@@ -1,0 +1,1 @@
+{"errors":[{"message":"Variable \"$tag\" got invalid value [\"travel\"]; Expected type String; String cannot represent an array value: [travel]","locations":[{"line":2,"column":3}]}],"pageContext":{"tag":["travel"]}}
