@@ -34,7 +34,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                     tags.length &&
                     tags.map((tag) => (
                         <Fragment key={tag}>
-                            <Link to={`/tags/${tag}/`}>{tag}</Link>
+                            <Link to={`/tags/${tag}/`}>{tag} </Link>
                         </Fragment>
                     ))}
             </p>
