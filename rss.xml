@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Wed, 23 Jan 2019 05:09:16 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Forensics (Defense of the Dark Arts)]]></title><description><![CDATA[This week focuses on how to investigating security incidents. You should be aware of the best way to investigate it while being careful to…]]></description><link>https://michelelarson.com/blog/security-forensics/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-forensics/</guid><pubDate>Fri, 18 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This week focuses on how to investigating security incidents. You should be aware of the best way to investigate it while being careful to preserve evidence.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Wed, 23 Jan 2019 05:13:24 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Forensics (Defense of the Dark Arts)]]></title><description><![CDATA[This week focuses on how to investigating security incidents. You should be aware of the best way to investigate it while being careful to…]]></description><link>https://michelelarson.com/blog/security-forensics/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-forensics/</guid><pubDate>Fri, 18 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This week focuses on how to investigating security incidents. You should be aware of the best way to investigate it while being careful to preserve evidence.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Side note - the lecturer talks about the book, &lt;a href=&quot;https://www.goodreads.com/book/show/18154.The_Cuckoo_s_Egg&quot;&gt;The Cuckoo’s Egg&lt;/a&gt;. I read it last year and loved it!&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Types of cases you may investigate&lt;/h3&gt;
 &lt;ul&gt;
@@ -120,26 +120,24 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;regedit&lt;/code&gt; in run window
-
-  &lt;a
+&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/87791a29882b11a34ebbf788ee275572/4f5b3/registry.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 291px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 79.03780068728523%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAADEUlEQVQ4y52S20sUYRjG518oqMD7LrsqqPAmb0KILjpQKeJFYGrioQgFS/F0oWWJZpIgnaBCkP6CrrU0a13X3dnjzOwcdg47M7utGrqHp/ebXRUv8qIPHr73m8Pve94DV1P/EFeaulHfOYC2Jy/Q+ngcLb3P0NQzhobOQdR3DOJSXReqqu/gxPmbOH7uOo6d3dO1isrn4ySuprkXp+8242pjOxraenD73qOKulFbdx+1t1pw5nIjuKpqcCcvHK1TF8HdaO3H6OxHTL5ZwNTbBUzMzePp608YefkeQ1MfMDD5Dt2js+gamcGD4Rl0Db/y1DE4jc6hctw5NL0vrn1gGtF4CnwsBUl1sRYQkJBdRBMG1oMiRCULIWkjHNPomY5QRIGkZJCkbzd4GXHBhOUWYdq7pDwB+yegW1nEJQOBkI6EqEGSDYgkFguSDkVLl5Uq72rKhma4kDULsmp5/+tmBikS1zc2AwdAWLHwed6HaEyAz+fDr5+rWCUtLS0ik83i6FXa37n2vudeWCjksbX9B9l0AL9dEZKkIhKNQjcMOI4LXddhUKxpKTi27e3snMlkyqhSCcVikRyOz1UeFJEvApvpZWy6PDRKTxJFpOlny7IgCAIURYEoSQSjUiQE75JcLncYuOQXvAMD7uwCW/YPAoaRlHXwPA+TYMxJOMxjbX0DwVAYadOAqqlY8wdgpu0DIIn78nWFncoOCwR0/NjKJghERZdl2I4Dm6WoqgRJkds0TLrANE1IyfJ7BmLLc/h9PYQSBZ7DPJCzlpBzgpSiSq7ClLoOlcAsTVlWvH1leQVyUkQkEsO3xUWCugfABN1WrACZw2234tB0kEwmvY+ZGxYzIKtZoVDAzs7OvvL5/AEwQB/tAXfzrCkr5DAEWTHIQZhSp+ZQIyKRKOLxhAf71/KAkqodArKmbGWj5EYnQJwaYtLYOIjHogjyEWpUhOqpeI1il/hpZhVilBtLTVG0PWAJBRqb7QxPQBqXNE1+SqM5y3qFN2hEVG/2LLh0ZrPJGsRq6rjuAVCuAA9P/P8txvkL/uNLqQsdAo4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Registry Editor&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/87791a29882b11a34ebbf788ee275572/4f5b3/registry.png&quot;
@@ -147,11 +145,8 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 /blog/static/87791a29882b11a34ebbf788ee275572/4f5b3/registry.png 291w&quot;
         sizes=&quot;(max-width: 291px) 100vw, 291px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;HKEY (handle to a key). Most important are &lt;code class=&quot;language-text&quot;&gt;HKEY_USERS&lt;/code&gt; (HKU) - profile of users, &lt;code class=&quot;language-text&quot;&gt;HKEY_LOCAL_MACHINE&lt;/code&gt; (HKLM)&lt;/p&gt;
@@ -199,26 +194,24 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 &lt;h3&gt;Lab&lt;/h3&gt;
 &lt;p&gt;We are then given a challenge, a Korean defector was caught with a USB stick that we need to investigate.&lt;/p&gt;
 &lt;p&gt;First I mounted the contents of the drive to a drive on my VM using OSFMount:
-
-  &lt;a
+&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/55db41f0441e2e74076a184508eda16f/6e3a5/1-mounted.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 19.888475836431226%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQY0yWOW0sCYRCG9xd2pOwmEwJDiLIuRCK6CCLoOiShm4KILoL+QD8hqMxSk4KV1XVb3fO3J5anz3VgeOeZeWcY5fb+kbuHJy6bN9ROLtitnbJXP6NYPmRlY5tCscJO9Zjq0Tlb5QMW14osF0osrZdyXVjdpLJf56pxzXOzgfLy+kGr3aH92aX3/Uu394M+NgmjFBHGBCLGDyKpkeQk51nO5nNPgusJzKmL4QiUr04HbTik3++jaRpjw+DPNLEsW6aFZduYkke6zmikE4YhU9kfDAaoqspkMkGXM0Pu2bKvvL23yLIMx3HwPA8hhFQ/r13XJYrkd0GQs+8HzCJJ5FfunNM0lZ44vxHHMf/B5BL0uFCssAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Contents of USB&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/55db41f0441e2e74076a184508eda16f/fb8a0/1-mounted.png&quot;
@@ -229,31 +222,26 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 /blog/static/55db41f0441e2e74076a184508eda16f/6e3a5/1-mounted.png 1076w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/77ce83f124f5f45d668d35413d4e5e2a/ab1f1/1b.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 44.90909090909091%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABrklEQVQoz4WRz07bQBDG/XSoqkSrFEgrQlS4wLmXXhBHWsEJbly58wJ9gp44AaoK+YNZL3bsrO1d25s4tvk6uwEaJCQsfZrdmdnffCM73w9P8W33B/YOT9Bqd7H0/iOWW2201jpY39zB+tdtrHW28Km9Mddnoy5WvnTxYaWDd8ur6Gzt4Of+Ac6Oj+D8+n2Ji2sPV30flz2Ov26IPwMffS8GFxN4Yw03UBjwBMP7FEN/LjeQ6FOu5wlcuxEuej7OexEc3+cIRiGUyiDSDEmqkCQpRJxASmXzZTlDnEhbK/QEknKa4pTyRUFxWqJuHig3hcPvGbJM0UUjiEZgHsMd8xBFY2rW0BPzsIQQMcZCEEzRsJjg0g7K8pze52iahsAEvLll5HBkJ4YhARmzDmggZrMKs6q2TgwsGgukBDJw+ehcEcxADXBCTp0B40iltE7CwIeSKTXSCnVNquaxquwGWhfWhS6K556ynNpzQ2cL5H5Iq+XI88JONV9FgBeycBK5MLF5jKZWP9WegLe08ohWNauYn9A0/xsX42tarD0DXeZiMByCc27XeW3yW1oE/gMt/ZIfmgcVHQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Contents of USB&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/77ce83f124f5f45d668d35413d4e5e2a/fb8a0/1b.png&quot;
@@ -265,11 +253,8 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 /blog/static/77ce83f124f5f45d668d35413d4e5e2a/ab1f1/1b.png 1650w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Next I used the Google Translate app on my phone to take a picture of the files and translate them:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Democratic People’s Republic of Korea - country to.mp3&lt;/li&gt;
@@ -280,26 +265,24 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 &lt;/ul&gt;
 &lt;h5&gt;Targets&lt;/h5&gt;
 &lt;p&gt;Looking at the contents of the jpg file as strings, I found the password:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/407d57d1c0dff5f0b58283721bc98cc5/02562/3.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 52.22078482104355%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACUUlEQVQozzVSWU8aURSeX9nEVlEQg7XbW9M+9ql9aOxrE0lMFAGNCyJENoelUZZhFgYGlHWgLLaVNqlBKmq+nnvVm3w5833n3C/nnDuC8+sKPnz6jDn7a8wtvITVvohZ2wKs8w5Mz9oxY3WQtgTbwgs8tczDMr8Ex6u3mJq24cnUDEUrnlnsWHz+Bh/fv4OglzToSgrpnA61dIpisYhSqYRWq4mzWp1rmnHGUShXoRFXixX+rVfqKBikVWpQD0SkfVEIYuIbTnIaMpJMUBA8DGN9fR2RWAz7/gO4PB5seD3wbm3BQ9je3YV7c5Nz5+oq3F4vNqjGueLExtoahFarhavxGLd3d5hMbmCabYRCIciyjHa7jcFggF63iy6h0+k88B46lGs0GmgSTPJgPv1+H8Jw+JuMJrgjQ3aYmEqlkM1mYRgGN1ZVlUdFUfg6GFg+k8lA1TRUqzVqxMTFxRDC8fExqrUams0mTk9pX1TAOtze2UY8HucmLGe2TJ7P5/O8pl6vc67rOsrlMhr1BmrkI/j8QWRyMsRECjt7fiSSKUQiEbjdbix/WcYa7SUQCMDlcnGd4YD4YegQ0WiU8yPxiHPWtTA4/4HxvwlGV2M+skm7kXI5SJIEn28P4XCYoo8uhvmoJ+kTBIMBBAh+/z5EUeRTMPNkMglhPL43ejxGuYJwLI50VoGs6sgrOhStSLGArHSvabrxgDLPSbLGo1ooQWAPcnl5yTEajdDufMev4R8Mzn/yRbMJuvSqvV4fVzTFze0trunONf0RDJMHMP0vefwHe2WYwkxF0g0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Password found&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/407d57d1c0dff5f0b58283721bc98cc5/fb8a0/3.png&quot;
@@ -312,32 +295,27 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 /blog/static/407d57d1c0dff5f0b58283721bc98cc5/02562/3.png 2319w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Which I used to unzip the zip file:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/a86b08d31715bef6501959cc0c6ac298/511d6/4.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 20.64404830362277%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/UlEQVQY002OuU7DUBBF/ak0FCRpIICQMChIIERDgYTYREdBR0GH4AsQBVUQMYiQzbKf/bw887wlB8cFpLiamTN3FuP2/pHrmzu2949ZWtlkublFY9WktbFHc71Da1EVq3m7Q2Ntl7Z5xM7hGebBCeenlzxcXWC8WK+89fp8jm0+vscMrAHOsE9WlBTFjLyYLmhGlpe15nWaFaRpTpJoZBDjhglG13rnazhmNJogfR8pJY7jYE9sXFfgV0wI8cejKKpzITzCMKx7XuVRSqHiGOO5J3jqhvgqJ8tSkh+N1rpa5uJVQ1IGeJ5PEAT1AaWSyjf/6j9qnZLnBWU55RdLNRZPK4ZqSAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Unzipped file&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/a86b08d31715bef6501959cc0c6ac298/fb8a0/4.png&quot;
@@ -349,32 +327,27 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 /blog/static/a86b08d31715bef6501959cc0c6ac298/511d6/4.png 1739w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And read its contents, the list of targets! (included S-Oil Onsan Refinery, GS Caltex Yeosu Refinery)&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/f0ec9196d316c5129de247ce423f8f06/34f25/5.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 8.734939759036143%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAiElEQVQI1yWLyw7BUAAF+8u0VRVVRGJLrldUNVa+x94HWCK9r+rNuOoks5nMCYrqykocEfszYleyPVSsNwXxaE44nBKlM2JPmOQdkXdpviQZL+gPMs+EXpx1zam4ENzuD4ySSKWRUvF8valrSdN8UFpjjMFYy2/OOdrWoX2rvZdKYW3zb4ztvl+RvYCnwaVvcQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Opened file&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/f0ec9196d316c5129de247ce423f8f06/fb8a0/5.png&quot;
@@ -387,35 +360,30 @@ volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname&lt;/code&gt;&
 /blog/static/f0ec9196d316c5129de247ce423f8f06/34f25/5.png 2324w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;h5&gt;Malware&lt;/h5&gt;
 &lt;p&gt;Looking at the strings of the .bin file, we see &lt;code class=&quot;language-text&quot;&gt;cmd.exe /q /c net share shared$=%SystemRoot% /GRANT: everyone, FULL&lt;/code&gt;
 It looks like it is executing a command to create a network share to the system root and give full permissions to everyone. /q is for quiet mode so it’s undetected.&lt;/p&gt;
 &lt;p&gt;When running the malware, the first thing I see is a file called igfxtrayex.exe that is created. By reading and googling strings and using the tools from last week, I think the malware is adding itself as a service to Windows Schedule Management Service (WinsSchMgmt). It looks like it creates and runs multiple files including dpnsvr16.exe and net_ver.dat. It also seems to change soooo many registry keys (just a small sub section below):&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/e4a1ad56282f2663afe586ba13b91236/b7132/bad.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 92.33817701453104%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAADOklEQVQ4y01UZ3PaQBDV//8nKZMySb4nsR07ITYGdQlVkADTZIpgKH55uyIkzNwMc9rbe23PuG+34YcpbMuH5fbgOAFcrwczCmAGEVqWiaQosVrvsVhuUS13WDzXmMxXmFc1ZtUGU/6vVjt+28IIQx/FsETU62Gz2aDerPGj24Ht2phOJ8j7GZIsweTpCePRCMPhELPZFEkSo6oq1PUGcRxhxG8bnjU810UyGMB1Pby8vGCzXuPV12/41fqNLMsxKAZ4aD/CdVw4toNu10QQhGThoiyHqJ4rZGmGlGvNs4bvedrQdhwcj0fdfPv9Ci02TJIEWZ6ha5rwWOfxUsuyEYYhfN/HaDzGcrnUuqIosN3tYMRRhAHhxtw8nU7Ybmt8ufsJ07RYVKKkHAEb5ESbJimiKMaAANKUMlASkWk2m2G1Wul5RZiVzSHZkIL319ek2dZbZVm2TY0jIuvBI7I8z9m4h/ligcNhr2iDICD9ZxgOqca8UagcjydSXuH1N9GwpdRiit9+FA29i4ae1zR4olGHw4HmTRXldkuXezzUp3MhXRaEdV3j449bdDpdRVIQvc/D0rzHGmnU7w8QnZ0VqrL2+z3kZ4RSwIaizd+Gn25v8djtakRG45HSjKh1EifauN/va8OFUj5Qz1T31pTrQrlx+aQuvzlTlkJxucPmorVEx6Tj0tzzPZoyxW63hU2NJQXPoqEImpWFbvw15d31DR4e2nowzVI1JWT2Ap9TxNxKIgThfD5XqmEYaC6n1NEQXTQ28b/YfL67O8emYHhFw7AJr8YmUg0le2OaItMidWKM0Ddc1+GsFqqTItRgf9fYSFTEZQm2IPTprkPaAsIPfL1MDJlMJhpwbaijx/Gy7UZDafjmPClxHF80lCmRZVqWjp5PDQWhaC51OikamzNlofI/5S6bCLXyHBuhKy5Lvcy4UJYcihGj0Vipy+heJuWSQ5ry4eaGYe6cJ2UAhyzkQpHApzFplml8nkhVYiZ5lYsVoXuhbP+LDTVs/b7XEIubj50O6fpNbJRy42oT/IJoU50Uea0UYcpNQXEx5eoK94xNRiR5P1dTxBB9wiS3pC6mzGZNbKROnjJB+wcsPx3qgm7HJgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Opened file&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/e4a1ad56282f2663afe586ba13b91236/fb8a0/bad.png&quot;
@@ -425,31 +393,26 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/e4a1ad56282f2663afe586ba13b91236/b7132/bad.png 757w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/b42eb19c22027bf891596c4fb49d9bf4/6ea70/bad2.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 16.801075268817204%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAsklEQVQI1zWPzQrCMBCE+/4v40k89yII4qHpr20aMU0qNdLE3grJuKl0YWGHYb+dTYQQ6IcBddMglp0t0usRRZFDKQ1FHmMMVVWhbVtw3mNdV4ieQ2kN7z3KsiS/hjEfJEI8NmBeFAjBw1mH9HJAxjKYt8E4jsh3YNcRkP+BgkOTF0Kgo2qDzxQmGUgMrxcaShjTOPfF+Xai5TuklFiWZVuKSfaOWsonpmnaZk2w+I21Fj/urd0XrBEBcgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Opened file&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/b42eb19c22027bf891596c4fb49d9bf4/fb8a0/bad2.png&quot;
@@ -459,32 +422,27 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/b42eb19c22027bf891596c4fb49d9bf4/6ea70/bad2.png 744w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It also tries to connect to a bunch of IPs starting with 43.130.141:&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/95632/bad3.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 576px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 67.1875%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQ4y42SyU/CQBSHSziZaEw8aNlKF9ppC20pILUKQa/uGhcS48WLJ///48/5jUwim/EwmaXzvvfNezU+Pr8wnV1gXE6Q5iOUk3P0RwVGJxMMizP0siHidIBsMEaSH8v9CNmwwEDe8fwQe/sH2NndV/PhoQnj9vEFnmvD8zzU6zUEvg+r1UIoBHy/g3rNREOeu46tZtM8gmO3kfR6qMlvhmEsj+f5mwoWIoRltRHHMVzXRbfbRRiGaEl4y7JUQsdx0Gg0ZCIfSZJIYA2VSmUBq/ysaShEgCAIJNBCFEUqkGAhEzWbTQUlkIm473Q6CmiaGwwv754gAl9lJZBWtm0rMJPQyFoYEsg91z355I3A64eXJaA25KwNrZUn0/BPYBQKFdxub6mhHDyjua5hmqaqhmvAq/tnxFGomkIgQQymAS1/Azm4/idQLAFXDfnkfxleP7xuBWpDXUPWThtmWbYZePM4X3uy7uJvIGE8Z5PY/a1ANmVTDVcN9V/AO+w2gVxXq9Vl4NP8HaenJfI8Vxaz2UzVpyxLFEWhbLQRoUzW7/cxnU5VTVcNvwGfwWV4/GK1vgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Opened file&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/95632/bad3.png&quot;
@@ -493,34 +451,29 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/95632/bad3.png 576w&quot;
         sizes=&quot;(max-width: 576px) 100vw, 576px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It also seems like it may be loading a window and drawing text to it, based on calls to BeginPaint, DrawText, and LoadIcon.&lt;/p&gt;
 &lt;h5&gt;Deleted files&lt;/h5&gt;
 &lt;p&gt;The following files were deleted (found using PhotoRec):&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/44adaa83cacd14a017263fe5ccade7cf/a7964/2-photorec.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 37.025796661608496%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAA+UlEQVQoz31R2W6EQAwDcd9XgeUUCIEE4nrY/v+nufJUs+pDdx+szCiJHSfK8/mN8zyxriuu68JxHNj3Hfd9Y1kWbNuGYRgwTRO6roPrulAU5T2apkEURciyDH3f4/F4oCgKAdu2YRgGVFWFpmmfiSSy7At1XQuCqqrg+z4cxxECcRyLqSjIYk7HN0WYI9I0RRiG0HX9l1DTdNGc5/m/U0gB5pIkEbWcXDoqyxJt24ooeoIgEIqmab4sep73IvoL1jBalvXe8jzPwvI4juIIVKIICdlIEVrin5Zp8+Nhuq4X+yMprynfPA7XQCFGQu6MOUa5Kg5B+xT6AdMoo3BPwEyuAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;PhotoRec&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/44adaa83cacd14a017263fe5ccade7cf/fb8a0/2-photorec.png&quot;
@@ -530,31 +483,26 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/44adaa83cacd14a017263fe5ccade7cf/a7964/2-photorec.png 659w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/214b2/2a.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 47.423887587822016%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABMUlEQVQoz22S2ZaCMBBE+f/fm4fhyLCIHgFBIWFfa1Jx2qMOD6GbpFN9K4lTXGIEPx6O8Qm32w1t26Jpmueo6xp5UeB6zZHnOaqqsrEwc9qssUZrjSzL0Pc9HKULeN7BDM9uXpYF8zw/xzRNuN/vthkjGzKK6DAMtq4sy4dgrjSCKML5fDKL41OQUXISlIaMmyhISs5JU9Yppay4k51DHKMAsbFMwnVd3woZlaqsIDeRovoTl6Z0wblxHA1h8AX/8I3oGJsz0buC3Pxp+VNQ7Dtt2+CSJEiS1E68nuGrZdIxsoZOJJcaXo4lpIUwDOH7vi36T/i4FBLIK2CkgBAyT9MHkMMPfxJD2XXdLqEQMQqh0HGQjOuWkAukc13XvLUrtm17F9x5Nsx5BNKQrngpdPsLMjqz67qKpF0AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Recovered files A&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/fb8a0/2a.png&quot;
@@ -564,31 +512,26 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/214b2/2a.png 854w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
   &lt;/a&gt;
-    
-
-  &lt;a
+&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/29454/2b.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 39.0452876376989%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABHklEQVQoz22S25KDIBBE+f+fVMzilhdEwLumOvSspFKpfegSxslxuidqig5aa+hKY14WPJ9PnOf51nVdmOcZwzBgHEf4ELCuK5xzWFL/vu9/fUnTNEEFp1GWGlVVSRMB/wFtAvI9odu2wVqLPqnrOhzHkeCznFX0Bo/HD4wxUiCAU2Ywn5yEMO89QpqQwAznk0DWeJcJi6JMKgTatI18PcYoMIpW+r6XH1O0zAgo1gmkeFfBNwKihsFKJrnhvIGS4T0hlTPMU9MJ+3lWDLlKSzGmlmK2+2n5cynhXkq2S6s5JtbVb2dly0VZpvHtG/K9FC4gT8RMmTfPW3JEWIxB7KvejajrGm3bSm60/A3kBjOMPbIk/oXSnR9jDyfluxc5iWa13eH4rAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Recovered files B&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/fb8a0/2b.png&quot;
@@ -598,33 +541,28 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/2b0d69a3aa4c4a034dac4f125a529f91/29454/2b.png 817w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;h5&gt;Username/passwords&lt;/h5&gt;
 &lt;p&gt;After opening a file recovered via PhotoRec, I searched in the .bin file for the string ‘spe’ (lecture hint) and found the following (at offset value 0x3ebbd):&lt;/p&gt;
-&lt;p&gt;
-  &lt;a
+&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/bd485/6.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
-  
-  &lt;span
+    &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
       style=&quot;padding-bottom: 50.32453483340545%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACL0lEQVQoz22RW08acRDF93NataJSb2nSN/sJmr71oUnTh/atiVoNTVoJ1guCVBEqCCwLKlor12Vxl0sCgcXw6+ymJKbpJCdzZnZmcv5nlY/vP/D6zVtmZpd5OreMZ36JOe8i3sUVPN4lJme8zC8+Z/bZChPTc8x4V1h+8ZJpzwJPpmaZlN7ElIcFmXm1uoqSUtNkzsPEzzKcqxdktTy5nMZlPo+maiRTWdJqnnQmRyZ7QUpyKp11c8JBWiD9+Nd9jjcDKKFwhOjPFLGzJKfxBPvBEMlEko1tP++2tvi0u8tGOMza4SHrwSCboRDrUvsiR4QFoUhEIPzoiOD+AcrNzS+63S6jEbTbbVGjYfe6aO0OX+oG2zWd7+UKO6USO+UygcY9gXqdmGXxbzw8PKDUjQa2PZCDI3q9HqqWo22ZpGXRVyrzTQ7574r4i0UCgh1dZ7tS5dgwsAcDBoL+3+wIU6LRKIVCgdvbWwpXV5zGYpwl0iTUHCcplaj4dZJxoLk8Ji+IZnMuz+bE8/wl2sUV+ctrNOHK2mcf4R+n7B2E2dj04Q/scX3zm2qlwr2oN0RRvVajJqoMsUCvVtGFl4slqsLvRL0hc7rMtVptlFKljmk1RbaN2Mi9aWEKdDlimiaNRsOFs9RsNl1uWpb7zamd7Hjv9Dudjhws16TREkOHrrGGeNNqtej3+64vw+HQzbZtuz6Pw6Hj2sljKEX3YNv9Q05U5DktqUf8P8aLj+vH8QdtRruELp3jjgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-    &gt;
-      &lt;img
+    &gt;&lt;/span&gt;
+    &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Usernames and passwords&quot;
         title=&quot;&quot;
         src=&quot;/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/fb8a0/6.png&quot;
@@ -637,11 +575,8 @@ It looks like it is executing a command to create a network share to the system 
 /blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/bd485/6.png 2311w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
-    &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;h5&gt;Strategy to Target&lt;/h5&gt;
 &lt;p&gt;DO NOT RUN THIS FILE! It will destroy your computer. 😱&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Malware (Defense Against the Dark Arts)]]></title><description><![CDATA[As part of my effort to obtain a Computer Science degree, I am taking a class called “Defense Against the Dark Arts” on Security topics. I’m…]]></description><link>https://michelelarson.com/blog/security-malware/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-malware/</guid><pubDate>Fri, 11 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;As part of my effort to obtain a Computer Science degree, I am taking a class called “Defense Against the Dark Arts” on Security topics. I’m actually really excited for this class, both its topics and its approach, which is that the lectures are given by experts who work in the field. As part of the class, I am required to write blog posts each week on the topic, so here I go!&lt;/p&gt;
 &lt;p&gt;The first week talks about malware (malicious software). I had a small understanding of malware, in that I knew what it is, but I had never thought about it beyond that. This week, the lecturer is from McAfee, and I learned that what the security research team is doing is writing drivers to detect malware, and in their approach to writing these drivers, trying to be able to detect future variations, because there’s just so much malware to keep up with.&lt;/p&gt;
