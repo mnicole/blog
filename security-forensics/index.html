@@ -1,4 +1,649 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.0.91"/><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"/><link rel="manifest" href="/blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Thoughts on Forensics (Defense of the Dark Arts) | Thoughts on Things</title><meta data-react-helmet="true" name="description" content=""/><meta data-react-helmet="true" property="og:title" content="Thoughts on Forensics (Defense of the Dark Arts)"/><meta data-react-helmet="true" property="og:description" content=""/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Michele Larson"/><meta data-react-helmet="true" name="twitter:title" content="Thoughts on Forensics (Defense of the Dark Arts)"/><meta data-react-helmet="true" name="twitter:description" content=""/><link as="script" rel="preload" href="/blog/webpack-runtime-7d880c6c42b8d743ff73.js"/><link as="script" rel="preload" href="/blog/app-8bfacea766f9c5c9543f.js"/><link as="script" rel="preload" href="/blog/0-cc2f9b2be16e7902f2d6.js"/><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-c2f565d642fb3b322475.js"/><link as="fetch" rel="preload" href="/blog/static/d/64/path---security-forensics-805-917-nHmoWllOE5qpR4BqabbSnYk2YPA.json" crossOrigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;padding:30px"><h1><a href="/blog/">Thoughts on Things</a></h1><h3>Thoughts on Forensics (Defense of the Dark Arts)</h3><p style="text-transform:uppercase;font-size:14px">January 18, 2019</p><div><p>This blog will contain entries for assignments for my “Defense Against the Dark Arts” class on Security topics, forensics.</p></div><hr/><p style="text-transform:uppercase;font-size:14px"><a href="/blog/tags/school/">school<!-- --> </a><a href="/blog/tags/security/">security<!-- --> </a></p><div style="display:flex"><p>By<!-- --> <strong>Michele Larson</strong></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/security-malware/">← <!-- -->Thoughts on Malware (Defense Against the Dark Arts)</a></li><li></li></ul></div></div></div><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.0.91"/><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"/><link rel="manifest" href="/blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Thoughts on Forensics (Defense of the Dark Arts) | Thoughts on Things</title><meta data-react-helmet="true" name="description" content=""/><meta data-react-helmet="true" property="og:title" content="Thoughts on Forensics (Defense of the Dark Arts)"/><meta data-react-helmet="true" property="og:description" content=""/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Michele Larson"/><meta data-react-helmet="true" name="twitter:title" content="Thoughts on Forensics (Defense of the Dark Arts)"/><meta data-react-helmet="true" name="twitter:description" content=""/><link as="script" rel="preload" href="/blog/webpack-runtime-3fe754863fb68510545c.js"/><link as="script" rel="preload" href="/blog/app-8bfacea766f9c5c9543f.js"/><link as="script" rel="preload" href="/blog/0-cc2f9b2be16e7902f2d6.js"/><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-c2f565d642fb3b322475.js"/><link as="fetch" rel="preload" href="/blog/static/d/446/path---security-forensics-805-917-Bwa8PkjQTRHD7t8qnEqcy7G5o.json" crossOrigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;padding:30px"><h1><a href="/blog/">Thoughts on Things</a></h1><h3>Thoughts on Forensics (Defense of the Dark Arts)</h3><p style="text-transform:uppercase;font-size:14px">January 18, 2019</p><div><p>This week focuses on how to investigating security incidents. You should be aware of the best way to investigate it while being careful to preserve evidence.</p>
+<p><strong>Side note - the lecturer talks about the book, <a href="https://www.goodreads.com/book/show/18154.The_Cuckoo_s_Egg">The Cuckoo’s Egg</a>. I read it last year and loved it!</strong></p>
+<h3>Types of cases you may investigate</h3>
+<ul>
+<li>Fraud</li>
+<li>Intellectual Property</li>
+<li>Hacker Intrusions/Data Breaches</li>
+<li>Inappropriate use of Internet</li>
+<li>Child Exploitation</li>
+<li>eDiscovery supporting Civil or Criminal Litigation</li>
+</ul>
+<h3>Stages of Investigation</h3>
+<ol>
+<li>Evidence acquisition</li>
+<li>Investigation and Analysis</li>
+<li>Reporting results</li>
+</ol>
+<h3>Forensics</h3>
+<ul>
+<li>Includes: Identifying, preserving, analyzing evidence and presenting results.</li>
+<li>Could find evidence in network, operating system, databases and applications, peripherals, removable media, human testimony</li>
+<li>To keep in mind: It’s not up to you to judge guilt. It’s up to you to show what happened. If you think someone is guilty, you look for information to prove your opinion, so it can make you biased while investigating.</li>
+<li>Need to describe results in a way that a judge will understand. Something the lecturer does is ask questions like an attorney to see if there’s anything a judge might ask that they can clarify now.</li>
+<li>Always check times and keep records of times.</li>
+<li>Any time you do anything, it affects the memory and could erase something.</li>
+<li>Locard’s Exchange Principle - when two things interact, there is always transference of material. Thoroughly document anything you do on a live system.</li>
+<li>Triage - There may be different ways to do something. You should check multiple ways to make sure you can come to the same conclusion.</li>
+<li>You can’t log into accounts even if you come across the username and password. You need permission from a judge. It has to be relevant to the case.</li>
+<li>Harddrives are giant and there may be a time limit. You also might get additional harddrives, portable harddrives, cell phones, etc. It takes time to process the data.</li>
+<li>Whitelisting is good to match checksums and verify files are ok and you don’t have to waste time investigating them. The person processing the harddrive will do a checksum of the entire harddrive. The first thing you should do is check that to make sure the evidence wasn’t tampered with.</li>
+</ul>
+<h3>Incident Response Process</h3>
+<ol start="0">
+<li>Incident Response Team Preparation</li>
+<li>Incident Detection</li>
+<li>Initial Response</li>
+<li>Formulate Response Strategy</li>
+<li>Investigate the Incident
+4a. Data Collection
+4b. Forensic Analysis
+4c. Perform Non-Forensic Investigation</li>
+<li>Document Findings
+5a. Administrative Action</li>
+</ol>
+<h3>APT Case Evidence</h3>
+<ul>
+<li>Reconnaissance: Firewall/IPS logs</li>
+<li>Delivery - Email Gateways logs, proxy logs, internet history, Java-IDX files</li>
+<li>Exploitation - Windows Event logs, crash dump files</li>
+<li>Installation - $MFT, memory dump registry, prefetch-files</li>
+<li>Command and Control - Memory dump, firewall logs, proxy logs, netflow</li>
+<li>Actions on Objectives - $MFT, memory dump registry, prefetch files, netflow, remote tools</li>
+</ul>
+<p><em>Initial Response - Shutting off the machine can destroy evidence, but you should pull network cable or block port (attacker may be on network still, even watching you!)</em></p>
+<h4>Order of Volatility - RFC 3227</h4>
+<ul>
+<li>Gather evidence in specific order, capturing the most volatile things first</li>
+<li>System memory</li>
+<li>Temporary file systems</li>
+<li>Process Table and Network Connections</li>
+<li>Network Routing Information and ARP cache</li>
+<li>Forensices Acquisition of Disks</li>
+<li>Remote Logging and monitoring data</li>
+<li>Physical config and network topology</li>
+<li>Backups</li>
+<li>Non volatile data (Time/Data stamps, event logs, web/application logs, registry)</li>
+<li>Relevant logical files (Unknown executables, attacker tools, any other files related to incident)</li>
+</ul>
+<h4>FTK Imager</h4>
+<ul>
+<li>Easy free tool, to dump memory, but leaves an imprint in memory so it’s better to do with commands.</li>
+<li>Note - Never install forensics tools on a suspect’s computer, because you’re influencing!</li>
+<li>Capture memory - don’t store it on desktop. usually will want to store on a shared network. Naming - operation + serial number or date + .mem. You can decide to include pagefile</li>
+<li>Add evidence item - you can copy external sources</li>
+<li>Take a look - find root -> $MFT master file table. You can export it from this tool</li>
+<li>Create disk image, pick encase (E01) as format or raw (DD)</li>
+</ul>
+<h4>Physical memory - system memory (RAM) - short term memory</h4>
+<p>You can get…</p>
+<ul>
+<li>All running processes at time of snapshot</li>
+<li>All loaded modules and DLL’s including malware</li>
+<li>Running device drivers, including rootkits</li>
+<li>Open files for each process, including path to file on disk</li>
+<li>Open registry keys for each process</li>
+<li>Open network sockets including IP address</li>
+<li>Decrypted versions of data</li>
+<li>Contents of windows</li>
+<li>Keystrokes</li>
+<li>Email attachments, file transfers</li>
+<li>Cryptographic key material</li>
+<li>WEP and WPA wireless keys</li>
+<li>Usernames/passwords</li>
+</ul>
+<h4>Analyzing Memory Dumps</h4>
+<ul>
+<li>Look for a printable string</li>
+<li>Reconstruct internal data structures</li>
+<li>Search for static signatures of kernal data structures</li>
+</ul>
+<h4>Volatility</h4>
+<ul>
+<li>Advanced memory forensics framework</li>
+<li>Plugins - malfind, csrpslist, orphan threads, PSList, PSScan, svcscan, ldrmodules, impscan, apihooks, idt, gdt, callbacks, driverirp, psxview, ssdt<em>ex, ssdt</em>by_threads</li>
+<li>Yara - Malware plugins for Volatility</li>
+</ul>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">volatility.exe -h    // shows options
+volatility.exe -f nameofmemorydump pluginname
+volatility.exe -f nameofmemorydump --profile=Win7SPOx86 pluginname</code></pre></div>
+<p><em>Plugins:</em></p>
+<ul>
+<li><code class="language-text">imageinfo</code> - tells us windows operating systems. image date and time - when you took the memory dump</li>
+<li><code class="language-text">psscan</code></li>
+<li><code class="language-text">dlllist -p &lt;processid&gt;</code></li>
+<li><code class="language-text">netscan</code></li>
+<li><code class="language-text">Deskscan</code> - </li>
+<li><code class="language-text">Getsids</code> - see which user rights the malware was running</li>
+</ul>
+<h4>Windows Registry</h4>
+<ul>
+<li>
+<p><code class="language-text">regedit</code> in run window
+
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/87791a29882b11a34ebbf788ee275572/4f5b3/registry.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 291px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 79.03780068728523%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAADEUlEQVQ4y52S20sUYRjG518oqMD7LrsqqPAmb0KILjpQKeJFYGrioQgFS/F0oWWJZpIgnaBCkP6CrrU0a13X3dnjzOwcdg47M7utGrqHp/ebXRUv8qIPHr73m8Pve94DV1P/EFeaulHfOYC2Jy/Q+ngcLb3P0NQzhobOQdR3DOJSXReqqu/gxPmbOH7uOo6d3dO1isrn4ySuprkXp+8242pjOxraenD73qOKulFbdx+1t1pw5nIjuKpqcCcvHK1TF8HdaO3H6OxHTL5ZwNTbBUzMzePp608YefkeQ1MfMDD5Dt2js+gamcGD4Rl0Db/y1DE4jc6hctw5NL0vrn1gGtF4CnwsBUl1sRYQkJBdRBMG1oMiRCULIWkjHNPomY5QRIGkZJCkbzd4GXHBhOUWYdq7pDwB+yegW1nEJQOBkI6EqEGSDYgkFguSDkVLl5Uq72rKhma4kDULsmp5/+tmBikS1zc2AwdAWLHwed6HaEyAz+fDr5+rWCUtLS0ik83i6FXa37n2vudeWCjksbX9B9l0AL9dEZKkIhKNQjcMOI4LXddhUKxpKTi27e3snMlkyqhSCcVikRyOz1UeFJEvApvpZWy6PDRKTxJFpOlny7IgCAIURYEoSQSjUiQE75JcLncYuOQXvAMD7uwCW/YPAoaRlHXwPA+TYMxJOMxjbX0DwVAYadOAqqlY8wdgpu0DIIn78nWFncoOCwR0/NjKJghERZdl2I4Dm6WoqgRJkds0TLrANE1IyfJ7BmLLc/h9PYQSBZ7DPJCzlpBzgpSiSq7ClLoOlcAsTVlWvH1leQVyUkQkEsO3xUWCugfABN1WrACZw2234tB0kEwmvY+ZGxYzIKtZoVDAzs7OvvL5/AEwQB/tAXfzrCkr5DAEWTHIQZhSp+ZQIyKRKOLxhAf71/KAkqodArKmbGWj5EYnQJwaYtLYOIjHogjyEWpUhOqpeI1il/hpZhVilBtLTVG0PWAJBRqb7QxPQBqXNE1+SqM5y3qFN2hEVG/2LLh0ZrPJGsRq6rjuAVCuAA9P/P8txvkL/uNLqQsdAo4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Registry Editor"
+        title=""
+        src="/blog/static/87791a29882b11a34ebbf788ee275572/4f5b3/registry.png"
+        srcset="/blog/static/87791a29882b11a34ebbf788ee275572/cde50/registry.png 148w,
+/blog/static/87791a29882b11a34ebbf788ee275572/4f5b3/registry.png 291w"
+        sizes="(max-width: 291px) 100vw, 291px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+</li>
+<li>
+<p>HKEY (handle to a key). Most important are <code class="language-text">HKEY_USERS</code> (HKU) - profile of users, <code class="language-text">HKEY_LOCAL_MACHINE</code> (HKLM)</p>
+</li>
+</ul>
+<h4>Timeline Analysis</h4>
+<ul>
+<li>$MFT (master file table) - check timings of when things are changed
+<code class="language-text">volatility.exe -f nameofmemorydump --profile=Win7SPOx86 mftparser --output=body &gt;&gt; mftparser.txt</code></li>
+<li>Reg-Ripper</li>
+<li>Volatility timeline
+<code class="language-text">volatility.exe -f nameofmemorydump --profile=Win7SPOx86 timeliner --output=body &gt;&gt; timeline.txt</code></li>
+</ul>
+<h4>Files and Directory Analysis</h4>
+<p>Things to check:</p>
+<ul>
+<li>pagefile.sys, index.dat, etc</li>
+<li>Windows event logs (Application, System, Security, DNS)</li>
+<li>IIS/webserver/FTP logs/URL Scan - the web could be a point of entry</li>
+<li>Windows firewall log (%windir%\pfirewall.log)</li>
+<li>setupapi.log - installation of applications and devices</li>
+<li>schedlgu.txt - scheduled tasks</li>
+<li>Application configuration files and logs</li>
+<li>Antivirus/IDS/IAS/ISA Server logs</li>
+<li>Prefetch folder <code class="language-text">strings C:\WINDOWS\Prefetch\PWDUMP2.exe</code></li>
+<li>Evidence of malware, rootkits, etc</li>
+<li>System restore points</li>
+<li>Hybernation file</li>
+<li>Crash-dump files</li>
+<li>LNK files</li>
+<li>Shell-bag - when you open a window</li>
+<li>HKEY_USERS for internet browsing history, last accessed files</li>
+<li>Autorun locations</li>
+<li>MRU lists</li>
+<li>UserAssist</li>
+<li>USB devices</li>
+<li>Geolocation</li>
+</ul>
+<h4>Data Recovery</h4>
+<ul>
+<li>When you delete files, the markers in memory for the data are deleted, but not always the data</li>
+<li>You can use a program to search for the data such as PhotoRec. Header files start with certain keys, so it looks for starting with JOJA and footer has xyz.</li>
+</ul>
+<hr>
+<h3>Lab</h3>
+<p>We are then given a challenge, a Korean defector was caught with a USB stick that we need to investigate.</p>
+<p>First I mounted the contents of the drive to a drive on my VM using OSFMount:
+
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/55db41f0441e2e74076a184508eda16f/6e3a5/1-mounted.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 19.888475836431226%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQY0yWOW0sCYRCG9xd2pOwmEwJDiLIuRCK6CCLoOiShm4KILoL+QD8hqMxSk4KV1XVb3fO3J5anz3VgeOeZeWcY5fb+kbuHJy6bN9ROLtitnbJXP6NYPmRlY5tCscJO9Zjq0Tlb5QMW14osF0osrZdyXVjdpLJf56pxzXOzgfLy+kGr3aH92aX3/Uu394M+NgmjFBHGBCLGDyKpkeQk51nO5nNPgusJzKmL4QiUr04HbTik3++jaRpjw+DPNLEsW6aFZduYkke6zmikE4YhU9kfDAaoqspkMkGXM0Pu2bKvvL23yLIMx3HwPA8hhFQ/r13XJYrkd0GQs+8HzCJJ5FfunNM0lZ44vxHHMf/B5BL0uFCssAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Contents of USB"
+        title=""
+        src="/blog/static/55db41f0441e2e74076a184508eda16f/fb8a0/1-mounted.png"
+        srcset="/blog/static/55db41f0441e2e74076a184508eda16f/1a291/1-mounted.png 148w,
+/blog/static/55db41f0441e2e74076a184508eda16f/2bc4a/1-mounted.png 295w,
+/blog/static/55db41f0441e2e74076a184508eda16f/fb8a0/1-mounted.png 590w,
+/blog/static/55db41f0441e2e74076a184508eda16f/526de/1-mounted.png 885w,
+/blog/static/55db41f0441e2e74076a184508eda16f/6e3a5/1-mounted.png 1076w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/77ce83f124f5f45d668d35413d4e5e2a/ab1f1/1b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 44.90909090909091%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABrklEQVQoz4WRz07bQBDG/XSoqkSrFEgrQlS4wLmXXhBHWsEJbly58wJ9gp44AaoK+YNZL3bsrO1d25s4tvk6uwEaJCQsfZrdmdnffCM73w9P8W33B/YOT9Bqd7H0/iOWW2201jpY39zB+tdtrHW28Km9Mddnoy5WvnTxYaWDd8ur6Gzt4Of+Ac6Oj+D8+n2Ji2sPV30flz2Ov26IPwMffS8GFxN4Yw03UBjwBMP7FEN/LjeQ6FOu5wlcuxEuej7OexEc3+cIRiGUyiDSDEmqkCQpRJxASmXzZTlDnEhbK/QEknKa4pTyRUFxWqJuHig3hcPvGbJM0UUjiEZgHsMd8xBFY2rW0BPzsIQQMcZCEEzRsJjg0g7K8pze52iahsAEvLll5HBkJ4YhARmzDmggZrMKs6q2TgwsGgukBDJw+ehcEcxADXBCTp0B40iltE7CwIeSKTXSCnVNquaxquwGWhfWhS6K556ynNpzQ2cL5H5Iq+XI88JONV9FgBeycBK5MLF5jKZWP9WegLe08ohWNauYn9A0/xsX42tarD0DXeZiMByCc27XeW3yW1oE/gMt/ZIfmgcVHQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Contents of USB"
+        title=""
+        src="/blog/static/77ce83f124f5f45d668d35413d4e5e2a/fb8a0/1b.png"
+        srcset="/blog/static/77ce83f124f5f45d668d35413d4e5e2a/1a291/1b.png 148w,
+/blog/static/77ce83f124f5f45d668d35413d4e5e2a/2bc4a/1b.png 295w,
+/blog/static/77ce83f124f5f45d668d35413d4e5e2a/fb8a0/1b.png 590w,
+/blog/static/77ce83f124f5f45d668d35413d4e5e2a/526de/1b.png 885w,
+/blog/static/77ce83f124f5f45d668d35413d4e5e2a/fa2eb/1b.png 1180w,
+/blog/static/77ce83f124f5f45d668d35413d4e5e2a/ab1f1/1b.png 1650w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Next I used the Google Translate app on my phone to take a picture of the files and translate them:</p>
+<ul>
+<li>Democratic People’s Republic of Korea - country to.mp3</li>
+<li>Target list.zip</li>
+<li>Rootkin.bin</li>
+<li>Target.bat</li>
+<li>Goal.png</li>
+</ul>
+<h5>Targets</h5>
+<p>Looking at the contents of the jpg file as strings, I found the password:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/407d57d1c0dff5f0b58283721bc98cc5/02562/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 52.22078482104355%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACUUlEQVQozzVSWU8aURSeX9nEVlEQg7XbW9M+9ql9aOxrE0lMFAGNCyJENoelUZZhFgYGlHWgLLaVNqlBKmq+nnvVm3w5833n3C/nnDuC8+sKPnz6jDn7a8wtvITVvohZ2wKs8w5Mz9oxY3WQtgTbwgs8tczDMr8Ex6u3mJq24cnUDEUrnlnsWHz+Bh/fv4OglzToSgrpnA61dIpisYhSqYRWq4mzWp1rmnHGUShXoRFXixX+rVfqKBikVWpQD0SkfVEIYuIbTnIaMpJMUBA8DGN9fR2RWAz7/gO4PB5seD3wbm3BQ9je3YV7c5Nz5+oq3F4vNqjGueLExtoahFarhavxGLd3d5hMbmCabYRCIciyjHa7jcFggF63iy6h0+k88B46lGs0GmgSTPJgPv1+H8Jw+JuMJrgjQ3aYmEqlkM1mYRgGN1ZVlUdFUfg6GFg+k8lA1TRUqzVqxMTFxRDC8fExqrUams0mTk9pX1TAOtze2UY8HucmLGe2TJ7P5/O8pl6vc67rOsrlMhr1BmrkI/j8QWRyMsRECjt7fiSSKUQiEbjdbix/WcYa7SUQCMDlcnGd4YD4YegQ0WiU8yPxiHPWtTA4/4HxvwlGV2M+skm7kXI5SJIEn28P4XCYoo8uhvmoJ+kTBIMBBAh+/z5EUeRTMPNkMglhPL43ejxGuYJwLI50VoGs6sgrOhStSLGArHSvabrxgDLPSbLGo1ooQWAPcnl5yTEajdDufMev4R8Mzn/yRbMJuvSqvV4fVzTFze0trunONf0RDJMHMP0vefwHe2WYwkxF0g0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Password found"
+        title=""
+        src="/blog/static/407d57d1c0dff5f0b58283721bc98cc5/fb8a0/3.png"
+        srcset="/blog/static/407d57d1c0dff5f0b58283721bc98cc5/1a291/3.png 148w,
+/blog/static/407d57d1c0dff5f0b58283721bc98cc5/2bc4a/3.png 295w,
+/blog/static/407d57d1c0dff5f0b58283721bc98cc5/fb8a0/3.png 590w,
+/blog/static/407d57d1c0dff5f0b58283721bc98cc5/526de/3.png 885w,
+/blog/static/407d57d1c0dff5f0b58283721bc98cc5/fa2eb/3.png 1180w,
+/blog/static/407d57d1c0dff5f0b58283721bc98cc5/08f6a/3.png 1770w,
+/blog/static/407d57d1c0dff5f0b58283721bc98cc5/02562/3.png 2319w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Which I used to unzip the zip file:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/a86b08d31715bef6501959cc0c6ac298/511d6/4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 20.64404830362277%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA/UlEQVQY002OuU7DUBBF/ak0FCRpIICQMChIIERDgYTYREdBR0GH4AsQBVUQMYiQzbKf/bw887wlB8cFpLiamTN3FuP2/pHrmzu2949ZWtlkublFY9WktbFHc71Da1EVq3m7Q2Ntl7Z5xM7hGebBCeenlzxcXWC8WK+89fp8jm0+vscMrAHOsE9WlBTFjLyYLmhGlpe15nWaFaRpTpJoZBDjhglG13rnazhmNJogfR8pJY7jYE9sXFfgV0wI8cejKKpzITzCMKx7XuVRSqHiGOO5J3jqhvgqJ8tSkh+N1rpa5uJVQ1IGeJ5PEAT1AaWSyjf/6j9qnZLnBWU55RdLNRZPK4ZqSAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Unzipped file"
+        title=""
+        src="/blog/static/a86b08d31715bef6501959cc0c6ac298/fb8a0/4.png"
+        srcset="/blog/static/a86b08d31715bef6501959cc0c6ac298/1a291/4.png 148w,
+/blog/static/a86b08d31715bef6501959cc0c6ac298/2bc4a/4.png 295w,
+/blog/static/a86b08d31715bef6501959cc0c6ac298/fb8a0/4.png 590w,
+/blog/static/a86b08d31715bef6501959cc0c6ac298/526de/4.png 885w,
+/blog/static/a86b08d31715bef6501959cc0c6ac298/fa2eb/4.png 1180w,
+/blog/static/a86b08d31715bef6501959cc0c6ac298/511d6/4.png 1739w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>And read its contents, the list of targets! (included S-Oil Onsan Refinery, GS Caltex Yeosu Refinery)</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/f0ec9196d316c5129de247ce423f8f06/34f25/5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 8.734939759036143%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAiElEQVQI1yWLyw7BUAAF+8u0VRVVRGJLrldUNVa+x94HWCK9r+rNuOoks5nMCYrqykocEfszYleyPVSsNwXxaE44nBKlM2JPmOQdkXdpviQZL+gPMs+EXpx1zam4ENzuD4ySSKWRUvF8valrSdN8UFpjjMFYy2/OOdrWoX2rvZdKYW3zb4ztvl+RvYCnwaVvcQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Opened file"
+        title=""
+        src="/blog/static/f0ec9196d316c5129de247ce423f8f06/fb8a0/5.png"
+        srcset="/blog/static/f0ec9196d316c5129de247ce423f8f06/1a291/5.png 148w,
+/blog/static/f0ec9196d316c5129de247ce423f8f06/2bc4a/5.png 295w,
+/blog/static/f0ec9196d316c5129de247ce423f8f06/fb8a0/5.png 590w,
+/blog/static/f0ec9196d316c5129de247ce423f8f06/526de/5.png 885w,
+/blog/static/f0ec9196d316c5129de247ce423f8f06/fa2eb/5.png 1180w,
+/blog/static/f0ec9196d316c5129de247ce423f8f06/08f6a/5.png 1770w,
+/blog/static/f0ec9196d316c5129de247ce423f8f06/34f25/5.png 2324w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h5>Malware</h5>
+<p>Looking at the strings of the .bin file, we see <code class="language-text">cmd.exe /q /c net share shared$=%SystemRoot% /GRANT: everyone, FULL</code>
+It looks like it is executing a command to create a network share to the system root and give full permissions to everyone. /q is for quiet mode so it’s undetected.</p>
+<p>When running the malware, the first thing I see is a file called igfxtrayex.exe that is created. By reading and googling strings and using the tools from last week, I think the malware is adding itself as a service to Windows Schedule Management Service (WinsSchMgmt). It looks like it creates and runs multiple files including dpnsvr16.exe and net_ver.dat. It also seems to change soooo many registry keys (just a small sub section below):</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/e4a1ad56282f2663afe586ba13b91236/b7132/bad.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 92.33817701453104%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAADOklEQVQ4y01UZ3PaQBDV//8nKZMySb4nsR07ITYGdQlVkADTZIpgKH55uyIkzNwMc9rbe23PuG+34YcpbMuH5fbgOAFcrwczCmAGEVqWiaQosVrvsVhuUS13WDzXmMxXmFc1ZtUGU/6vVjt+28IIQx/FsETU62Gz2aDerPGj24Ht2phOJ8j7GZIsweTpCePRCMPhELPZFEkSo6oq1PUGcRxhxG8bnjU810UyGMB1Pby8vGCzXuPV12/41fqNLMsxKAZ4aD/CdVw4toNu10QQhGThoiyHqJ4rZGmGlGvNs4bvedrQdhwcj0fdfPv9Ci02TJIEWZ6ha5rwWOfxUsuyEYYhfN/HaDzGcrnUuqIosN3tYMRRhAHhxtw8nU7Ybmt8ufsJ07RYVKKkHAEb5ESbJimiKMaAANKUMlASkWk2m2G1Wul5RZiVzSHZkIL319ek2dZbZVm2TY0jIuvBI7I8z9m4h/ligcNhr2iDICD9ZxgOqca8UagcjydSXuH1N9GwpdRiit9+FA29i4ae1zR4olGHw4HmTRXldkuXezzUp3MhXRaEdV3j449bdDpdRVIQvc/D0rzHGmnU7w8QnZ0VqrL2+z3kZ4RSwIaizd+Gn25v8djtakRG45HSjKh1EifauN/va8OFUj5Qz1T31pTrQrlx+aQuvzlTlkJxucPmorVEx6Tj0tzzPZoyxW63hU2NJQXPoqEImpWFbvw15d31DR4e2nowzVI1JWT2Ap9TxNxKIgThfD5XqmEYaC6n1NEQXTQ28b/YfL67O8emYHhFw7AJr8YmUg0le2OaItMidWKM0Ddc1+GsFqqTItRgf9fYSFTEZQm2IPTprkPaAsIPfL1MDJlMJhpwbaijx/Gy7UZDafjmPClxHF80lCmRZVqWjp5PDQWhaC51OikamzNlofI/5S6bCLXyHBuhKy5Lvcy4UJYcihGj0Vipy+heJuWSQ5ry4eaGYe6cJ2UAhyzkQpHApzFplml8nkhVYiZ5lYsVoXuhbP+LDTVs/b7XEIubj50O6fpNbJRy42oT/IJoU50Uea0UYcpNQXEx5eoK94xNRiR5P1dTxBB9wiS3pC6mzGZNbKROnjJB+wcsPx3qgm7HJgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Opened file"
+        title=""
+        src="/blog/static/e4a1ad56282f2663afe586ba13b91236/fb8a0/bad.png"
+        srcset="/blog/static/e4a1ad56282f2663afe586ba13b91236/1a291/bad.png 148w,
+/blog/static/e4a1ad56282f2663afe586ba13b91236/2bc4a/bad.png 295w,
+/blog/static/e4a1ad56282f2663afe586ba13b91236/fb8a0/bad.png 590w,
+/blog/static/e4a1ad56282f2663afe586ba13b91236/b7132/bad.png 757w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/b42eb19c22027bf891596c4fb49d9bf4/6ea70/bad2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 16.801075268817204%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAsklEQVQI1zWPzQrCMBCE+/4v40k89yII4qHpr20aMU0qNdLE3grJuKl0YWGHYb+dTYQQ6IcBddMglp0t0usRRZFDKQ1FHmMMVVWhbVtw3mNdV4ieQ2kN7z3KsiS/hjEfJEI8NmBeFAjBw1mH9HJAxjKYt8E4jsh3YNcRkP+BgkOTF0Kgo2qDzxQmGUgMrxcaShjTOPfF+Xai5TuklFiWZVuKSfaOWsonpmnaZk2w+I21Fj/urd0XrBEBcgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Opened file"
+        title=""
+        src="/blog/static/b42eb19c22027bf891596c4fb49d9bf4/fb8a0/bad2.png"
+        srcset="/blog/static/b42eb19c22027bf891596c4fb49d9bf4/1a291/bad2.png 148w,
+/blog/static/b42eb19c22027bf891596c4fb49d9bf4/2bc4a/bad2.png 295w,
+/blog/static/b42eb19c22027bf891596c4fb49d9bf4/fb8a0/bad2.png 590w,
+/blog/static/b42eb19c22027bf891596c4fb49d9bf4/6ea70/bad2.png 744w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>It also tries to connect to a bunch of IPs starting with 43.130.141:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/95632/bad3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 576px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 67.1875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABq0lEQVQ4y42SyU/CQBSHSziZaEw8aNlKF9ppC20pILUKQa/uGhcS48WLJ///48/5jUwim/EwmaXzvvfNezU+Pr8wnV1gXE6Q5iOUk3P0RwVGJxMMizP0siHidIBsMEaSH8v9CNmwwEDe8fwQe/sH2NndV/PhoQnj9vEFnmvD8zzU6zUEvg+r1UIoBHy/g3rNREOeu46tZtM8gmO3kfR6qMlvhmEsj+f5mwoWIoRltRHHMVzXRbfbRRiGaEl4y7JUQsdx0Gg0ZCIfSZJIYA2VSmUBq/ysaShEgCAIJNBCFEUqkGAhEzWbTQUlkIm473Q6CmiaGwwv754gAl9lJZBWtm0rMJPQyFoYEsg91z355I3A64eXJaA25KwNrZUn0/BPYBQKFdxub6mhHDyjua5hmqaqhmvAq/tnxFGomkIgQQymAS1/Azm4/idQLAFXDfnkfxleP7xuBWpDXUPWThtmWbYZePM4X3uy7uJvIGE8Z5PY/a1ANmVTDVcN9V/AO+w2gVxXq9Vl4NP8HaenJfI8Vxaz2UzVpyxLFEWhbLQRoUzW7/cxnU5VTVcNvwGfwWV4/GK1vgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Opened file"
+        title=""
+        src="/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/95632/bad3.png"
+        srcset="/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/9d04d/bad3.png 148w,
+/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/f1dcb/bad3.png 295w,
+/blog/static/f7fe0b68d9a773f19e1c8dd56044ce2e/95632/bad3.png 576w"
+        sizes="(max-width: 576px) 100vw, 576px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>It also seems like it may be loading a window and drawing text to it, based on calls to BeginPaint, DrawText, and LoadIcon.</p>
+<h5>Deleted files</h5>
+<p>The following files were deleted (found using PhotoRec):</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/44adaa83cacd14a017263fe5ccade7cf/a7964/2-photorec.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 37.025796661608496%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAA+UlEQVQoz31R2W6EQAwDcd9XgeUUCIEE4nrY/v+nufJUs+pDdx+szCiJHSfK8/mN8zyxriuu68JxHNj3Hfd9Y1kWbNuGYRgwTRO6roPrulAU5T2apkEURciyDH3f4/F4oCgKAdu2YRgGVFWFpmmfiSSy7At1XQuCqqrg+z4cxxECcRyLqSjIYk7HN0WYI9I0RRiG0HX9l1DTdNGc5/m/U0gB5pIkEbWcXDoqyxJt24ooeoIgEIqmab4sep73IvoL1jBalvXe8jzPwvI4juIIVKIICdlIEVrin5Zp8+Nhuq4X+yMprynfPA7XQCFGQu6MOUa5Kg5B+xT6AdMoo3BPwEyuAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="PhotoRec"
+        title=""
+        src="/blog/static/44adaa83cacd14a017263fe5ccade7cf/fb8a0/2-photorec.png"
+        srcset="/blog/static/44adaa83cacd14a017263fe5ccade7cf/1a291/2-photorec.png 148w,
+/blog/static/44adaa83cacd14a017263fe5ccade7cf/2bc4a/2-photorec.png 295w,
+/blog/static/44adaa83cacd14a017263fe5ccade7cf/fb8a0/2-photorec.png 590w,
+/blog/static/44adaa83cacd14a017263fe5ccade7cf/a7964/2-photorec.png 659w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/214b2/2a.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 47.423887587822016%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABMUlEQVQoz22S2ZaCMBBE+f/fm4fhyLCIHgFBIWFfa1Jx2qMOD6GbpFN9K4lTXGIEPx6O8Qm32w1t26Jpmueo6xp5UeB6zZHnOaqqsrEwc9qssUZrjSzL0Pc9HKULeN7BDM9uXpYF8zw/xzRNuN/vthkjGzKK6DAMtq4sy4dgrjSCKML5fDKL41OQUXISlIaMmyhISs5JU9Yppay4k51DHKMAsbFMwnVd3woZlaqsIDeRovoTl6Z0wblxHA1h8AX/8I3oGJsz0buC3Pxp+VNQ7Dtt2+CSJEiS1E68nuGrZdIxsoZOJJcaXo4lpIUwDOH7vi36T/i4FBLIK2CkgBAyT9MHkMMPfxJD2XXdLqEQMQqh0HGQjOuWkAukc13XvLUrtm17F9x5Nsx5BNKQrngpdPsLMjqz67qKpF0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Recovered files A"
+        title=""
+        src="/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/fb8a0/2a.png"
+        srcset="/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/1a291/2a.png 148w,
+/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/2bc4a/2a.png 295w,
+/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/fb8a0/2a.png 590w,
+/blog/static/e8a807dd7bb7eb6705ec5cccd926b26e/214b2/2a.png 854w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    
+
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/29454/2b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 39.0452876376989%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABHklEQVQoz22S25KDIBBE+f+fVMzilhdEwLumOvSspFKpfegSxslxuidqig5aa+hKY14WPJ9PnOf51nVdmOcZwzBgHEf4ELCuK5xzWFL/vu9/fUnTNEEFp1GWGlVVSRMB/wFtAvI9odu2wVqLPqnrOhzHkeCznFX0Bo/HD4wxUiCAU2Ywn5yEMO89QpqQwAznk0DWeJcJi6JMKgTatI18PcYoMIpW+r6XH1O0zAgo1gmkeFfBNwKihsFKJrnhvIGS4T0hlTPMU9MJ+3lWDLlKSzGmlmK2+2n5cynhXkq2S6s5JtbVb2dly0VZpvHtG/K9FC4gT8RMmTfPW3JEWIxB7KvejajrGm3bSm60/A3kBjOMPbIk/oXSnR9jDyfluxc5iWa13eH4rAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Recovered files B"
+        title=""
+        src="/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/fb8a0/2b.png"
+        srcset="/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/1a291/2b.png 148w,
+/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/2bc4a/2b.png 295w,
+/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/fb8a0/2b.png 590w,
+/blog/static/2b0d69a3aa4c4a034dac4f125a529f91/29454/2b.png 817w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h5>Username/passwords</h5>
+<p>After opening a file recovered via PhotoRec, I searched in the .bin file for the string ‘spe’ (lecture hint) and found the following (at offset value 0x3ebbd):</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/bd485/6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 50.32453483340545%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACL0lEQVQoz22RW08acRDF93NataJSb2nSN/sJmr71oUnTh/atiVoNTVoJ1guCVBEqCCwLKlor12Vxl0sCgcXw6+ymJKbpJCdzZnZmcv5nlY/vP/D6zVtmZpd5OreMZ36JOe8i3sUVPN4lJme8zC8+Z/bZChPTc8x4V1h+8ZJpzwJPpmaZlN7ElIcFmXm1uoqSUtNkzsPEzzKcqxdktTy5nMZlPo+maiRTWdJqnnQmRyZ7QUpyKp11c8JBWiD9+Nd9jjcDKKFwhOjPFLGzJKfxBPvBEMlEko1tP++2tvi0u8tGOMza4SHrwSCboRDrUvsiR4QFoUhEIPzoiOD+AcrNzS+63S6jEbTbbVGjYfe6aO0OX+oG2zWd7+UKO6USO+UygcY9gXqdmGXxbzw8PKDUjQa2PZCDI3q9HqqWo22ZpGXRVyrzTQ7574r4i0UCgh1dZ7tS5dgwsAcDBoL+3+wIU6LRKIVCgdvbWwpXV5zGYpwl0iTUHCcplaj4dZJxoLk8Ji+IZnMuz+bE8/wl2sUV+ctrNOHK2mcf4R+n7B2E2dj04Q/scX3zm2qlwr2oN0RRvVajJqoMsUCvVtGFl4slqsLvRL0hc7rMtVptlFKljmk1RbaN2Mi9aWEKdDlimiaNRsOFs9RsNl1uWpb7zamd7Hjv9Dudjhws16TREkOHrrGGeNNqtej3+64vw+HQzbZtuz6Pw6Hj2sljKEX3YNv9Q05U5DktqUf8P8aLj+vH8QdtRruELp3jjgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Usernames and passwords"
+        title=""
+        src="/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/fb8a0/6.png"
+        srcset="/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/1a291/6.png 148w,
+/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/2bc4a/6.png 295w,
+/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/fb8a0/6.png 590w,
+/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/526de/6.png 885w,
+/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/fa2eb/6.png 1180w,
+/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/08f6a/6.png 1770w,
+/blog/static/f95e466da5c2bd0bbcd609d4ccf11ffc/bd485/6.png 2311w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h5>Strategy to Target</h5>
+<p>DO NOT RUN THIS FILE! It will destroy your computer. 😱</p></div><hr/><p style="text-transform:uppercase;font-size:14px"><a href="/blog/tags/school/">school<!-- --> </a><a href="/blog/tags/security/">security<!-- --> </a></p><div style="display:flex"><p>By<!-- --> <strong>Michele Larson</strong></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/security-malware/">← <!-- -->Thoughts on Malware (Defense Against the Dark Arts)</a></li><li></li></ul></div></div></div><script>
   
   
   if(true) {
@@ -13,4 +658,4 @@
       
       
       }
-      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"security-forensics-805","path":"/security-forensics/"};window.dataPath="64/path---security-forensics-805-917-nHmoWllOE5qpR4BqabbSnYk2YPA";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8bfacea766f9c5c9543f.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3635204df4706c6cb0ec.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-c2f565d642fb3b322475.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js-4f8dc691c2a43880d6ab.js"],"component---src-pages-404-js":["/component---src-pages-404-js.45c524bc197c7fc922a0.css","/component---src-pages-404-js-c089a1bb9d9f548ecd47.js"],"component---src-pages-index-js":["/component---src-pages-index-js.45c524bc197c7fc922a0.css","/component---src-pages-index-js-7d175d33c41680ecdc91.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js.45c524bc197c7fc922a0.css","/component---src-pages-tags-js-a220c49368d333a91d38.js"],"pages-manifest":["/pages-manifest-06232cf7b345226826b5.js"]};/*]]>*/</script><script src="/blog/component---src-templates-blog-post-js-c2f565d642fb3b322475.js" async=""></script><script src="/blog/0-cc2f9b2be16e7902f2d6.js" async=""></script><script src="/blog/app-8bfacea766f9c5c9543f.js" async=""></script><script src="/blog/webpack-runtime-7d880c6c42b8d743ff73.js" async=""></script></body></html>
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"security-forensics-805","path":"/security-forensics/"};window.dataPath="446/path---security-forensics-805-917-Bwa8PkjQTRHD7t8qnEqcy7G5o";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-8bfacea766f9c5c9543f.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3635204df4706c6cb0ec.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-c2f565d642fb3b322475.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js-4f8dc691c2a43880d6ab.js"],"component---src-pages-404-js":["/component---src-pages-404-js.72dbeacc3950e5605200.css","/component---src-pages-404-js-38ebbcb9139e61c61e31.js"],"component---src-pages-index-js":["/component---src-pages-index-js.72dbeacc3950e5605200.css","/component---src-pages-index-js-5dc7412219fee693b3f6.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js.72dbeacc3950e5605200.css","/component---src-pages-tags-js-bba0d0141f858052ca80.js"],"pages-manifest":["/pages-manifest-a192c0779544f3c4e04d.js"]};/*]]>*/</script><script src="/blog/component---src-templates-blog-post-js-c2f565d642fb3b322475.js" async=""></script><script src="/blog/0-cc2f9b2be16e7902f2d6.js" async=""></script><script src="/blog/app-8bfacea766f9c5c9543f.js" async=""></script><script src="/blog/webpack-runtime-3fe754863fb68510545c.js" async=""></script></body></html>
