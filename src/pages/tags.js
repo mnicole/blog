@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-// eslint-disable-next-line
-import pageStyles from './page.module.css';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
