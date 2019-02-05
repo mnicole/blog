@@ -1,4 +1,478 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Wed, 30 Jan 2019 05:19:08 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Security Defenses (Defense of the Dark Arts)]]></title><description><![CDATA[This week focuses on life as a malware researcher and covers how the attack gets into the system, how it typically functions, and how we can…]]></description><link>https://michelelarson.com/blog/security-defenses/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-defenses/</guid><pubDate>Sat, 26 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This week focuses on life as a malware researcher and covers how the attack gets into the system, how it typically functions, and how we can defend against it.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 05 Feb 2019 07:48:00 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)]]></title><description><![CDATA[Software Vulnerabilities Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a…]]></description><link>https://michelelarson.com/blog/security-software/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-software/</guid><pubDate>Wed, 30 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Software Vulnerabilities&lt;/h4&gt;
+&lt;p&gt;Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a weak password, or unchecks a security box, etc. Those things make it less secure.) This week will focus on the first, software vulnerabilities.&lt;/p&gt;
+&lt;p&gt;Companies use bug bounty programs where they ask people to find vulnerabilities and report them so they can be fixed, and then they’ll be paid for finding them. &lt;/p&gt;
+&lt;p&gt;Companies have gotten better at protecting their perimeters, so rather than focusing on perimeter attacks, attackers now focus on targeting users through phishing and social engineering.&lt;/p&gt;
+&lt;p&gt;They can be targeted through a web browser, where javascript code can take over the browser. &lt;/p&gt;
+&lt;h5&gt;WinDbg&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;debugger that freezes the program and lets you inspect it.&lt;/li&gt;
+&lt;li&gt;List modules &lt;code class=&quot;language-text&quot;&gt;lm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Search for string (called simple) &lt;code class=&quot;language-text&quot;&gt;lm list modules&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set breakpoint in singlestackandheap program, main function &lt;code class=&quot;language-text&quot;&gt;bp singlestackandheap!main&lt;/code&gt; on &lt;/li&gt;
+&lt;li&gt;list breakpoints &lt;code class=&quot;language-text&quot;&gt;bl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;go &lt;code class=&quot;language-text&quot;&gt;g&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Display dword in memory in (eip) &lt;code class=&quot;language-text&quot;&gt;dd eip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Unassemble - takes bytes at address (eip) and desembles them &lt;code class=&quot;language-text&quot;&gt;u eip&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;See numbers in different formats &lt;code class=&quot;language-text&quot;&gt;.formats 123&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Display as ascii string &lt;code class=&quot;language-text&quot;&gt;da 123&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Display as unicode string &lt;code class=&quot;language-text&quot;&gt;du 123&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Registers &lt;code class=&quot;language-text&quot;&gt;r&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Stack &lt;code class=&quot;language-text&quot;&gt;k&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/77244/windbg.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 65.893470790378%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACdElEQVQ4y12S21PaUBDG8/8/dtROO1ZnnGm11NoH60MfFAUUoeGWewIkQSBAQC4SqFy/7h6bjuOZObObze7vfHv2SJ+PE/h2+gMnp+c4Pr3A0ck5dj4lsHuQwM5+Qvi83x9+xx7F9g6+CvvuwxF297/g49EZDo/PcXZxhZvkLaRfl0nkSxrksgG5qCNXUFGsGNCsqojdywru7otIpvK4TBeQzlWQvCsgVzZpW8hSTbagI51XKF6ClMrkYFg2Ot0eFqs1JtMpBo9DBPTd6Ybw/Af0wj7kQgmKZlCug7KiwXLq8B5aKJFfUXUUy6qwkiz/huPYmIzH2G42GI1GCNptdLtdLJcLxMu2LTi2jXqtCtM04PsegqAN0zBgWSYMQ4eua5AymVsCOphMJliv1xgOh+h0OgjDELPZDPP5XMQNKuS8Wq0mfN/3CRgI36Z4pVKBqhEweX2NarUqgM/Pz+j3+8I+PT0JtWwZqlEyAznXNE00Gg0BZN8m5bquCyul0hlY3ErdpTZ7aFPSmNpnyHK5FHBelmWJAgZysed5/xXyPz6QrXSbScN3q5hOhlj8iTCbjrFeLbDdbvF6xYUMZBsrZBD/483XIf28yiKrN2B1InjDFcwgwmDGsK2AxmBRZL7cI0NcUthqtYTPbSuqKnzpIpmD7ASoP67gjTZQHsYIo40Abl4B45Zj4OuhMJCvgdVLmdQNmr77rzF6NoNQ2Lcrvvz4Drllfg1iyhRXSaFo+fomBYeSPM9HRM9kTNPuDwbi9AFZfj6skpUxlIvioXDLsXJFUV4UpmnKrusKAE82iiL0ej0BaDabQgXHGcSFby3XxhPnur9XNKGmbvVbSgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Trying WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/fb8a0/windbg.png&quot;
+        srcset=&quot;/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/1a291/windbg.png 148w,
+/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/2bc4a/windbg.png 295w,
+/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/fb8a0/windbg.png 590w,
+/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/526de/windbg.png 885w,
+/blog/static/4e04a32e24d8faa1afb8a0f1d7019325/77244/windbg.png 1164w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;Registers&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;eax - likely stores return&lt;/li&gt;
+&lt;li&gt;eip - instruction pointer&lt;/li&gt;
+&lt;li&gt;ebp/esp - stack frame pointers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Program memory&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;!teb&lt;/code&gt; - stack - thread - pay attention to stack limit and stack base (refers to entire program)&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;!peb&lt;/code&gt; - heap - process - pay attention to process heap&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;!address&lt;/code&gt; - will tell you where it is&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Memory corruption&lt;/h5&gt;
+&lt;p&gt;Accessing (reading/writing) memory (usually stack or heap) in an invalid way which results in an undefined behavior (that we then take control of! - exploitation)&lt;/p&gt;
+&lt;p&gt;As kind of an inside security thing, as a proof of concept you try to get the calculator app in Windows to launch when you launch your payload when exploiting a vulnerability.&lt;/p&gt;
+&lt;p&gt;Metasploit has a lot of vulnerabilities and payloads you can use by mixing and matching to exploit programs.&lt;/p&gt;
+&lt;h5&gt;Stack overflow explained&lt;/h5&gt;
+&lt;p&gt;In an overflow, we can overwrite what is on the stack in memory, such as saved EBP, saved return address, next function parameter, local variables… so for example, the saved EBP value is whatever we had put in there, which can correspond to an address. &lt;/p&gt;
+&lt;h5&gt;Taking control of program&lt;/h5&gt;
+&lt;h5&gt;1. Crash triage&lt;/h5&gt;
+&lt;p&gt;What registers contain attacker controlled data? what registers point to attacker controlled data? Is attacker controlled data on the stack or the heap? Do we control critical data such as stack frames?
+Where are we in the execution of the program?&lt;/p&gt;
+&lt;h5&gt;2. Determine the return address offset&lt;/h5&gt;
+&lt;p&gt;How many bytes between our buffer and the return address on the stack?&lt;/p&gt;
+&lt;h5&gt;3. Position our shellcode&lt;/h5&gt;
+&lt;h5&gt;4. Find address of our shellcode&lt;/h5&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;ffe4&lt;/code&gt; is a jump instruction. We can look for that anywhere in memory and replace the return address with that jmp esp instruction. ESP is pointing to our code, so it will execute off the stack.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4&gt;Lab&lt;/h4&gt;
+&lt;p&gt;We are going to exploit a program by overflowing the stack buffer. Here is the javascript code that is running:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/7eae9991b7730ba3f4e444e01e9372d0/811f5/lab1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 310px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 28.064516129032256%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABN0lEQVQY0z2Q6XaCQBSDef9H62ndEAUFhh1UFgEFt/brBWp/3BMyw+Qm0SzryGyes7XOKK/F2FQEUUcQHtmaSriHqzL8MMd2YvZOQpSUpIeGY9nR9nAZpoP2+oPmeSWbbc3ObkSgYrkq8IIW242Fe6x0h70dyUJfUATdRBaksrTglJ1pi46m6qma5yTY9S8e37JBiL4+46gbeXHhcBrmimG44lKxWO5E6CCCKdY+ZK3b3FXCy/IodwFR1tLfQWsvT65iOS9v6CuLj09DXNriOEL5GbqhxKUrFUgtpj/ObL5ltjAxxfXX3EQFOQvhcVqjFdV1zF+3L5K0krgnHDebespqwriUH89kx2bE4TyUuEOniUQO42JM48u7vOylwyChqieX3Y3R9u0x4Zt3f99v/p7/+z8cNH4B5Ai+YeG/428AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;JS program&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/7eae9991b7730ba3f4e444e01e9372d0/811f5/lab1.png&quot;
+        srcset=&quot;/blog/static/7eae9991b7730ba3f4e444e01e9372d0/3db3b/lab1.png 148w,
+/blog/static/7eae9991b7730ba3f4e444e01e9372d0/1434c/lab1.png 295w,
+/blog/static/7eae9991b7730ba3f4e444e01e9372d0/811f5/lab1.png 310w&quot;
+        sizes=&quot;(max-width: 310px) 100vw, 310px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I load it into windbg and trigger the vulnerability:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/e80ced5230e067f2d2bc5fb7ffe5355d/e18e2/lab2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 30.758426966292134%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAAA+UlEQVQY021Q6YqDYAz0/V9NoVrveuGBV6t40dYDZncCun9WCOabTCaTKKZpIgxD+L4Px3Ukv91usCwLcRxDVVXczTvyPL8wctI0xePxQBAEcF0XRVFIKGxgwbbtq4HNTdNcpL7v5U9snmdM04Tv94tlWSTatpU6Byl0GEUR6roW4vv9xnEc0rCuK/Z9v4I4sW3bpP7fpziOc6lzDTo816qqCv6ve+Ynj4OzLBPu8/lE13X4fD5/gpqmyf0Mw5BbeJ4HXddB52dOMdZ4Gq73er0kyrKUOE+TJAkUCjHhZDoahkEms4FvCvBuJzaOo5yGq9MZVydOHsV/AGhjumc30thwAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/e80ced5230e067f2d2bc5fb7ffe5355d/fb8a0/lab2.png&quot;
+        srcset=&quot;/blog/static/e80ced5230e067f2d2bc5fb7ffe5355d/1a291/lab2.png 148w,
+/blog/static/e80ced5230e067f2d2bc5fb7ffe5355d/2bc4a/lab2.png 295w,
+/blog/static/e80ced5230e067f2d2bc5fb7ffe5355d/fb8a0/lab2.png 590w,
+/blog/static/e80ced5230e067f2d2bc5fb7ffe5355d/e18e2/lab2.png 712w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Next I change the code to use &lt;code class=&quot;language-text&quot;&gt;msfPatternString&lt;/code&gt; to generate and search a pattern and in WinDBG type &lt;code class=&quot;language-text&quot;&gt;!load byakugan&lt;/code&gt; to load a program to tell me the offset of the registers. I run the program and &lt;code class=&quot;language-text&quot;&gt;!pattern_offset 2000&lt;/code&gt; to get the return address of 1028.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/5f5a0d48a5e4e71d7e4aee74650ef8b6/44786/lab3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 316px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 33.22784810126582%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABd0lEQVQoz12R6ZKiQBCEff8XmzVWZwAVVwS6Gwc5RE5FHB2/KTQ2NmJ/ZHTW0RlVWRM9D3j7fcBZFPhhi2UX6N2ZUEV82BtWbkCgEnSUsVorqeVoc6BqBoqq53qD/grnC5z6B5M8LPD8Ad8/4Tg1jt2IWEco+Y2XSc4wm20lr1kuY7xNhrtO2G5z6SuJ9yd2nx3F8ZuygklbXakbOBYPfk1znGWD1rU0NyhV8/GuROwTx4qwnB2WpZi9hywWsXCDbRumU48kvVEUInhuL3Q9tOc7xbllkflYqY+TbvGKPapO2Bx3qCojqFKCMsbUB5rhxv0BX/cXhq/X2pO+GzgNUNYDS1cxt1yWG42vY5T4ZS08XN8QmD2uFxGEe+b2H7ZhzGoVooysrjPxNRdPr7Jy2dGJctPe2MWleBmzXkfiy1FQikCKiY5kufiq0udHT3p0dJBa8oxHQSPxU3BvYurT93PcfniNPmLk4/VGfhmvOPzj/79/MWr8AIiVB2JnQCZaAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/5f5a0d48a5e4e71d7e4aee74650ef8b6/44786/lab3.png&quot;
+        srcset=&quot;/blog/static/5f5a0d48a5e4e71d7e4aee74650ef8b6/18004/lab3.png 148w,
+/blog/static/5f5a0d48a5e4e71d7e4aee74650ef8b6/c49a0/lab3.png 295w,
+/blog/static/5f5a0d48a5e4e71d7e4aee74650ef8b6/44786/lab3.png 316w&quot;
+        sizes=&quot;(max-width: 316px) 100vw, 316px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/6c8c467e13cd09475449e6df683c0f80/9eb69/lab4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.16129032258064%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABgklEQVQoz32Si2rCUBBE8/+fUSi0v1IUNL5NYmqiifGtCRgVneasVdoiXVj2PvbO7Oxep9vtyg989Xo9BUGgVqul4XCoTqejwWCgfr+vRqNh53Ec2x0+Go3k+Z5FcsnDHTae5wlg1u12W77v234ymTwAoiiyc0jm87n5ZrNRnudar9e2XiwWckDlMUyz2Uy73U5lWQo7HA46n8+6Xq/6a5fLRc/MgT0MQ2VZpu12a6AwZvPMqoAgSRJjp0rylsul3ZEbxZH2+70VQQEOEgGs1WomnX5xRtX0DQXNZtN6XK/XH5IBm06nStPUHFLIDJBHPAAYIKoGhMg9DhCEkAAEKEqonF7fwa2HJIPOwWq1MkdqURSPxtNLImdlJQ2ZSPxpx+PxViEDsW/wPW3XdasKMpOVpon+MwZ2dxsKvQMAIAAhGI/Hldxq3ekqSWfVf/MtjsJPHU+nX0D39T3alPlfgNCXcTXJ3WYlN97rtVnqzS313sireNBLvdDH9PZdLk++EvYFYufkMs1DFp4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/6c8c467e13cd09475449e6df683c0f80/fb8a0/lab4.png&quot;
+        srcset=&quot;/blog/static/6c8c467e13cd09475449e6df683c0f80/1a291/lab4.png 148w,
+/blog/static/6c8c467e13cd09475449e6df683c0f80/2bc4a/lab4.png 295w,
+/blog/static/6c8c467e13cd09475449e6df683c0f80/fb8a0/lab4.png 590w,
+/blog/static/6c8c467e13cd09475449e6df683c0f80/9eb69/lab4.png 620w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I put that value into the code (need to divide by 2 because it returns 2 for every 1) and add values to the string so it will overwrite that space in memory:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/4da1e0c8d1e77e7091aebf7d5bb6a450/28feb/lab5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 299px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 21.070234113712374%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAA5UlEQVQY01WP2W6DQAxF+f9Pa6UmRZQ1AYawDExg2EmapKcj1Jc+HF3Zsn2vLd/vOBxbongiPI34wUAhF1IhcZyT6RWIiyIRDWF0MaooqwGlN/T0ZLnDvP2xgiWyaT9yikeOdovn92S5NnXBlxvjuClBmOEFGdG5IDSkmaKWPYOama8Lutt2xuUH6/YNjxfo/snbe0NZ38mLK6rdyMuOj0OAbUe4niBOpEl8wXYTCl9wjzL0Z0AVCIQxbMcH1rS89qiNccvLdk+h2tWwIJuBUg5Udc+1W3fNq55KaqSZH83efPv/8i8Q4ylvgUeXfQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/4da1e0c8d1e77e7091aebf7d5bb6a450/28feb/lab5.png&quot;
+        srcset=&quot;/blog/static/4da1e0c8d1e77e7091aebf7d5bb6a450/58d0d/lab5.png 148w,
+/blog/static/4da1e0c8d1e77e7091aebf7d5bb6a450/bd2b0/lab5.png 295w,
+/blog/static/4da1e0c8d1e77e7091aebf7d5bb6a450/28feb/lab5.png 299w&quot;
+        sizes=&quot;(max-width: 299px) 100vw, 299px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/a21061bada3a72946b6b1a77d075d06c/6ea70/lab6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 29.973118279569892%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABAElEQVQY022QiYqDQBBE/f9vEzzjgUaTGA88o4mJeKRCNSgsrDB0DT3dVj3F932cz2fcbjcEQSDadV3EcSzaNE3R1+sVURTJSZLk0JxJ0xRlWeL1ekHRdR2e58G2bTiOI0sulwvyPJfKYWrWtm3xeDzw+XwwDAOezyfquhYzYRhKXzmdTnLhEB9N04Tv9ytDy7JgXdfj8D7Ps1S++e9T6I5x6IbRGIN1d0ckO5aiKHC/36VHXVWVmPizUNM0GIYhrOhWN3SoqgrLskAc7LNHJGTFJE3TIMsyuTMuDRyROUiwhEo+7/cbfd+j6zrhM46jwGaPmo722Nu2SY+L+BNi+gGmA7ySGNMhQAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/a21061bada3a72946b6b1a77d075d06c/fb8a0/lab6.png&quot;
+        srcset=&quot;/blog/static/a21061bada3a72946b6b1a77d075d06c/1a291/lab6.png 148w,
+/blog/static/a21061bada3a72946b6b1a77d075d06c/2bc4a/lab6.png 295w,
+/blog/static/a21061bada3a72946b6b1a77d075d06c/fb8a0/lab6.png 590w,
+/blog/static/a21061bada3a72946b6b1a77d075d06c/6ea70/lab6.png 744w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now I see where the program starts and ends and search the program between those two values for ff e4, which is the jump, and update my code with it plus add a call to shellcode to my string to execute next:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/26ec4ab6ed8aa539430605343b2b11a8/de368/lab7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 10.977242302543507%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAbUlEQVQI112Muw7DIBRD8/8/1LVz5pKrkCFCEVCeYgIBg9veLR2Oju3By04vZP+GMRpKKbTWEGOE957de8cY48b/VmvFnBOlFCyP9cCTAo7zAtEGrQ2EEN9MkFLy8Q9rLds5x04pMTln7iEE9gefXpXVxWndBQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/26ec4ab6ed8aa539430605343b2b11a8/fb8a0/lab7.png&quot;
+        srcset=&quot;/blog/static/26ec4ab6ed8aa539430605343b2b11a8/1a291/lab7.png 148w,
+/blog/static/26ec4ab6ed8aa539430605343b2b11a8/2bc4a/lab7.png 295w,
+/blog/static/26ec4ab6ed8aa539430605343b2b11a8/fb8a0/lab7.png 590w,
+/blog/static/26ec4ab6ed8aa539430605343b2b11a8/de368/lab7.png 747w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/ecffed612e1184bd210fa4e6a528d4d1/9531c/lab8.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 319px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 48.275862068965516%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAAB6UlEQVQoz1VS6ZraMAzM+7/ZdulyBAgkEHKfzmHnIqUwnSS72/bHfJJla6SRrLlGDP0ocbkqOF4H86KQZAPsW4SzFcBxM7i+QBCVuNGPEsn7BqK+Q3ZAeycGol+ghUYI3ZBMrnE619hsC/ihhHXxsT/Y0PdXFol457LwDbaT4uZkyFIJJTqockBNSPUbTfeCdh8eeLzAwBMfm4lsYBclUj72vBzbrYX11oRpBrjYMQt72O5M1CQe9xbys4Ngd0YYs0D7hNbKAQ1bzkkQp4qyEuTFMJ+TjPLZSZq1EGXPQvUsd7KivEP1n3K/JHMEWqcGdCMgig4RkydCQQlF1ZNomqdEJhbCJKu/i0xvJolt/z+0hsNVZE7TbpndNSbRwKSW5xpBUMHzK0SxguvQRg3ipKWKEZV8olYv1PI1W0loVXbnJeBzwzengWkJuG6H1buFj7UL4xjjsI/w/sOCqbeoBOctgbIkKqAoFisYz/NZ8jjPIEkUfq7PeHvToR8cbjnkdmOsViduNsPp5OFo+Njtrnx3wsFwsdmYsOyUBW34kYJspg7zel6KVA+keUN5glLL2U/zFsHst/OSwrii3Hr+k1MsjKrF8k1RjcsM4yCFbF/oSNrzkw6/iHHx5/On333549/Yv3bKb7iLP4FR7jDbdp/MAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/ecffed612e1184bd210fa4e6a528d4d1/9531c/lab8.png&quot;
+        srcset=&quot;/blog/static/ecffed612e1184bd210fa4e6a528d4d1/231f6/lab8.png 148w,
+/blog/static/ecffed612e1184bd210fa4e6a528d4d1/04000/lab8.png 295w,
+/blog/static/ecffed612e1184bd210fa4e6a528d4d1/9531c/lab8.png 319w&quot;
+        sizes=&quot;(max-width: 319px) 100vw, 319px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It worked! I see a calculator:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/902af4083fc5535c7a3a3ba345298c61/1bc44/lab9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 59.24412665985699%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAAB+UlEQVQoz31T6XKbMBjk/d+pM/2RSVNf4NsEDOYSYBCnwTjY3n6Sj2mmSTWzo4Nltd8hpW1a1HWNpmlwOBwkxLptW0KDruvQnQRO8qxpb7wT7b8aiiAJQSlW38Sa5oCyLJEXBQqJHAVPUeTZ7WLiHY9H9H2P8/l8A63FXnFdF5zIKSFJEoQhg7Xb4VXd4Lem43Vq4ZeqY/zjJwZvQ7AkxT6OEEURYpoFP2QMSV6ioouU2WyG7XYLwzBg2zZM04SqTbEyGXZBDovgJy1Y2uLlbYz5Yi55juOQWCjFIrokLSsZpSI/RCGYuIkIjAjm1oITZijbHrzukBNYWmOkzuHdhXzflyiripzVz7Qpur6BvtFhvL/Dsi14nksOZxgsdljaMRZWhBXNa4fjZbKUIhEJcs6fRRR4Cj6q+zgQlfX8AJoRwAwymD6X0L0Mg+kaORVGuqqqT4KP7pCCXXdrgev1Kue8qKQ7Ny5gsQyGn2LtckzXW1zO/ZN7uVz+gSKKIcLoPz5kb4kWiPck4CRg/AB3X8GOCpisxGxj4XoX/G4oLTmsyb7ot0cYrhdguBI5jCiHoQx/uAmgLg3p8PKNO+kwLmvEeYGUepBnnHKUy55UNQ0TVcNoPMFkomI0Gsl2+fQQvipKUdUo6FUIh+J1PNDcCyRezd8//Q+C8wfnfYhSc8774wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;WinDbg&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/902af4083fc5535c7a3a3ba345298c61/fb8a0/lab9.png&quot;
+        srcset=&quot;/blog/static/902af4083fc5535c7a3a3ba345298c61/1a291/lab9.png 148w,
+/blog/static/902af4083fc5535c7a3a3ba345298c61/2bc4a/lab9.png 295w,
+/blog/static/902af4083fc5535c7a3a3ba345298c61/fb8a0/lab9.png 590w,
+/blog/static/902af4083fc5535c7a3a3ba345298c61/526de/lab9.png 885w,
+/blog/static/902af4083fc5535c7a3a3ba345298c61/1bc44/lab9.png 979w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4&gt;Exploiting the heap&lt;/h4&gt;
+&lt;h5&gt;1. Free the object&lt;/h5&gt;
+&lt;p&gt;In Windows when compiled with Microsoft Visual C’s runtime library, 1MB of memory gets allocated when creating a virtual process heap. This is what Internet Explorer uses. When 1MB of memory is requested, VirtualAlloc is used and returns chunks of data up to 1MB. After the 18th request for an allocation of a size, it creates buckets of that size. &lt;/p&gt;
+&lt;p&gt;With JavaScript we can control when something gets freed.&lt;/p&gt;
+&lt;p&gt;Page Heap - debugging heap you can enable to see more info:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/f0faa08c701671eb42158acc07bee93a/0d0be/heaplab.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 46.189735614307935%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAACHklEQVQoz5WO20/SYRzGf3d2kKGzTVKWhzkEEvjxA2T1f3VRm1utLrxqemeHuVZNp8FaQnkaCiqCNZCDgqID8wSOJSHef3p5L+q6i2fP+zzf7/t8H2XywwyzcyGCoRi+wAr++SjvfUtMBTeYDed57VtjYjbCG/8Grz41eZ2JmVUmv8SYCWWZi2QIRpIs+eeITX1EefZiFJtdRXN7cHu8mMz3GbI7sasurIIHTFYsQw6sNidmq51Bq03MNYYcGtrwQzTPA1SXl57+Ad5OvkN5MvKUbqMRi9mMwyE+WiySNaeT3p57dHfdpa+vF2N3F/39fRg6O2lvb6O19TZ3OjrkTlubHkVRGB8fR3n0eIQbN2+h1+sxGAzodDpaWlokmkv/g7GxMZTnoy9xuYfxeDwMe72oqhObzS5hF01VVRWN1X8smjs1TXJzt+m7XG5MpkGmp6dRPgcWCCyGmQ9t8HV5jYWVKIurmxJL4Zj0g8uRv7NvoXWpF1ajhNa/S4RjCTYTWaI/MiiJRIJ0OkNye5tkcltyIpmUyGSzQqeIb21Jv3R0RKFwQC6fp1gq8fP4mErlgsb1NfWrKxqNa5R0Os3e3h77+/sSuVyOVCol3weFgtC7FItFuVOpVLi8/EW9/ptyuSx0mfPzc47koYIIbKDE43F2dnZlUF5cPj095VhcLokGTT48PBTzHRlYrVY5OzuTH2u1mgiuS31yciKPNb0/I3vONESqU3EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Enabling Page Heap&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/f0faa08c701671eb42158acc07bee93a/fb8a0/heaplab.png&quot;
+        srcset=&quot;/blog/static/f0faa08c701671eb42158acc07bee93a/1a291/heaplab.png 148w,
+/blog/static/f0faa08c701671eb42158acc07bee93a/2bc4a/heaplab.png 295w,
+/blog/static/f0faa08c701671eb42158acc07bee93a/fb8a0/heaplab.png 590w,
+/blog/static/f0faa08c701671eb42158acc07bee93a/0d0be/heaplab.png 643w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;2. Replace the object that got freed with a new object that you create as the attacker&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Figure out the size&lt;/li&gt;
+&lt;li&gt;Make allocations of the same size&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next we need to find out the size of the space we’re freeing. We can tell the size of the busy space allocation by setting a breakpoint right before it gets freed. By using &lt;code class=&quot;language-text&quot;&gt;!heap -p -a eax&lt;/code&gt; we can see where the allocations are freed and see what space in memory this is happening, and then set a breakpoint:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/2faba5dd9363f29a70335341272960bc/26951/heaplab2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 560px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 81.07142857142857%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsSAAALEgHS3X78AAACPElEQVQ4y3WU544aQRCEef/nsOS3sPyD4whLzhkWlpxzruNra1aW5Rup1TCarq6qntlIr9eT7/sqFAqq1Wrif6fT0XA41Gw20/l8Fut6ver5fFq+XC46nU72//V66fF42N7tdlPkeDxqOp0ql8upVCqpWq2q1WpZ9Pt9rVYrLRYLi9FoZEBuHQ4HI7Ner8O9yG630263VxCMtKR4PtdyubQmMIQp4NlsVqlUyhrO32cmk4k1QBFNWbCN7Pd7zcaBMsmY/F5HtXrdijKZjGKxmJLJpDzPM7B8Pm+MUIW8/63I4bBXdbjRz19FxUtdFfI5Y4SniUTCrACIaDQaxoIAED8hhA33+908jRz2O2W6K/34Xddn2VfiM/YuLhgAMmFJrlQq5jHhftMU9sViUc1m0+Sb5PGwr7wXl99tq1wuq/6WTU6n01ZEUIQVNMIOmgCKz3iKn0EQ/AHsv33xvLSab6l0pBAQ5DpAigHBU9eMzHAAxFfzEEDQ6cr9Qw4ekgkKYQVDAAGBCdPn7rnAwxBwMBjYFMnIBRiWsHIDIWAMKIxh9e8Krw1A8XjcTGWS7XbbCmEBKM0IgNz14aJ/C8jdikajBuiGAhBPESvcVGmCBW6Pl7Ldbi3z/ELJPLGPjw91u90QEDYMgD0YOw+5RpzhdQC22Wwsu4seAnIQhnQGkGnjGbLJgCPVZYC+lQwgHsIGaQC6QcDKvWPAnGQG9zcQETIcj8d2CGnua+NeBKxpgJ/su68SvnMH3YfBAX8B0hGMUrVw3K8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Page Heap&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/2faba5dd9363f29a70335341272960bc/26951/heaplab2.png&quot;
+        srcset=&quot;/blog/static/2faba5dd9363f29a70335341272960bc/b2ad5/heaplab2.png 148w,
+/blog/static/2faba5dd9363f29a70335341272960bc/2283b/heaplab2.png 295w,
+/blog/static/2faba5dd9363f29a70335341272960bc/26951/heaplab2.png 560w&quot;
+        sizes=&quot;(max-width: 560px) 100vw, 560px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/9ce27280519823e6d3655a8c6cdeb51f/a9d25/heaplab3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 77.39463601532567%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACuUlEQVQ4y31T2XLaQBDU/39CPiIPrjgOtjltMLY5hIQkJKGDQ9ynsBB3Z2ZtKDupZKu62F1WvTPdvdJNIoHb+xySmQKS6QISiRyub1K4uk7hLv2EzMMLktlXJHMlpAjJ7AvSD2Uk7gv4lcrjLvNE+0UUnqvIE6TbdBZlRUdJ1lCq6cgXy/h5n8ePZBGpQhVl3YNstVExPFQbLYGa3UGN9mSzTWv/fc/q4LXuQsrmcvB9D4auQ6vXYdsWNE2HYTQwGg5wOh4AnLBcLBCvI2w3G9o7vuP0gY/5freDlMlkiNAXBDqRNptNKEoNtVoN/X4f5zGdThGt19hut2J9Op3oGgjg06/0mM/DdV1YlvWJUBGEQRDgcDgITCYThGGIOI7x5xDkH5DKlQoajYYg0TQNjuOgKsuQawqRO5jNZnh7e0O3G2A4HMJvtcQef7zf73Gkdj8PqVqtigq5veVyiXC1gq7K8Mw6HNtEtArFwTHpGS5m6AVdDAYDrKn9Bev6UfGlwgoRclUM07Tguw7unjVclchBclFzA3iDBezOGGZ7BMvvCT1HoxF6vR7G47GQgwvii6Ri8Rl1cpfbVRQVpq7i+6OJb/kxbrUpMs4aWW+LnB0i68ao92NsNjFVGCOKIlEhg+dctWiZNTRNU9zo+5Sp8iscQ8GoH1y0Cecz7OIIx/0O/xvSZDKFR7HRDYO0dNBuU2Blig1V2+l0L3GYcGyiNXa73V/OfnGZDwZtH52Wh1arjQ4RcmQYbBYLz3HpdrvCXdaKW/tnbGbzBR4VD0+ySSSyMIcjpKqqyOaKXOfBgs/nc/H/2WWO0znol5Y13UDRGkH1RvA9V4RZphyyURz0MyHry0QsPre9oSfIZJzFLxWqah2L6RigN8sbfIhfi2XZsOwmPM8XRjWpMg46z13XE7qzRLzmM7xm/AZ791DTz6qrywAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Page Heap&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/9ce27280519823e6d3655a8c6cdeb51f/fb8a0/heaplab3.png&quot;
+        srcset=&quot;/blog/static/9ce27280519823e6d3655a8c6cdeb51f/1a291/heaplab3.png 148w,
+/blog/static/9ce27280519823e6d3655a8c6cdeb51f/2bc4a/heaplab3.png 295w,
+/blog/static/9ce27280519823e6d3655a8c6cdeb51f/fb8a0/heaplab3.png 590w,
+/blog/static/9ce27280519823e6d3655a8c6cdeb51f/a9d25/heaplab3.png 783w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Because heapfree takes 3 parameters, we can use &lt;code class=&quot;language-text&quot;&gt;!heap -p -a poi(esp + 8)&lt;/code&gt; to find the space that gets freed.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/c6a33f23290d56cdbf5388b921f2994b/acd0d/heaplab4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 50.556438791732916%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAAB/ElEQVQoz12SXY/SUBCG+clGY+LNem1i4o1eeLG3628wajYuLiK0UOh3+ahAQViKS6lkgdL28ZyDGOOkb2fOTOedj9OKZTvcLWOCoEc0nTKJpozGE6bCnkYTNsmaX+mGVGiJ+1XMMTtAWZAfhabkJCddSe+XDAMHy9CUDnsek2GA77nMY0G2P5Lujmwejqy3mcCB7aFAHBFHBRFW2OxLKu9DeKf95LIa8fZ6xOWXGVeNO17frnn64YFXGrys5zy7LnjyGS5uUb4XdXj0seTxp5KLm5Ln1ZI3uiBcbgvscE7LG/HN7Cs0rAFfDZ+bRgfDHVLTTTQzwB5E+N9/EM5iZquUjZg42Z+wFjjkYmQ5e+A5+K5NP/DwHQvXNvGE7hotdK2B2TFotzQGPZ9tmpDtd+TZeX+FeHK107IoqBTi5boe3a5Jq9Wi2dTw/QDDMKjVarSFdhwHx3WF32c0Gv+Jd8RFBkTiEj3hl3HP806EMtDv9xkMBipZ2pZlnYgEwjBUH3c6HeWX9mKxUJjP5+qPmM1mjMdjKnmeqyRZ/Uwgbdu2VaIrKkuf7PhMJn1xHJMkCTL/X1EdmqapqkuSbrerEtrtNtVqFV3XxRqa1Ot1RSqnSNOULMvY7XaKsCzLv1CEsqrEcDhU48ukXq+nOpKFZEFpS8LVasX/IonO8hul/dTKCCuXjgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Page Heap&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/c6a33f23290d56cdbf5388b921f2994b/fb8a0/heaplab4.png&quot;
+        srcset=&quot;/blog/static/c6a33f23290d56cdbf5388b921f2994b/1a291/heaplab4.png 148w,
+/blog/static/c6a33f23290d56cdbf5388b921f2994b/2bc4a/heaplab4.png 295w,
+/blog/static/c6a33f23290d56cdbf5388b921f2994b/fb8a0/heaplab4.png 590w,
+/blog/static/c6a33f23290d56cdbf5388b921f2994b/acd0d/heaplab4.png 629w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h5&gt;3. Position shell code into memory&lt;/h5&gt;
+&lt;p&gt;When you’re using your browser, you can’t know where the memory is being created. We can make a huge string that fills up a giant amount of memory. You can then put in your shell code because it will be in a super high memory address because of your string. This is in a predictable place.&lt;/p&gt;
+&lt;h5&gt;4. Use object again&lt;/h5&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Security Defenses (Defense of the Dark Arts)]]></title><description><![CDATA[This week focuses on life as a malware researcher and covers how the attack gets into the system, how it typically functions, and how we can…]]></description><link>https://michelelarson.com/blog/security-defenses/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-defenses/</guid><pubDate>Sat, 26 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This week focuses on life as a malware researcher and covers how the attack gets into the system, how it typically functions, and how we can defend against it.&lt;/p&gt;
 &lt;h4&gt;Spreading malware&lt;/h4&gt;
 &lt;h5&gt;First contact - Possible Sources&lt;/h5&gt;
 &lt;ul&gt;
