@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/blog/component---src-templates-blog-post-js.72dbeacc3950e5605200.css">body{background-color:#1f2232;color:#fff;font-family:Titillium Web,sans-serif;font-size:20px;letter-spacing:.04em}body,h1{font-weight:100}h1{font-family:Lato,sans-serif;font-size:65px;letter-spacing:0;margin:20px 0 10px}a{color:#e3bac6;text-decoration:none}h1>a{color:#fff}h1,h2,h3,h4,h5{padding-top:20px;color:#bc9ec1;text-transform:uppercase;font-family:Lato,sans-serif;font-weight:300}</style><meta name="generator" content="Gatsby 2.0.91"/><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"/><link rel="manifest" href="/blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Thoughts on Network Security (Defense Against the Dark Arts) | Thoughts on Things</title><meta data-react-helmet="true" name="description" content=""/><meta data-react-helmet="true" property="og:title" content="Thoughts on Network Security (Defense Against the Dark Arts)"/><meta data-react-helmet="true" property="og:description" content=""/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Michele Larson"/><meta data-react-helmet="true" name="twitter:title" content="Thoughts on Network Security (Defense Against the Dark Arts)"/><meta data-react-helmet="true" name="twitter:description" content=""/><link as="script" rel="preload" href="/blog/webpack-runtime-9ba71cf355ce90622a24.js"/><link as="script" rel="preload" href="/blog/app-f66cd48d3b7ffec6f559.js"/><link as="script" rel="preload" href="/blog/0-d5b0ae4c4b22ae57f84e.js"/><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"/><link as="fetch" rel="preload" href="/blog/static/d/884/path---security-network-944-cf5-0sHRLGtiwYuNjl8pMeyeT7AHn8U.json" crossOrigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;padding:30px"><h1><a href="/blog/">Thoughts on Things</a></h1><h3>Thoughts on Network Security (Defense Against the Dark Arts)</h3><p style="text-transform:uppercase;font-size:14px">February 12, 2019</p><div><h4>Why do we need Network Security?</h4>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/blog/component---src-templates-blog-post-js.72dbeacc3950e5605200.css">body{background-color:#1f2232;color:#fff;font-family:Titillium Web,sans-serif;font-size:20px;letter-spacing:.04em}body,h1{font-weight:100}h1{font-family:Lato,sans-serif;font-size:65px;letter-spacing:0;margin:20px 0 10px}a{color:#e3bac6;text-decoration:none}h1>a{color:#fff}h1,h2,h3,h4,h5{padding-top:20px;color:#bc9ec1;text-transform:uppercase;font-family:Lato,sans-serif;font-weight:300}</style><meta name="generator" content="Gatsby 2.0.91"/><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"/><link rel="manifest" href="/blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Thoughts on Network Security (Defense Against the Dark Arts) | Thoughts on Things</title><meta data-react-helmet="true" name="description" content=""/><meta data-react-helmet="true" property="og:title" content="Thoughts on Network Security (Defense Against the Dark Arts)"/><meta data-react-helmet="true" property="og:description" content=""/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Michele Larson"/><meta data-react-helmet="true" name="twitter:title" content="Thoughts on Network Security (Defense Against the Dark Arts)"/><meta data-react-helmet="true" name="twitter:description" content=""/><link as="script" rel="preload" href="/blog/webpack-runtime-cfe5b7500136167a2dd8.js"/><link as="script" rel="preload" href="/blog/app-f66cd48d3b7ffec6f559.js"/><link as="script" rel="preload" href="/blog/0-d5b0ae4c4b22ae57f84e.js"/><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"/><link as="fetch" rel="preload" href="/blog/static/d/57/path---security-network-944-cf5-Jfh3AWwZZgbZDrZE3as2wzs3QQ.json" crossOrigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;padding:30px"><h1><a href="/blog/">Thoughts on Things</a></h1><h3>Thoughts on Network Security (Defense Against the Dark Arts)</h3><p style="text-transform:uppercase;font-size:14px">February 12, 2019</p><div><h4>Why do we need Network Security?</h4>
 <ul>
 <li>Keeping dangerous data out</li>
 <li>Prevent exfiltration of data</li>
@@ -77,7 +77,318 @@
 <li>VPN/IPSEC - Security layer allowing IP packets to be encrypted between two endpoints under a security association. </li>
 <li>NIPS (Network Intrusion Prevention System) - watches for patterns of traffic or application data that is malicious</li>
 <li>Software Defined Networks (SDN) - can reprogram switches remotely using OpenFlow, so if you find something suspicious, you can quickly send it to a quarantined space.</li>
-</ul></div><hr/><p style="text-transform:uppercase;font-size:14px"><a href="/blog/tags/school/">school<!-- --> </a><a href="/blog/tags/security/">security<!-- --> </a></p><div style="display:flex"><p>By<!-- --> <strong>Michele Larson</strong></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/security-final/">← <!-- -->Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)</a></li><li></li></ul></div></div></div><script>
+</ul>
+<hr>
+<h4>Lab</h4>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/d5b8079c7961c4290cb0ec22aea08c02/c674e/1a.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 24.199288256227756%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAA2UlEQVQY01VRSRKDMAzjTTAcgCZQluwJ0/7/L6qVtIceNIpteU23riv2fcdz27AJaBPLskApheM4Krf3Ca11jY/jiL7vMQzDHzrvHK7rgrEGwQdYsa21lWOMCCFIzMI5KzrRBC/+gPM84UUfY4IxBrkUlHKjSynVpPfrBb4jIYWMsYJLRAU556pxztcYwQIxsGFrylwv3DnrxMjI4qCTXViIq3rfCpCZVO67MhtwMsa4DZum7yB1Qgp+SQRFrXhpK8tKTk6gedt5xvJ4YBZWSmOaJmhh3ph/8AEIB7WMZrbqXwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 1"
+        title=""
+        src="/blog/static/d5b8079c7961c4290cb0ec22aea08c02/fb8a0/1a.png"
+        srcset="/blog/static/d5b8079c7961c4290cb0ec22aea08c02/1a291/1a.png 148w,
+/blog/static/d5b8079c7961c4290cb0ec22aea08c02/2bc4a/1a.png 295w,
+/blog/static/d5b8079c7961c4290cb0ec22aea08c02/fb8a0/1a.png 590w,
+/blog/static/d5b8079c7961c4290cb0ec22aea08c02/c674e/1a.png 843w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Using the included .pcap file to find the meeting day:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/6a8b3/1b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 69.4789081885856%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAADH0lEQVQ4y1WSW3PaVhSF9ev60GkzzbTTl05/Qd/6H/qepz5kWlzPtImbNG3TBHOrbWEuAiGEEIirwGAEAgwY27h4jO2v20rcTs7M1lpn6ey1z9nnKJZlUbJMyhJmwC1M0ySv62SzWXJ5HV24pmkBGoaBbdtUqlUqFZt6TbDWoFav4zgOiqomyRtZ9KyKVjTFoEAmnSGXy4lJjoPDLPF4gmgkSjwWJxwOk5B5LBEnEY2SOdwneqiTSmfRZAOKIxVG/ojpbMpo5DGZjpkvZgEOvGPcTkuqO5QrsvNSEcsuUW/WAr3ltmi2m7hug5Zgs9VAsSdJ9F6cvIQ9VimNDuj9U+D4ygj09lmOGQ6tpcaYMvV5mrKvytoklqw1vX3M4QHG4G/sURqlMk3IZBe9H6Y236M8jjO8yeNtNDGP0VyqTCngnicFDRqnB6JHuc8repEg1xxGJP8NlpdA0bwUqrvPfnuPnJcm3U/inJewTw1SRyqFsUbjsowxyVEX1P1soD/k7Ume2lWDfLWdRHlVNXlRLvBS4vdaKeCv2zXedmrvNMckfNTgz4b9DusWryoGf4j+q1Vg29DZLuTZyufYMYsojUVCerFLaRiWPt0fOcL4VmOCJr2KSM8SLOTIvctkgJ3zA+xJNNBt+V+W3LK/izV8iz2Mo5jS2HQnRsqNYfpJMt0E7qVBb12US5Fi0vz+dYnqPCu9taSgSqYTDS4x40ZItXclIgFPt2Io9WaTfrfNUadBr9Nk0HMZez2OBwMsR7TBkPVqyaDf5djz5Xkt8CcnDMcTPF+e1sgPeID+BKXa7PBLfkYoPSGU8gllTgL+XXTKN79NeVO5IFye8WRvzHNjyf24u7uTD/+P93yz2aDoTpevd5Y8/mnGlz8veLQ14/H2nK+ezQNtS7/g27+WfBKa833mAm43XF9LSPLmfTzw9XqNUnA6YnjKo9CUz7dP+PTHEz7bOuEL4R89nfJUOxfDBR//MOVJ8kx2c/Of0c3NhzwwrLoDufIzXpQueGmt2CmthK8C/qx4QaG/5nV1xXNzRa635u72weTmA9N7vLq64l+t0cvpFnyLNwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 1"
+        title=""
+        src="/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/fb8a0/1b.png"
+        srcset="/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/1a291/1b.png 148w,
+/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/2bc4a/1b.png 295w,
+/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/fb8a0/1b.png 590w,
+/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/526de/1b.png 885w,
+/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/fa2eb/1b.png 1180w,
+/blog/static/660b13c0eb5d73ee7b94fbec56b27b8f/6a8b3/1b.png 1209w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Using the decode program to decode the day - Wednesday!</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/53fbf7872f2d2f4f647d880195db87b9/67462/1c.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 68.41230257689111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAADYUlEQVQ4y02T22sjZRjG558RKoI9QOkhrW6zgvVGFEW8W0ulJ1pa0UsFlcbdTe2V4I3C4h7cC3VBd1V2S3cX17Sb40xmMpnJoUmapjk22TZJm7RJ+/PLdFkc+PE873fx8r3fPK8kKwpKUEZVZORgkE7tdrtRAgE0UZvhMOFQCEOoEYkQ1DSCqkrYNDGjUUxx1sEwDQzDQFpfX+cf10OePlln0+/H7fXyaP0huitI1K0Tc4eIPQ2RCBjU8jnqxaKgQDWfp1ooUCuVqJfLNBoNms0Gkq6HSSSSJFNptrd3yOXyRMwY3icxQr6MYAdDzhDVspRLdZ6VDykValT3D2kdH7+gfXoqOEPyBpK43BExrkEsnhRjbOH3BQm5xO08UbZ8McwNg4S8RbN+xPHhkdBOsxNO261zWi3ax00L6fvr9/ju2u/8eO0Gt3++xfWbN7lz4ycKd+9QuP83uXt/kP/zLsX7f1F5vMYziwdU3f9S821S9WxYehRSaIRVpHisjKZmmJtbxG4fY8xuZ2FmlvCah+SGyo5XI7UZJOPXqafT1FLbVAUH8QT7sTj70bjwW9Qyu9SzOaRfN8v84ioyMb3Ea6M2hoaGmJqaIeDPE9KKGHoBXaiuCg3myCT3KOxW2KscU95vsbd/QuWgRUnUnTPJreRwedNMTM4yLJoNCuamp9n1yuR8CjlvgKzbL7xMNZnkMJ3iKJOG9glwJjh9zpmFpIeLIodZJj+etUYeHx9nYWEJlyuFqmZFvvKo4g/HYntk8wfs5g7IZA/Y2akIyudkKhbpdBlJ1bbQQgnm5xe5eNHOyMgIMzMzBOUAHpFJt8eDR+D3BwgE5HO1vGLh98toYil0VcbQgkipVJJ8PisazlvvZxseFn4BzYxjmudbYIqtCIltiUYjRJ7Xuq5bm2EaOo+VJLcf6dxaU5CajSYtkaNPPv2MgcFBLoyN8e577/OFw8nlq05WVjqssLq6itO5Ynmn08nysgOHw8Hlbxwsfn6VKz/8xgNfAqmT8E4wHUvzvDM6zAdvXOBt2wBv9ffyZl833d2v0tPTQ29Pr6X/p6+vz9JXul7i2yvLdD6p1W5zKhLunPqIDwf7mLSPcun1ISbGbFwaHbCewGYbEdgYtrzthe807O/vp6vrZb786mur4X9XeHHg7H7OWgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 1"
+        title=""
+        src="/blog/static/53fbf7872f2d2f4f647d880195db87b9/fb8a0/1c.png"
+        srcset="/blog/static/53fbf7872f2d2f4f647d880195db87b9/1a291/1c.png 148w,
+/blog/static/53fbf7872f2d2f4f647d880195db87b9/2bc4a/1c.png 295w,
+/blog/static/53fbf7872f2d2f4f647d880195db87b9/fb8a0/1c.png 590w,
+/blog/static/53fbf7872f2d2f4f647d880195db87b9/526de/1c.png 885w,
+/blog/static/53fbf7872f2d2f4f647d880195db87b9/fa2eb/1c.png 1180w,
+/blog/static/53fbf7872f2d2f4f647d880195db87b9/67462/1c.png 1203w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/3b6bbd4ef5944b7a41dd8702419defff/d74a6/2a.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 16.281512605042018%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAkElEQVQI1z2OSQ7FIAxDuRHdIjHPQ8v9b+Mm9OsvIpuQvFjc60bvHXtvtNZQSkGtDXMOhBAw1yI/kXNGb/3vuay10MZAKYXruiClhMglw3lPy1Q+nCEGsTrnjvf077yDoWX2McbT11qftyG1NJtSglicgIqvjzEoYcWgxK1W7Of5JSpHuccwBjPsO/CBOQDDX32wao0ysyRQAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 2"
+        title=""
+        src="/blog/static/3b6bbd4ef5944b7a41dd8702419defff/fb8a0/2a.png"
+        srcset="/blog/static/3b6bbd4ef5944b7a41dd8702419defff/1a291/2a.png 148w,
+/blog/static/3b6bbd4ef5944b7a41dd8702419defff/2bc4a/2a.png 295w,
+/blog/static/3b6bbd4ef5944b7a41dd8702419defff/fb8a0/2a.png 590w,
+/blog/static/3b6bbd4ef5944b7a41dd8702419defff/526de/2a.png 885w,
+/blog/static/3b6bbd4ef5944b7a41dd8702419defff/d74a6/2a.png 952w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Finding the file sent over TCP:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/e057a576c30159e47b47816fb52624de/77e94/2b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 76.84449489216799%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAAAsSAAALEgHS3X78AAACGUlEQVQ4y52UXW/aMBSG8/8vdtH/MWlX1W4mbetoRT6c74QAYbRrIAwIkIRQIOHdOSbV1mnVxiw9OfZr+8Q+to/iBT4YPwzQiyJE/Z+EvRCmacIwDAgh4HkewjBEEAQI2LY8a9yviC93CDQTftdA7IYYWDRJtdAXLh7vH5DOZkjTVDKdTv/IZDKR/ePxmBx+NBEbIwSdEGP3AbEYIbyN0FeHqPIKXE6nE3/wWjm1fXmek8NPAgN9QA49cjjGUAwRdSOplfkWDU441vVfacjpar0mhzcO+voI/m0PsfUVkTaET6sN73rYfM9wqCrst9uXlFscdjvJs3akcdliASVWDaSGhdT2kVoOEmpn9wlW3ybIkwTFY4JymqKgOBWT5Azp1WJOLKReUpxLsnPSlTkFsznscXzaoWa7f6Ll80ZB222h7Uh+0Wpq161etzFcbzZQsiyTkzkOdcvxeLyMwwFN02C1WkFZLpfylH4fdKnjFw65cfGqXnPIW+bCwv/Cu5Ex5GvDN70sS3kpC0LaopDav1IQFV2bGZ22wu9U0zTobHUDqqrCtm34vi/fp+u5ss7v1HXPdcdxZJvrZ+3cZ1kWFMsU0DUVlu2gqwuZCHRdR6fTkRP5ZzyQNYYn8k8NQ8ClflXtygUYugaTEojyQQvwWaXk4DlyMMOOGK7zShjb5smazDqCMpBjGXh7E+HN9RBX7wSurvu4eh/jB+WuXHbNgS6XAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 2"
+        title=""
+        src="/blog/static/e057a576c30159e47b47816fb52624de/fb8a0/2b.png"
+        srcset="/blog/static/e057a576c30159e47b47816fb52624de/1a291/2b.png 148w,
+/blog/static/e057a576c30159e47b47816fb52624de/2bc4a/2b.png 295w,
+/blog/static/e057a576c30159e47b47816fb52624de/fb8a0/2b.png 590w,
+/blog/static/e057a576c30159e47b47816fb52624de/77e94/2b.png 881w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Using Wireshark to save the file contents:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/f50666674dd8f708fcd201a1e10a68d9/6e8e0/2c.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 70.42253521126761%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAAC20lEQVQ4y01U2XLaQBDU/78llT9JKjZ2bHLYRqBzdSB0IAkJCLhwwIAQAZxOa30kD10aaXd6u2d2pNi2DUfYcB0B23FgWdYbTMIWDoTgWrOP6w08z5PwPRf9fh9ef4DBYICAUL60r3B724Z6+x0dw8RdR0Wn04GqdtBRe7i4+or29TXOzs5xdn6OVquF63YbF5eX+HbVws3dHS5vNHRVlTkqFEEFYRQhimMURYGyHCPPc2RZKmGZhiTXdSb1VBkbhk7FJiybLrje7DEIXdeheK6A59CysCRsU0ev26O1gFYD+H6CIBgi6A/hujFLMYDrxbTavCeIkwzDYYY0zRFTlGL5EURUwolL+NkMOgkskaAY1UiSDaJozYQNN6+RECnjothhXFaYTndYLPb4+bMidpjfL6D8EBkunDla9gSfjAnOrDFueiH63komjEYbzGa1THh4qCWWy98Sq9VeYrmssV4339ZQ0jjEtMwxSiNMiwyzccaaBFS3papHTCc7qlpjPK4wn+0wI/Fq9Uy2WNR4fNxjvz/geDxhs9lAidiQLB+RYIj+IGQtUhY34DVoSHYYBCv0/SVtVrRO+8la2qyqI3HA09MJp9ORzydst9sXwiyniiGTStlZIUJ2eoc82yIKH2XtGoXjcssDn+OHhz3q+oDD4UjCE/78+Y/w9ZqUZck445UY8L1ivGUNK2TphmsVJpNKNuD+vv7XjGklbS+XTT3Xr4Qj2kmQZhlVpSRsFNZEReVbhLTv+yvM53uixq9fv9mEA2v2XLsDcTw2CisosaxhLmv3qlDTTI5izLELIajWskLeyyHCMOf9S0k+5P4R9xa0X2IyLti8UopRhOMyUbzNp2maULtd6IYGwzKhcUI0rUtSQ6KZkGZqbE6JpvWgmxZuVR13PYMwoXzrOejqJhthyR+A4MbvqoEbjYe4LqfBffkpNPHzobpuSNg84EL18e5ziPcfHXxoJfgLSgnnoRA0I3kAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 2"
+        title=""
+        src="/blog/static/f50666674dd8f708fcd201a1e10a68d9/fb8a0/2c.png"
+        srcset="/blog/static/f50666674dd8f708fcd201a1e10a68d9/1a291/2c.png 148w,
+/blog/static/f50666674dd8f708fcd201a1e10a68d9/2bc4a/2c.png 295w,
+/blog/static/f50666674dd8f708fcd201a1e10a68d9/fb8a0/2c.png 590w,
+/blog/static/f50666674dd8f708fcd201a1e10a68d9/526de/2c.png 885w,
+/blog/static/f50666674dd8f708fcd201a1e10a68d9/fa2eb/2c.png 1180w,
+/blog/static/f50666674dd8f708fcd201a1e10a68d9/6e8e0/2c.png 1207w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Checking the packets for the password to the file:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/db336dbf1c589af92ac4f48426d34198/cc4aa/2d.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 29.769392033542974%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABJElEQVQY0z2RzW6DMBCEeaaqSsDGJoXgX2ww9EKr5Nj3f4PprpX2YK1ZZr8ZrZucMpxzmKYJfd9DSlnr7XarVSlVj9YDNH3ftcIoBSatcb22GIYBbdui7TrSKDTjONYmHx6UQtY7w/6AmoYFGX23b3iIdzyHDj/yHUaThowEwVgnhEAzz3NNtywLQgiwxiClhOPY4X2o6UspCDHi9AZPP+PLTni4Oz7LBk8zIXikJZHeo7HWgVMyzBDMO1+B27YhxqVCrbXVcObVkObjPsMRIFIvk5ZNjbEV3qScsVEChjCwECiQU6REx3GQUSRYwr7vWKjHxgfdWVfKjvM8qxmb5ryiWekHw9iJKw9x9HVd6w554ZfLpT4W175Xrx2r/wfk2r32+AuektkN1lgIcgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 2"
+        title=""
+        src="/blog/static/db336dbf1c589af92ac4f48426d34198/fb8a0/2d.png"
+        srcset="/blog/static/db336dbf1c589af92ac4f48426d34198/1a291/2d.png 148w,
+/blog/static/db336dbf1c589af92ac4f48426d34198/2bc4a/2d.png 295w,
+/blog/static/db336dbf1c589af92ac4f48426d34198/fb8a0/2d.png 590w,
+/blog/static/db336dbf1c589af92ac4f48426d34198/526de/2d.png 885w,
+/blog/static/db336dbf1c589af92ac4f48426d34198/cc4aa/2d.png 954w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Trying to use truecrypt to see the file, but the mapping fails 😞</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/ca8d0cc895dd2c30d1386fac906d9106/d74a6/2e.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 21.113445378151262%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuklEQVQY001PWw6DMAzjROWNgAJ9wAqCQZmQxv1P4pFoTPuw4jqpZQd+3+G9x7Zt6LoOTdPwNMagrmtordG1LdoLpCuleKeU5tuyLFm7/wb7/sI0TZBSIkkSpGnKuPm/FobhFwJCiN/75lEUITiOA845LMuCvh/YfBgGGGsZ6/rEOI6sUQIpa1RVxYmoAWmUuChyxHGM4H2emOeZKy/XpIpkSiBOsJexeziuba3hAMTzPOfkWZZxEzL8AJi6iWnQfNH/AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 2"
+        title=""
+        src="/blog/static/ca8d0cc895dd2c30d1386fac906d9106/fb8a0/2e.png"
+        srcset="/blog/static/ca8d0cc895dd2c30d1386fac906d9106/1a291/2e.png 148w,
+/blog/static/ca8d0cc895dd2c30d1386fac906d9106/2bc4a/2e.png 295w,
+/blog/static/ca8d0cc895dd2c30d1386fac906d9106/fb8a0/2e.png 590w,
+/blog/static/ca8d0cc895dd2c30d1386fac906d9106/526de/2e.png 885w,
+/blog/static/ca8d0cc895dd2c30d1386fac906d9106/d74a6/2e.png 952w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/b4d5c69899291c70e03028ebcebea130/5be35/3a.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 23.56020942408377%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAAA4ElEQVQY002PWbaEIAxE3ZGt+OUADswK6um3/63US+jh9McFUqRyKlUIHtd5IsYdxhh473AcCVprbNuG6zphnYOzDjklxH3H0PcYxxHzPGOaJgzDgObxQF3XqFhkI6OkwrquBTZIKbHQv1KqsCxLgQfwIKbvh9K7kl9STxVCwN/ziUwpc86475tSXdgpCd+see8RQsRJPZ764x5pi4O2ikUvb+q31qJKKcMaC0cm/0ZrUwaygWvFq41TScxwwldq0uX02oZqTlzxIUSLpmkKbdt+7w9CCHRd94Xrj/b7Zv4BCTWvr+J+9H8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 3"
+        title=""
+        src="/blog/static/b4d5c69899291c70e03028ebcebea130/fb8a0/3a.png"
+        srcset="/blog/static/b4d5c69899291c70e03028ebcebea130/1a291/3a.png 148w,
+/blog/static/b4d5c69899291c70e03028ebcebea130/2bc4a/3a.png 295w,
+/blog/static/b4d5c69899291c70e03028ebcebea130/fb8a0/3a.png 590w,
+/blog/static/b4d5c69899291c70e03028ebcebea130/526de/3a.png 885w,
+/blog/static/b4d5c69899291c70e03028ebcebea130/5be35/3a.png 955w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Here I use File > Export Objects > HTTP to view the HTTP Objects List:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/eb05b6b482c881cf6fc62658bf354ea7/8c774/3b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 67.47491638795987%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAACDklEQVQ4y52SeXOaQBiH+f5fptOkMW018YriGUAEUURRUzWHgIKTeD5dSNLjj6QHMw/vu+zuM78dVioWcjQbZXSljmmZWEYLU1df0KhWylzlLihmL8lfpsldpKmWi5SKWaqlLM2aTFGuUa9WEqT2wEF3HEzXRdZ6yMaYmjmi3plQNUZUOzdcaQ6yPuBKtWl2b1D7M1R7hvJCwxxSbbdFbyOlHJ0P7RofjTopdUzaWvNFvxc8iPEdp5rHue6TMX3SxoJ8L6Q8fKI0eEwouxsKvYAT45qUayJ1/Szy4BRt9pUomvP8bAW7d9j/wpHdU4jc+4Qy/YzU8YtU3HMxyHDvz9mLNZvtju1un7B5qT/ZJfOv7PYHlmFIY5TB8PKxsEBlmEqEi2DO8SAyiE3vs//RHw4HonWINs3hrMtCGOSojM6oT8558Gccj8/CvYj6J56FR8JoRaFzSmV8hjRcKrSnMvpNSQhv/0MoEkYhzX4BfVpCms/mLB4WTL9N8TxPCI9/ceTdb0der9dMxhO8hYdki7vjukOsbhfP9/9ZGCeNojVBEIi9B6S4Wa2W3N7dsVoGyaV575iHGJEqrkdRk/Xbx0QYf5fiV5xqs3lCMW0Mq0dfpLbfoGv3sawuPdE7Q5da3eJMdvCCZeKRXmNvNxu0dofGtfhJuo7+BlqrhaIoqJqGoqpk8k1OCjqrMEoSfgckSMTGdm20PwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Question 3"
+        title=""
+        src="/blog/static/eb05b6b482c881cf6fc62658bf354ea7/fb8a0/3b.png"
+        srcset="/blog/static/eb05b6b482c881cf6fc62658bf354ea7/1a291/3b.png 148w,
+/blog/static/eb05b6b482c881cf6fc62658bf354ea7/2bc4a/3b.png 295w,
+/blog/static/eb05b6b482c881cf6fc62658bf354ea7/fb8a0/3b.png 590w,
+/blog/static/eb05b6b482c881cf6fc62658bf354ea7/526de/3b.png 885w,
+/blog/static/eb05b6b482c881cf6fc62658bf354ea7/fa2eb/3b.png 1180w,
+/blog/static/eb05b6b482c881cf6fc62658bf354ea7/8c774/3b.png 1196w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p></div><hr/><p style="text-transform:uppercase;font-size:14px"><a href="/blog/tags/school/">school<!-- --> </a><a href="/blog/tags/security/">security<!-- --> </a></p><div style="display:flex"><p>By<!-- --> <strong>Michele Larson</strong></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/security-final/">← <!-- -->Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)</a></li><li></li></ul></div></div></div><script>
   
   
   if(true) {
@@ -92,4 +403,4 @@
       
       
       }
-      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"security-network-944","path":"/security-network/"};window.dataPath="884/path---security-network-944-cf5-0sHRLGtiwYuNjl8pMeyeT7AHn8U";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f66cd48d3b7ffec6f559.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3243d24a58c1ec451366.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.72dbeacc3950e5605200.css","/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js.72dbeacc3950e5605200.css","/component---src-templates-tags-js-5b990690a4223c7572f3.js"],"component---src-pages-404-js":["/component---src-pages-404-js.72dbeacc3950e5605200.css","/component---src-pages-404-js-83b4f47cd9f059860b3f.js"],"component---src-pages-index-js":["/component---src-pages-index-js.72dbeacc3950e5605200.css","/component---src-pages-index-js-34532f2676402adfb57f.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js.72dbeacc3950e5605200.css","/component---src-pages-tags-js-0b7c6d04ebae9fd1832d.js"],"pages-manifest":["/pages-manifest-48c47ac61ada49c0aa63.js"]};/*]]>*/</script><script src="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js" async=""></script><script src="/blog/0-d5b0ae4c4b22ae57f84e.js" async=""></script><script src="/blog/app-f66cd48d3b7ffec6f559.js" async=""></script><script src="/blog/webpack-runtime-9ba71cf355ce90622a24.js" async=""></script></body></html>
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"security-network-944","path":"/security-network/"};window.dataPath="57/path---security-network-944-cf5-Jfh3AWwZZgbZDrZE3as2wzs3QQ";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f66cd48d3b7ffec6f559.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3243d24a58c1ec451366.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.72dbeacc3950e5605200.css","/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js.72dbeacc3950e5605200.css","/component---src-templates-tags-js-5b990690a4223c7572f3.js"],"component---src-pages-404-js":["/component---src-pages-404-js.72dbeacc3950e5605200.css","/component---src-pages-404-js-83b4f47cd9f059860b3f.js"],"component---src-pages-index-js":["/component---src-pages-index-js.72dbeacc3950e5605200.css","/component---src-pages-index-js-34532f2676402adfb57f.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js.72dbeacc3950e5605200.css","/component---src-pages-tags-js-0b7c6d04ebae9fd1832d.js"],"pages-manifest":["/pages-manifest-8db8ac3175b856a55c4e.js"]};/*]]>*/</script><script src="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js" async=""></script><script src="/blog/0-d5b0ae4c4b22ae57f84e.js" async=""></script><script src="/blog/app-f66cd48d3b7ffec6f559.js" async=""></script><script src="/blog/webpack-runtime-cfe5b7500136167a2dd8.js" async=""></script></body></html>
