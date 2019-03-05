@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Feb 2019 06:27:59 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Web Security (Defense Against the Dark Arts)]]></title><description><![CDATA[95% of malware is sent over the web! 😳 Injection Points De-obfuscated Content → Browser/Extensions JavaScript → Script Engine HTML (Dom…]]></description><link>https://michelelarson.com/blog/security-web/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-web/</guid><pubDate>Tue, 19 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Tue, 05 Mar 2019 06:35:37 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><link>https://michelelarson.com/blog/security-mobile/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-mobile/</guid><content:encoded></content:encoded></item><item><title><![CDATA[Thoughts on Email Security (Defense Against the Dark Arts)]]></title><description><![CDATA[Terms Spamtrap/honeypot - domain or address that only receives spam addresses (no legit emails) Botnet - machines that have been taken over…]]></description><link>https://michelelarson.com/blog/security-email/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-email/</guid><pubDate>Fri, 01 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Terms&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Spamtrap/honeypot - domain or address that only receives spam addresses (no legit emails)&lt;/li&gt;
+&lt;li&gt;Botnet - machines that have been taken over and the user doesn’t support the end goal&lt;/li&gt;
+&lt;li&gt;Showshoe spam - spreading load over many ISPs&lt;/li&gt;
+&lt;li&gt;Phishing/Spear Phishing - email targeting specific individual or department that appears to be from a trusted source &lt;/li&gt;
+&lt;li&gt;RBL - (realtime blackhole list) - tests mail server IP to see if it is known to be malicious&lt;/li&gt;
+&lt;li&gt;Heuristics - you can build a list of rules, example - “subject like xxx” AND “from email like xxxx” AND “no attachment”&lt;/li&gt;
+&lt;li&gt;Fingerprinting/Hashing - way to sign emails to ensure authenticity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Examples of malicious emails throughout history&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;419 phishing - “I’m a prince, send money” etc&lt;/li&gt;
+&lt;li&gt;Canadian Pharmacy - Putting text in html span tags so it isn’t caught by heuristics, created a website that looks legitimate&lt;/li&gt;
+&lt;li&gt;Pump ‘n dump - artificially creating demand for stock and then spammers dump the stock and the value goes down&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Tools&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;DIG - DNS records &lt;code class=&quot;language-text&quot;&gt;dig mydomain.com mx&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;WHOIS - IP/Domain registration &lt;code class=&quot;language-text&quot;&gt;whois google.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Databases - gather data, able to write sql queries to identify and group emails&lt;/li&gt;
+&lt;li&gt;Regex - write rules for identifying spam&lt;/li&gt;
+&lt;li&gt;Trustedsource.org - based on McAfee data&lt;/li&gt;
+&lt;li&gt;spamhaus.org - reputation data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Techniques for understanding data&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Parsing data&lt;/li&gt;
+&lt;li&gt;Grouping - by timestamp, source_ip, subject, URL, etc&lt;/li&gt;
+&lt;li&gt;Aggregation - count distinct values/time&lt;/li&gt;
+&lt;li&gt;Identification of outliers - why may something highly similar be classified differently?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;This week was pretty light in terms of the content presented. Most of the examples were about how to write Regex and MySQL queries, which I have covered in other classes. This was probably my least favorite week and topic in the course. Most of the techniques and examples talked about here we’ve already touched on before so I didn’t learn too much new. Plus, after doing the lab last week about classifying malicious URLs from data, which was really fun, this lab seemed too similar, but not as fun.&lt;/p&gt;
+&lt;p&gt;I also really didn’t like that the majority of the time was spent talking about how to write regex for Viagra. I wish that they had used a different example. I know this is what you think of when you think of stereotypical spam content but I didn’t really enjoy to listen to the lecturer say that word 50 times, and there are so many other examples you can use.&lt;/p&gt;
+&lt;p&gt;What I did learn is some tools for checking to see if emails are malicious, and if I ever do get an email that I’m not sure is spam or not, I can now read more information about it and look up the mail server to see what I can find from the message data. Other than that, I think I prefer other topics in security.&lt;/p&gt;
+&lt;p&gt;Finally, I thought it was interesting and never really thought about how it’s worse to have a legitimate email go to your spam than vice versa. Lately I have had many emails go to spam on my Google email at work. Lots of legitimate ones including some sent from third party websites that my company uses, such as event planning sites. I think Gmail is stepping up their spam filtering but I do occasionally see emails go in there that shouldn’t.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Web Security (Defense Against the Dark Arts)]]></title><description><![CDATA[95% of malware is sent over the web! 😳 Injection Points De-obfuscated Content → Browser/Extensions JavaScript → Script Engine HTML (Dom…]]></description><link>https://michelelarson.com/blog/security-web/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-web/</guid><pubDate>Tue, 19 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;&lt;/h4&gt;
 &lt;p&gt;95% of malware is sent over the web! 😳&lt;/p&gt;
 &lt;h4&gt;Injection Points&lt;/h4&gt;
 &lt;ul&gt;
@@ -982,8 +1018,40 @@
 &lt;li&gt;Disassociating memory from file on disk - Root kits can utilize APIs that give away its associated file on disk&lt;/li&gt;
 &lt;li&gt;File content foraging - modify some files on disk. If you try to read the file, they can insert anywhere on the chain&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)]]></title><description><![CDATA[Invite Code I first go to the website and open the Developer Console tools and refresh to view all of the network connections. I inspect…]]></description><link>https://michelelarson.com/blog/security-final/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-final/</guid><pubDate>Thu, 07 Feb 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Invite Code&lt;/h4&gt;
-&lt;p&gt;I first go to the website and open the Developer Console tools and refresh to view all of the network connections. I inspect each and the contents that are transferred but don’t see any useful information.&lt;/p&gt;
-&lt;p&gt;Based on the lesson from Week 7, I try hacking in through removing some fields but only get this message:&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)]]></title><description><![CDATA[Software Vulnerabilities Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a…]]></description><link>https://michelelarson.com/blog/security-software/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-software/</guid><pubDate>Wed, 30 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Software Vulnerabilities&lt;/h4&gt;
+&lt;p&gt;I first go to the website and open the Developer Console tools and refresh to view all of the network connections. I inspect each and the contents that are transferred but don’t see any useful information. I also inspect all of the files being loaded and content on the page.&lt;/p&gt;
+&lt;p&gt;Based on the lesson from Week 7, I try hacking in through modifying the form but only get this message:
+&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/068865db877e9e99bf66ac553f4b28dc/8e816/final1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 440px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 53.18181818181819%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABxElEQVQoz3WSyW4bMQyG/RpFEs8iaRaNZt+8zNix06BBLy2CFkURtCnSXPL+D/CXkmzP5NDDB1ILf5ISF57guHHFDG64dpixS0/ADwRcTjBOWF/HLT0bq62+p1noS3qDRRw8tgcej8ACaezVkuHKcQmHghk+XLsmmcv/I6g3WMhRjz6KwUHZlfj7+oZfzy8Y9kd8ffyOp9/P+PH0E18ev+HPyyvyqqVE/kmEv+ts4VCFPglWJFgNHqJMot/couo2SMsWRb3C/niPbruGyisj5ovo8hxzjGCgGLyAUcuMhO27uSx617bGYT616piWdXU3pzeeY1rWD66qDGGSI4gLxGmJSJUXa0gKJFSdJk4ryKw2NpS5QcTpVKHLA8i8JtEaedNhu7/HajxiPd4Zu//4Gf32gH44YDx+otZvsbt7IP+BEjQGnXQSpDGQWQNVNEhJNCmmKtr1Ds1qpERrtJsd6n4wZ2dsXGv8S8sOC8ymKjuiRUZVpvTwKa3Pldb9aPzVeKCK6G7RnbD3dPKZoACPEohIIUgIaRGxot+UNNTSnGufhRKhUrSek9LnJdPY2DniZmhdbtG+w9hpYCdsFdOdc9z8l/8BREpIy3EKYygAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Form&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/068865db877e9e99bf66ac553f4b28dc/8e816/final1.png&quot;
+        srcset=&quot;/blog/static/068865db877e9e99bf66ac553f4b28dc/e5da5/final1.png 148w,
+/blog/static/068865db877e9e99bf66ac553f4b28dc/2629f/final1.png 295w,
+/blog/static/068865db877e9e99bf66ac553f4b28dc/8e816/final1.png 440w&quot;
+        sizes=&quot;(max-width: 440px) 100vw, 440px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I do see a javascript file being loaded called ’&lt;a href=&quot;https://www.hackthebox.eu/js/inviteapi.min.js&quot;&gt;/js/inviteapi.min.js&lt;/a&gt;’ which looks like a minified javascript file. I execute this script in jsbin.com but change “return p” to “console.log(p)” to see what it says:
+&lt;code class=&quot;language-text&quot;&gt;&amp;quot;function verifyInviteCode(code){var formData={\&amp;quot;code\&amp;quot;:code};$.ajax({type:\&amp;quot;POST\&amp;quot;,dataType:\&amp;quot;json\&amp;quot;,data:formData,url:&amp;#39;/api/invite/verify&amp;#39;,success:function(response){console.log(response)},error:function(response){console.log(response)}})}function makeInviteCode(){$.ajax({type:\&amp;quot;POST\&amp;quot;,dataType:\&amp;quot;json\&amp;quot;,url:&amp;#39;/api/invite/how/to/generate&amp;#39;,success:function(response){console.log(response)},error:function(response){console.log(response)}})}&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Here I see maybe I should do a CURL Post request to &lt;code class=&quot;language-text&quot;&gt;/api/invite/how/to/generate&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;This gives me &lt;code class=&quot;language-text&quot;&gt;{&amp;quot;success&amp;quot;:1,&amp;quot;data&amp;quot;:{&amp;quot;data&amp;quot;:&amp;quot;SW4gb3JkZXIgdG8gZ2VuZXJhdGUgdGhlIGludml0ZSBjb2RlLCBtYWtlIGEgUE9TVCByZXF1ZXN0IHRvIC9hcGkvaW52aXRlL2dlbmVyYXRl&amp;quot;,&amp;quot;enctype&amp;quot;:&amp;quot;BASE64&amp;quot;},&amp;quot;0&amp;quot;:200}&lt;/code&gt;. I try that code but it doesn’t work, so I see it also says “BASE64” so I try decoding it and find out it decodes to “In order to generate the invite code, make a POST request to /api/invite/generate”. I do a CURL POST to &lt;code class=&quot;language-text&quot;&gt;/api/invite/generate&lt;/code&gt; and get the response &lt;code class=&quot;language-text&quot;&gt;{&amp;quot;success&amp;quot;:1,&amp;quot;data&amp;quot;:{&amp;quot;code&amp;quot;:&amp;quot;VFZJVk4tQVdFWEctWlpWUVMtWUdSSkgtR0FDV0c=&amp;quot;,&amp;quot;format&amp;quot;:&amp;quot;encoded&amp;quot;},&amp;quot;0&amp;quot;:200}&lt;/code&gt;. I try that code, but that doesn’t work, so I also BASE64 decode that to get &lt;code class=&quot;language-text&quot;&gt;TVIVN-AWEXG-ZZVQS-YGRJH-GACWG&lt;/code&gt;. That works!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)]]></title><description><![CDATA[Software Vulnerabilities Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a…]]></description><link>https://michelelarson.com/blog/security-software/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-software/</guid><pubDate>Wed, 30 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Software Vulnerabilities&lt;/h4&gt;
 &lt;p&gt;Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a weak password, or unchecks a security box, etc. Those things make it less secure.) This week will focus on the first, software vulnerabilities.&lt;/p&gt;
 &lt;p&gt;Companies use bug bounty programs where they ask people to find vulnerabilities and report them so they can be fixed, and then they’ll be paid for finding them. &lt;/p&gt;
 &lt;p&gt;Companies have gotten better at protecting their perimeters, so rather than focusing on perimeter attacks, attackers now focus on targeting users through phishing and social engineering.&lt;/p&gt;
