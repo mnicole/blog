@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 10 Mar 2019 22:44:46 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Mobile Security (Final for Defense Against the Dark Arts)]]></title><description><![CDATA[OS Overview This week starts with an overview of mobile devices and operating systems, the main ones which are: Apple - IOS 2007, is closed…]]></description><link>https://michelelarson.com/blog/security-mobile/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-mobile/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;OS Overview&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 10 Mar 2019 22:48:38 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Mobile Security (Final for Defense Against the Dark Arts)]]></title><description><![CDATA[OS Overview This week starts with an overview of mobile devices and operating systems, the main ones which are: Apple - IOS 2007, is closed…]]></description><link>https://michelelarson.com/blog/security-mobile/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-mobile/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;OS Overview&lt;/h4&gt;
 &lt;p&gt;This week starts with an overview of mobile devices and operating systems, the main ones which are:&lt;/p&gt;
 &lt;h5&gt;Apple - IOS&lt;/h5&gt;
 &lt;ul&gt;
@@ -47,10 +47,10 @@
 &lt;li&gt;Development tools - Android SDK Manager&lt;/li&gt;
 &lt;li&gt;Android debug bridge&lt;/li&gt;
 &lt;li&gt;AXMLPrinter2 and APK Tool (reverse compiled files)&lt;/li&gt;
-&lt;li&gt;Androguard&lt;/li&gt;
+&lt;li&gt;Androguard = tool for reverse engineering Android apps, includes DEX/ODEX, apk, Android’s binary xml, disassembly of DEX/ODEX bytecodes&lt;/li&gt;
 &lt;li&gt;Dex2jar - dex code to jar, then can be read by JD-GUI&lt;/li&gt;
 &lt;li&gt;JD-GUI - reads Java code (see above)&lt;/li&gt;
-&lt;li&gt;JadX&lt;/li&gt;
+&lt;li&gt;JadX - DEX to Java compiler&lt;/li&gt;
 &lt;li&gt;Malware can hide binaries in the assets folder. You can use a hex editor like VBinDiff to check the file header.&lt;/li&gt;
 &lt;li&gt;To execute Native ELF payload - load the binary as a library and execute it using shell commands&lt;/li&gt;
 &lt;li&gt;To do static analysis of native payload - use ARM Disassembler and ARM Decompiler&lt;/li&gt;
