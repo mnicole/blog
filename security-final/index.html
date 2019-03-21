@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/blog/component---src-templates-blog-post-js.72dbeacc3950e5605200.css">body{background-color:#1f2232;color:#fff;font-family:Titillium Web,sans-serif;font-size:20px;letter-spacing:.04em}body,h1{font-weight:100}h1{font-family:Lato,sans-serif;font-size:65px;letter-spacing:0;margin:20px 0 10px}a{color:#e3bac6;text-decoration:none}h1>a{color:#fff}h1,h2,h3,h4,h5{padding-top:20px;color:#bc9ec1;text-transform:uppercase;font-family:Lato,sans-serif;font-weight:300}</style><meta name="generator" content="Gatsby 2.0.91"/><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"/><link rel="manifest" href="/blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts) | Thoughts on Things</title><meta data-react-helmet="true" name="description" content=""/><meta data-react-helmet="true" property="og:title" content="Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)"/><meta data-react-helmet="true" property="og:description" content=""/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Michele Larson"/><meta data-react-helmet="true" name="twitter:title" content="Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)"/><meta data-react-helmet="true" name="twitter:description" content=""/><link as="script" rel="preload" href="/blog/webpack-runtime-a2efcaa195508382b8fe.js"/><link as="script" rel="preload" href="/blog/app-f66cd48d3b7ffec6f559.js"/><link as="script" rel="preload" href="/blog/0-d5b0ae4c4b22ae57f84e.js"/><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"/><link as="fetch" rel="preload" href="/blog/static/d/818/path---security-final-03-d-40e-LJSdXTYifP37WmxUbeL7yocLA.json" crossOrigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;padding:30px"><h1><a href="/blog/">Thoughts on Things</a></h1><h3>Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)</h3><p style="text-transform:uppercase;font-size:14px">February 07, 2019</p><div><h4>Invite Code</h4>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/blog/component---src-templates-blog-post-js.72dbeacc3950e5605200.css">body{background-color:#1f2232;color:#fff;font-family:Titillium Web,sans-serif;font-size:20px;letter-spacing:.04em}body,h1{font-weight:100}h1{font-family:Lato,sans-serif;font-size:65px;letter-spacing:0;margin:20px 0 10px}a{color:#e3bac6;text-decoration:none}h1>a{color:#fff}h1,h2,h3,h4,h5{padding-top:20px;color:#bc9ec1;text-transform:uppercase;font-family:Lato,sans-serif;font-weight:300}</style><meta name="generator" content="Gatsby 2.0.91"/><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml"/><link rel="manifest" href="/blog/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><title data-react-helmet="true">Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts) | Thoughts on Things</title><meta data-react-helmet="true" name="description" content=""/><meta data-react-helmet="true" property="og:title" content="Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)"/><meta data-react-helmet="true" property="og:description" content=""/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Michele Larson"/><meta data-react-helmet="true" name="twitter:title" content="Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)"/><meta data-react-helmet="true" name="twitter:description" content=""/><link as="script" rel="preload" href="/blog/webpack-runtime-ecd2562c95ef1577ba14.js"/><link as="script" rel="preload" href="/blog/app-f66cd48d3b7ffec6f559.js"/><link as="script" rel="preload" href="/blog/0-d5b0ae4c4b22ae57f84e.js"/><link as="script" rel="preload" href="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"/><link as="fetch" rel="preload" href="/blog/static/d/680/path---security-final-03-d-40e-PL6Ge5twtM8OeCbajPfwrODWDk.json" crossOrigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div style="margin-left:auto;margin-right:auto;padding:30px"><h1><a href="/blog/">Thoughts on Things</a></h1><h3>Thoughts on Hacking Challenges (Final for Defense Against the Dark Arts)</h3><p style="text-transform:uppercase;font-size:14px">February 07, 2019</p><div><h4>Invite Code</h4>
 <p>I first go to the website and open the Developer Console tools and refresh to view all of the network connections. I inspect each and the contents that are transferred but don’t see any useful information. I also inspect all of the files being loaded and content on the page.</p>
 <p>Based on the lesson from Week 7, I try hacking in through modifying the form but only get this message:
 <a
@@ -31,14 +31,311 @@
   </a></p>
 <p>I do see a javascript file being loaded called ’<a href="https://www.hackthebox.eu/js/inviteapi.min.js">/js/inviteapi.min.js</a>’ which looks like a minified javascript file. I execute this script in jsbin.com but change “return p” to “console.log(p)” to see what it says:
 <code class="language-text">&quot;function verifyInviteCode(code){var formData={\&quot;code\&quot;:code};$.ajax({type:\&quot;POST\&quot;,dataType:\&quot;json\&quot;,data:formData,url:&#39;/api/invite/verify&#39;,success:function(response){console.log(response)},error:function(response){console.log(response)}})}function makeInviteCode(){$.ajax({type:\&quot;POST\&quot;,dataType:\&quot;json\&quot;,url:&#39;/api/invite/how/to/generate&#39;,success:function(response){console.log(response)},error:function(response){console.log(response)}})}&quot;</code></p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/63b5613b5a6829174d6d4ced50d67b10/6a24b/final2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 17.391304347826086%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAi0lEQVQI14WOywqDMBBF/f+fC9WtG6kGTGwSm4eBGk+NUOii0IHDhTsDcxrlEsEnso9sX+SQSHEjxExIGWU0yinUqpjdjF71lT54Uopo63nYlYZSKHtl/0HhVXflYDADt+mGGAWd7Ghli5gEve6RVjKa+/lspjn4P8d5ZL277KrZ8lyurHy6amu84Q0y2OXXUX0m1gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="JS File"
+        title=""
+        src="/blog/static/63b5613b5a6829174d6d4ced50d67b10/fb8a0/final2.png"
+        srcset="/blog/static/63b5613b5a6829174d6d4ced50d67b10/1a291/final2.png 148w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/2bc4a/final2.png 295w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/fb8a0/final2.png 590w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/526de/final2.png 885w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/fa2eb/final2.png 1180w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/6a24b/final2.png 1357w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
 <p>Here I see maybe I should do a CURL Post request to <code class="language-text">/api/invite/how/to/generate</code>!</p>
-<p>This gives me <code class="language-text">{&quot;success&quot;:1,&quot;data&quot;:{&quot;data&quot;:&quot;SW4gb3JkZXIgdG8gZ2VuZXJhdGUgdGhlIGludml0ZSBjb2RlLCBtYWtlIGEgUE9TVCByZXF1ZXN0IHRvIC9hcGkvaW52aXRlL2dlbmVyYXRl&quot;,&quot;enctype&quot;:&quot;BASE64&quot;},&quot;0&quot;:200}</code>. I try that code but it doesn’t work, so I see it also says “BASE64” so I try decoding it and find out it decodes to “In order to generate the invite code, make a POST request to /api/invite/generate”. I do a CURL POST to <code class="language-text">/api/invite/generate</code> and get the response <code class="language-text">{&quot;success&quot;:1,&quot;data&quot;:{&quot;code&quot;:&quot;VFZJVk4tQVdFWEctWlpWUVMtWUdSSkgtR0FDV0c=&quot;,&quot;format&quot;:&quot;encoded&quot;},&quot;0&quot;:200}</code>. I try that code, but that doesn’t work, so I also BASE64 decode that to get <code class="language-text">TVIVN-AWEXG-ZZVQS-YGRJH-GACWG</code>. That works!</p>
-<h4>Challenge 1 - Web - Lernaen</h4>
-<p>I try a few combinations: ‘password’, ‘1’, ‘a bunch of chars to try and overflow it’, Lernaean’ (the title of the page). There’s no files being loaded and just the password param being sent. I see that if I send certain chars, it converts them first before sending. I right click on the POST request in Firefox and am able to copy the curl request, where I am able to try sending my attempts directly by inputting whatever I want. I try a lot of other combinations, trying to hack in via sql injection, trying to send other params such as ‘username’, ‘user’, ‘admin’, but nothing works. Finally I try googling “Lernaen” since it’s an uncommon name. </p>
-<p><code class="language-text">The Lernaean Hydra or Hydra of Lerna more often known simply as the Hydra, is a serpentine water monster in Greek and Roman mythology.</code></p>
-<p>I google Hydra and <a href="read">https://www.concise-courses.com/what-is-hydra</a> about the password cracking tool. </p>
-<!-- Complete a minimum of 3 challenges of your choice. These should sum to at least 50 points. Extra credit will be given for points over 75 in a 10:1 fashion -- every 10 points over 75 that you get, you get an extra point on your FINAL COURSE GRADE. [30 points -- 10/challenge completed]
-Write up how you did the above. This include how you completed the challenge, your thought process that got you there, and a description of any tools you used and how you used them. [60 points -- 20/challege completed and 5 for how you obtained an invitation code] --></div><hr/><p style="text-transform:uppercase;font-size:14px"><a href="/blog/tags/school/">school<!-- --> </a><a href="/blog/tags/security/">security<!-- --> </a></p><div style="display:flex"><p>By<!-- --> <strong>Michele Larson</strong></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/security-software/">← <!-- -->Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)</a></li><li><a rel="next" href="/blog/security-windows/">Thoughts on Windows Internals (Defense Against the Dark Arts)<!-- --> →</a></li></ul></div></div></div><script>
+<p>This gives me <code class="language-text">{&quot;success&quot;:1,&quot;data&quot;:{&quot;data&quot;:&quot;SW4gb3JkZXIgdG8gZ2VuZXJhdGUgdGhlIGludml0ZSBjb2RlLCBtYWtlIGEgUE9TVCByZXF1ZXN0IHRvIC9hcGkvaW52aXRlL2dlbmVyYXRl&quot;,&quot;enctype&quot;:&quot;BASE64&quot;},&quot;0&quot;:200}</code>. </p>
+<p>I try that code but it doesn’t work, so I see it also says “BASE64” so I try decoding it using <a href="https://www.base64decode.org">https://www.base64decode.org</a> and find out it decodes to “In order to generate the invite code, make a POST request to /api/invite/generate”.</p>
+<p>I do a CURL POST to <code class="language-text">/api/invite/generate</code> and get the response <code class="language-text">{&quot;success&quot;:1,&quot;data&quot;:{&quot;code&quot;:&quot;VFZJVk4tQVdFWEctWlpWUVMtWUdSSkgtR0FDV0c=&quot;,&quot;format&quot;:&quot;encoded&quot;},&quot;0&quot;:200}</code>. I try that code, but that doesn’t work, so I also BASE64 decode that to get <code class="language-text">TVIVN-AWEXG-ZZVQS-YGRJH-GACWG</code>. That works!</p>
+<h4>Challenge 1 - Reversing - Snake - 10 points</h4>
+<p>For this challenge, I need to download a file, called <code class="language-text">snake.py</code>. I open it in a text editor and also run the script and see it asks me for a username and password.</p>
+<p>First I take a look at the file:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/ad835/1a.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 61.08562691131498%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAACqUlEQVQoz3WT3UtTcRzGf1ha0guWomVJiZWaiG+rdLmtpqazLZWILgryKrroqpuugi6CoH8jgiyiooKgmi8haFGhaam5pdvOzna28z63+dbTd+cUeqEXD8/DOfw+PL/v+R6m8jL0iAo9ShJJvJm1GCnzXFCR0DVDuiojubKK6Gg/vjkL8dNdjJkLhfD3FGC+Ow/cxV1giihBlzOHFRMapyyYWYsqJpTe6wpJIuDiKsLDXnyyF2HCVYLJjn2Y8RTC15VvQBkX4iDzChIxE6bHzFbr3WgbU6BGRCwklhEc+IDh08X40noIY+0H8cNzAFPuIvzy5IMFA0HE+TgUQYIqyNTu39Ul07VM1lWk00mkkwmsAIiMDuGjhYBnDmOspQQTbcWYaidgZwEBZwOI+nmIgRiUCAHDitHGaBtfG8H87G/4JqcRCITx/e0rvHZUwuuqQb+rCoPnKzDUWYZhdylYKBhCnIuZM6RWCVFbAxF4QdIRDfC4cbUXHkcrus6eQ7ezHT0kt90Jj70FbpsTHU02Qyw4PQPRL0Kek6BwMpSQRNdUjI+gSQRUCRjicbneDevOajTuqIIluxwnc4/jxPZKNFD+73VZR8DCPh/C/qDRQhAESGIcmqqYa6KpSNLcIuEwuqvaUJtVhua8GkPW3dWG2/fWwZFfb2RLTjkBOQ6BuTlwIZolHVRiogHSFBmqLGNB0xChTbjS2APbnlq07D+FZvKG7GMbigk8h4ScpHVIIamlkEqRL5GvLCL9ZwnLWIWsKbhmuwQ7NckALdvKUb/16IZiww/f4PNTL0aeePH18QDG+gYx3jeA8ef0Nzx7h/EX7zHy6CVcJVZUs1KjRebgpg17mRXXWTNuMgduMSduszbcYa24S/neFgce5NhwP7cJjuwK1K4DbQb9CxsAn5XYk6uHAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="snake.py"
+        title=""
+        src="/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/fb8a0/1a.png"
+        srcset="/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/1a291/1a.png 148w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/2bc4a/1a.png 295w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/fb8a0/1a.png 590w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/526de/1a.png 885w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/fa2eb/1a.png 1180w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/ad835/1a.png 1308w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>I see that it says:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">if user_input == slither</code></pre></div>
+<p>So first thing I do is <code class="language-text">print slither</code> which outputs “anaconda”. I run the script and type in “anaconda” and it asks me to enter my password.</p>
+<p>There are a bunch of arrays that hold things like <code class="language-text">[0x74, 0x68..]</code>. I have a feeling these are hex codes, so I start converting them using this <a href="https://bluesock.org/~willg/dev/ascii.html">converter</a>:</p>
+<p>chains = “this is a troll”  😂</p>
+<p>password = “its not that easy” 😂</p>
+<p>keys = “password!!”</p>
+<p>Printing out some things from the file:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/f449d/1b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 66.75824175824175%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABSElEQVQ4y62S60/CMBTFG1ATFU18xGmMoDyGJhNWXpNtgLzBCEwNCBsSeWjU///7sR1qjGICyIdfzm1uenp7WtJq19GxbtA2DVs7lmHXw6cuXt766A9NDEYWRs8PeBx0mHbZ2kTzvga+l8Nrq9fEa88AMfQKiuc68pLKVENB0lAK6V+16qVQfdRWzTeuNZvID8Y9Uj1KQSbeP6HEPxOk7NERWQoguhJkiP+GVDypseGyuBBI2a1DdvgWZ1g9ZhM6Fzjh1Uka1On/1eAxzBMFqYt5JF2SPSWHm38/YFZT0ggWUBNzyAkJpLZkZIU40tt0/glLbg35AwWZ3Shy+wlc7sUQ419oQgRTGbbC17iTqigeqsxQQXonCuoIfETArs9+wGcE05iS23ABDSmLjEARXxehbJwi4RIRXz1DbE1CcjOEC5bxpIebxDvKt3tdjWTgcQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="snake.py"
+        title=""
+        src="/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/fb8a0/1b.png"
+        srcset="/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/1a291/1b.png 148w,
+/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/2bc4a/1b.png 295w,
+/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/fb8a0/1b.png 590w,
+/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/f449d/1b.png 728w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>I take a look again and see that for the password, it’s checking if each char you type in for the password is in the chars array. I print the chars array and see a bunch of numbers. I use that same URL to convert each to its char value, and get keys = <code class="language-text">udvvrjwa$$</code> and chains = <code class="language-text">-rs}*k*-|yvv</code>. I try entering <code class="language-text">udvvrjwa$$</code> into the submission box. It works!</p>
+<h4>Challenge 2 - CRYPTO - SICK TEACHER - 20 points</h4>
+<p>This looks like a classic crypto challenge. I first think that one of the words might be “teacher” but the pattern doesn’t fit any. I notice that “IKW” repeats and I think it could be “THE” because there is also “IKWYW” which could be “THERE”. When I put in “THERE”, I notice the next word could be “ARE”. I fill in all of those letters. Next I figure that C = O because I have T? which is probably TO. Next I notice OR?ER so I think S must be “D”. “HMS” so far translates to “A?D” so I think “M” = “N”. “B” must equal “I” since we already know what “A” is and there’s no other single letter word. Next I guess “J” = “S” because of “IKBJ” being “THI?” and “BJ” being “I?“. From there, I keep going and guessing letters until the entire sentence becomes clear. (Although I regret wasting so much time filling in the entire thing since the flag is at the very end — this does occur to me that it may be at the end, but I keep going since I do want to solve the entire cipher.)</p>
+<p>Starting out:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/2074a/2a.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 70.4161979752531%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABO0lEQVQ4y62T6Y6DMAyE8/7PuRVHgBDus9l8BiOq/VNtizRyYjtm7EmMtTas6xqWZfkKDAW/+Zm6rv84n8/nv2HKsgz7vodt26R11h8VpGVYOudClmVhnufPWi6KIsCyqiqBFhdbHxaQR9x7H8pobWFlT65vvJBxrjoK5vYIVtFBcZLwoxpjYByqInu9FToi4nQGjBYAFGUPI+w4joK+7yV5GIbDnn72xMZpukZliniwbVuhrS0BLSotRtt1nfi6Plpfv+RhicNURIFdnufnHFzAJ6OIPlrTq/SWKGmaXu1SBLaIoSLxZyvFM2Fizx8BmCdJIizJlZfiThWVftM011oU9McomNk7l978PB7SKkizNNwZ0zosyuoQCrZ3oaYohorDWlom6QqMgxzS14LV9XpeHQYvr+q0d/D9AklXQIe71tUJAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Starting out"
+        title=""
+        src="/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/fb8a0/2a.png"
+        srcset="/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/1a291/2a.png 148w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/2bc4a/2a.png 295w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/fb8a0/2a.png 590w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/526de/2a.png 885w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/2074a/2a.png 889w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Everything solved:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/8a7cda381c9a31730c60215003a9fbe5/e094c/2b.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 88.04960541149944%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAAB2ElEQVQ4y6WUW6+aUBCF+aFt0lbbU4/tU/tjfTMx3gAREAQv4HS+gbFqYpqeY7Ky956ZzGWtwWA8Gsh49EXGrwMZDj7I1+HHe6jt+8sn+f3rp+HH69Divj3EjF4+G4L1ei3b7VbSNJUoimS320ld11JV1R32+73h0f6IgGRVVUutjyzLpGlaec8vyLQzq6woikLO57M5LpfLmxAw6ul0kuPxKG3bGt6azBKGYSh5nhuHi8VCKuXvXSNHmjCOY9lsNoYkSSRRXl0oioEEv/py5Rm7xyIkfuJpLiAZFwyI4gk5EQtOoeRwOBgtdteTNycb4f49KpOM1aEid++UQmVZXoNvT1DXh/7UhJrYNVBRtrp7haT9KOwhnXKS2PcTG2/G4x7H9z7uJLeRGZfgzplbpwTR+f+KFCyXS6sWa7LVatVXj6Wzx1bZCfcuwVpj8VM06ptiKttDAgHGsiyuI2S9wq42HLlIcOZ3wL1pmq5DqoQ36xP3otAxNIQKVIcjT3Sr+rFX3UQJ7c/hb5e+V7Z7mgTRfFQKY3NaENL3EjuJgyjqdrDjI7yOi9131HnzbnPl6qkoBGZZaiL4twwX3dlebY94+i3PZjOZTqcymUxkPp8Lb1T/1+9Zwj/NK02oYdUeDQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Everything solved"
+        title=""
+        src="/blog/static/8a7cda381c9a31730c60215003a9fbe5/fb8a0/2b.png"
+        srcset="/blog/static/8a7cda381c9a31730c60215003a9fbe5/1a291/2b.png 148w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/2bc4a/2b.png 295w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/fb8a0/2b.png 590w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/526de/2b.png 885w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/e094c/2b.png 887w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/d505c30fd9213092fe42af8f81b67545/89502/2c.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 35.169082125603865%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABG0lEQVQoz31R7W7DIBDL87RdPggcH4GkSbaqUt//eTwf6dZNk/bDMnCHD5vGpAG9dzAhw8aFa0HrAy5S0ErAIBZWJthUIMXi3AvOgyOk4tQ7dC7CTQtOnUUT14gw7wjLXnmMM8akWCme0dmA3k3oRRHxNh5o7QudSxjYe+GAJmwGsghcSZBppZBOK0TGOAnhYcgmKTxsJkdPoUDhUAWVFfriRsVMSJzi6yRtbN3XdF504S+eYj+h/VUw3wTr7XHkR1tquaewrl26MsN8nGmO7BnksK8Wx1D4mMKotnqmeTauOPj5HZLXWjS8PJCH2jw/+ff+VS9VqNY1Q+NpeU6I1ztxQ9ru8MsH89z5o/s3yz/71ib4vNHNyl92+AQOxeWnMYChdgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Entering the answer"
+        title=""
+        src="/blog/static/d505c30fd9213092fe42af8f81b67545/fb8a0/2c.png"
+        srcset="/blog/static/d505c30fd9213092fe42af8f81b67545/1a291/2c.png 148w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/2bc4a/2c.png 295w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/fb8a0/2c.png 590w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/526de/2c.png 885w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/89502/2c.png 1035w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<h4>Challenge 3 - CRYPTO - YOU CAN DO IT! - 10 points</h4>
+<p>This challenge is a text file with the letters <code class="language-text">YHAOANUTDSYOEOIEUTTC!</code></p>
+<p>My initial thought is that the challenge is called YOU CAN DO IT! and there’s an exclamation point and all of the letters in “YOU CAN DO IT”, so I think maybe I need to unscramble the rest of the letters. I take out the letters for “YOU CAN DO IT” and see what’s left.</p>
+<p>After trying many combinations:</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/683a1052fdc0e186e9e7b69418634ca2/edd88/3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 47.288503253796094%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABAElEQVQoz52SXWuDMBSG8zf8FlGYV4LEqahQ2XQ2QWNbOnvbu10Nuv1/3iWBjvZisHrx3JyEJ+85J+QyCXx/MIjzFjPbYx53EHwG6zneXga8bjrsxQGXzy9dXw4nHHdHyTsmNkmErqu7CtLUNRjbom03qKsaVVWhKArETzFs24bruhrf9+F53h3Xs1vIc55LQYmyLGFZFgzDgGmavzLHcR6CUEp1IppRhGGoJX+9/h9I0zTouk623CKO79tcJRzHEZxzLMuik6qWVUIVf5UwyzIolCyX87wVrZGSYRjkluW3EQJ93+uEqu2r7FEpSdMUajEqZZIkiKJIzzIIglUJfwDKJAoRNPpH5wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Combinations"
+        title=""
+        src="/blog/static/683a1052fdc0e186e9e7b69418634ca2/fb8a0/3.png"
+        srcset="/blog/static/683a1052fdc0e186e9e7b69418634ca2/1a291/3.png 148w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/2bc4a/3.png 295w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/fb8a0/3.png 590w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/526de/3.png 885w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/edd88/3.png 922w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>And trying to enter them in the solution box…</p>
+<p><code class="language-text">YOUSEETHATYOUCANDOIT!</code> works!</p>
+<h4>Challenge 4 - CRYPTO - Deceitful Batman - 10 points</h4>
+<p>This challenge is a text file with <code class="language-text">NAANAAANNNAANAAAANANANANAAAAAAAANNAANAAANAAANANNAAAAAAAANNNAANAAAAANAANAAAA</code>. My initial thought is to count the letters in each, and maybe each number is associated with a letter. That doesn’t work out since there’s a lot of single characters.</p>
+<p>Then I think it kind of reminds me of the Hamming Code that I just learned about in algorithms since there’s only two values, A and N. I look that up but it doesn’t really seem right.</p>
+<p>I google “Binary cryptography” to see waht comes up and find <a href="https://en.wikipedia.org/wiki/Bacon%27s_cipher">Bacon’s cipher</a>. This looks promising…</p>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/21176/4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 13.707165109034266%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAoUlEQVQI102LTQ6CMBSEOQeEFbTlABTKz45goS2IEePKGKP3v8LYPqNx8WXezJuJbvcBejGYDx5tYLSFmSzGQeOyX/F8vHDedqzuiG09wc0L9Dhj8n07OeoaUgfrf5FSEl3XQdU16n+qirK+76GUQuNpm4a6UkrygXCXZUmbtm0RMcbAGUfQPM+JLMsgigKcf/KgASEE+W+WpiniOEaSJD/e6Vdi+p2gvlwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Solved"
+        title=""
+        src="/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/fb8a0/4.png"
+        srcset="/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/1a291/4.png 148w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/2bc4a/4.png 295w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/fb8a0/4.png 590w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/526de/4.png 885w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/fa2eb/4.png 1180w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/21176/4.png 1284w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p>
+<p>Looks like I found the cypher: NAPIER!</p>
+<h4>Summary:</h4>
+<p><a
+    class="gatsby-resp-image-link"
+    href="/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/b574e/5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 49.52305246422894%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABkUlEQVQoz4WRXY6cMBCEOUc2/NkGg8FgAwPsMBMlD3v/I1XKhlGySpQ8lBpQ83V1dVJULezi0PsbKmPR+RnKOBi/ou4cHt8/MMw70rKCqDW248B6/4Zpe2CO2uFu77E3KCnrDn7f0Ywe7TjDr3fogXV/QtsJx48POH5LRY2Sw6ftgJsm6N5HNdajZlVmhGoHAqWC6TpOOuBvO3KpkfHntFD4WlR4u2pwKOnw/b4R+uTgI7p0yxYd9tMawUkuFBsbdOOCqrXRRaGaqLQMsFMpoYXSGOeFEWyMaIUlpHdzjKvhNtHhW64QcmwHh0xWcTXBGOx0Q8lBuTz1cnh/7Jj3x+XwiA7Dc+eCQ2YYXKRljYprd4smrIfQXRwSqtDne0ZgSYeGg1/5nQrHGHjQAZIbJmFyWEe1hodpI1ASIps+wuQFDH1lVdPVRofP6C5q5ZUZg7EjTbkTGDISuuVVDdfsL2ef9er7kklK/Ca+5/I6njqBGVeWjUFt278D61/AuNE/lISmTGhmYSNQ/AHsPzn8H/An2qsnfiixtAUAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    ></span>
+    <img
+        class="gatsby-resp-image-image"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;"
+        alt="Proof"
+        title=""
+        src="/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/fb8a0/5.png"
+        srcset="/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/1a291/5.png 148w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/2bc4a/5.png 295w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/fb8a0/5.png 590w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/526de/5.png 885w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/fa2eb/5.png 1180w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/b574e/5.png 1258w"
+        sizes="(max-width: 590px) 100vw, 590px"
+      />
+  </span>
+  </a></p></div><hr/><p style="text-transform:uppercase;font-size:14px"><a href="/blog/tags/school/">school<!-- --> </a><a href="/blog/tags/security/">security<!-- --> </a></p><div style="display:flex"><p>By<!-- --> <strong>Michele Larson</strong></p></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/blog/security-software/">← <!-- -->Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)</a></li><li><a rel="next" href="/blog/security-windows/">Thoughts on Windows Internals (Defense Against the Dark Arts)<!-- --> →</a></li></ul></div></div></div><script>
   
   
   if(true) {
@@ -53,4 +350,4 @@ Write up how you did the above. This include how you completed the challenge, yo
       
       
       }
-      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"security-final-03d","path":"/security-final/"};window.dataPath="818/path---security-final-03-d-40e-LJSdXTYifP37WmxUbeL7yocLA";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f66cd48d3b7ffec6f559.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3243d24a58c1ec451366.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.72dbeacc3950e5605200.css","/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js.72dbeacc3950e5605200.css","/component---src-templates-tags-js-5b990690a4223c7572f3.js"],"component---src-pages-404-js":["/component---src-pages-404-js.72dbeacc3950e5605200.css","/component---src-pages-404-js-83b4f47cd9f059860b3f.js"],"component---src-pages-index-js":["/component---src-pages-index-js.72dbeacc3950e5605200.css","/component---src-pages-index-js-34532f2676402adfb57f.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js.72dbeacc3950e5605200.css","/component---src-pages-tags-js-0b7c6d04ebae9fd1832d.js"],"pages-manifest":["/pages-manifest-a3f4bc85f5e56075bb8f.js"]};/*]]>*/</script><script src="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js" async=""></script><script src="/blog/0-d5b0ae4c4b22ae57f84e.js" async=""></script><script src="/blog/app-f66cd48d3b7ffec6f559.js" async=""></script><script src="/blog/webpack-runtime-a2efcaa195508382b8fe.js" async=""></script></body></html>
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-blog-post-js","jsonName":"security-final-03d","path":"/security-final/"};window.dataPath="680/path---security-final-03-d-40e-PL6Ge5twtM8OeCbajPfwrODWDk";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f66cd48d3b7ffec6f559.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-3243d24a58c1ec451366.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js.72dbeacc3950e5605200.css","/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js.72dbeacc3950e5605200.css","/component---src-templates-tags-js-5b990690a4223c7572f3.js"],"component---src-pages-404-js":["/component---src-pages-404-js.72dbeacc3950e5605200.css","/component---src-pages-404-js-83b4f47cd9f059860b3f.js"],"component---src-pages-index-js":["/component---src-pages-index-js.72dbeacc3950e5605200.css","/component---src-pages-index-js-34532f2676402adfb57f.js"],"component---src-pages-tags-js":["/component---src-pages-tags-js.72dbeacc3950e5605200.css","/component---src-pages-tags-js-0b7c6d04ebae9fd1832d.js"],"pages-manifest":["/pages-manifest-632c0197f500107dee24.js"]};/*]]>*/</script><script src="/blog/component---src-templates-blog-post-js-874a1cf32e0f30fb274d.js" async=""></script><script src="/blog/0-d5b0ae4c4b22ae57f84e.js" async=""></script><script src="/blog/app-f66cd48d3b7ffec6f559.js" async=""></script><script src="/blog/webpack-runtime-ecd2562c95ef1577ba14.js" async=""></script></body></html>

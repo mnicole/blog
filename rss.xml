@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Sun, 10 Mar 2019 22:48:38 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Mobile Security (Final for Defense Against the Dark Arts)]]></title><description><![CDATA[OS Overview This week starts with an overview of mobile devices and operating systems, the main ones which are: Apple - IOS 2007, is closed…]]></description><link>https://michelelarson.com/blog/security-mobile/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-mobile/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;OS Overview&lt;/h4&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Thoughts on Things]]></title><description><![CDATA[Thoughts on Things]]></description><link>https://michelelarson.com/blog</link><generator>RSS for Node</generator><lastBuildDate>Thu, 21 Mar 2019 06:29:59 GMT</lastBuildDate><item><title><![CDATA[Thoughts on Mobile Security (Defense Against the Dark Arts)]]></title><description><![CDATA[OS Overview This week starts with an overview of mobile devices and operating systems, the main ones which are: Apple - IOS 2007, is closed…]]></description><link>https://michelelarson.com/blog/security-mobile/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-mobile/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;OS Overview&lt;/h4&gt;
 &lt;p&gt;This week starts with an overview of mobile devices and operating systems, the main ones which are:&lt;/p&gt;
 &lt;h5&gt;Apple - IOS&lt;/h5&gt;
 &lt;ul&gt;
@@ -1362,14 +1362,311 @@
   &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I do see a javascript file being loaded called ’&lt;a href=&quot;https://www.hackthebox.eu/js/inviteapi.min.js&quot;&gt;/js/inviteapi.min.js&lt;/a&gt;’ which looks like a minified javascript file. I execute this script in jsbin.com but change “return p” to “console.log(p)” to see what it says:
 &lt;code class=&quot;language-text&quot;&gt;&amp;quot;function verifyInviteCode(code){var formData={\&amp;quot;code\&amp;quot;:code};$.ajax({type:\&amp;quot;POST\&amp;quot;,dataType:\&amp;quot;json\&amp;quot;,data:formData,url:&amp;#39;/api/invite/verify&amp;#39;,success:function(response){console.log(response)},error:function(response){console.log(response)}})}function makeInviteCode(){$.ajax({type:\&amp;quot;POST\&amp;quot;,dataType:\&amp;quot;json\&amp;quot;,url:&amp;#39;/api/invite/how/to/generate&amp;#39;,success:function(response){console.log(response)},error:function(response){console.log(response)}})}&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/63b5613b5a6829174d6d4ced50d67b10/6a24b/final2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 17.391304347826086%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAi0lEQVQI14WOywqDMBBF/f+fC9WtG6kGTGwSm4eBGk+NUOii0IHDhTsDcxrlEsEnso9sX+SQSHEjxExIGWU0yinUqpjdjF71lT54Uopo63nYlYZSKHtl/0HhVXflYDADt+mGGAWd7Ghli5gEve6RVjKa+/lspjn4P8d5ZL277KrZ8lyurHy6amu84Q0y2OXXUX0m1gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;JS File&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/63b5613b5a6829174d6d4ced50d67b10/fb8a0/final2.png&quot;
+        srcset=&quot;/blog/static/63b5613b5a6829174d6d4ced50d67b10/1a291/final2.png 148w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/2bc4a/final2.png 295w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/fb8a0/final2.png 590w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/526de/final2.png 885w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/fa2eb/final2.png 1180w,
+/blog/static/63b5613b5a6829174d6d4ced50d67b10/6a24b/final2.png 1357w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Here I see maybe I should do a CURL Post request to &lt;code class=&quot;language-text&quot;&gt;/api/invite/how/to/generate&lt;/code&gt;!&lt;/p&gt;
-&lt;p&gt;This gives me &lt;code class=&quot;language-text&quot;&gt;{&amp;quot;success&amp;quot;:1,&amp;quot;data&amp;quot;:{&amp;quot;data&amp;quot;:&amp;quot;SW4gb3JkZXIgdG8gZ2VuZXJhdGUgdGhlIGludml0ZSBjb2RlLCBtYWtlIGEgUE9TVCByZXF1ZXN0IHRvIC9hcGkvaW52aXRlL2dlbmVyYXRl&amp;quot;,&amp;quot;enctype&amp;quot;:&amp;quot;BASE64&amp;quot;},&amp;quot;0&amp;quot;:200}&lt;/code&gt;. I try that code but it doesn’t work, so I see it also says “BASE64” so I try decoding it and find out it decodes to “In order to generate the invite code, make a POST request to /api/invite/generate”. I do a CURL POST to &lt;code class=&quot;language-text&quot;&gt;/api/invite/generate&lt;/code&gt; and get the response &lt;code class=&quot;language-text&quot;&gt;{&amp;quot;success&amp;quot;:1,&amp;quot;data&amp;quot;:{&amp;quot;code&amp;quot;:&amp;quot;VFZJVk4tQVdFWEctWlpWUVMtWUdSSkgtR0FDV0c=&amp;quot;,&amp;quot;format&amp;quot;:&amp;quot;encoded&amp;quot;},&amp;quot;0&amp;quot;:200}&lt;/code&gt;. I try that code, but that doesn’t work, so I also BASE64 decode that to get &lt;code class=&quot;language-text&quot;&gt;TVIVN-AWEXG-ZZVQS-YGRJH-GACWG&lt;/code&gt;. That works!&lt;/p&gt;
-&lt;h4&gt;Challenge 1 - Web - Lernaen&lt;/h4&gt;
-&lt;p&gt;I try a few combinations: ‘password’, ‘1’, ‘a bunch of chars to try and overflow it’, Lernaean’ (the title of the page). There’s no files being loaded and just the password param being sent. I see that if I send certain chars, it converts them first before sending. I right click on the POST request in Firefox and am able to copy the curl request, where I am able to try sending my attempts directly by inputting whatever I want. I try a lot of other combinations, trying to hack in via sql injection, trying to send other params such as ‘username’, ‘user’, ‘admin’, but nothing works. Finally I try googling “Lernaen” since it’s an uncommon name. &lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;The Lernaean Hydra or Hydra of Lerna more often known simply as the Hydra, is a serpentine water monster in Greek and Roman mythology.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;I google Hydra and &lt;a href=&quot;read&quot;&gt;https://www.concise-courses.com/what-is-hydra&lt;/a&gt; about the password cracking tool. &lt;/p&gt;
-&lt;!-- Complete a minimum of 3 challenges of your choice. These should sum to at least 50 points. Extra credit will be given for points over 75 in a 10:1 fashion -- every 10 points over 75 that you get, you get an extra point on your FINAL COURSE GRADE. [30 points -- 10/challenge completed]
-Write up how you did the above. This include how you completed the challenge, your thought process that got you there, and a description of any tools you used and how you used them. [60 points -- 20/challege completed and 5 for how you obtained an invitation code] --&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)]]></title><description><![CDATA[Software Vulnerabilities Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a…]]></description><link>https://michelelarson.com/blog/security-software/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-software/</guid><pubDate>Wed, 30 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Software Vulnerabilities&lt;/h4&gt;
+&lt;p&gt;This gives me &lt;code class=&quot;language-text&quot;&gt;{&amp;quot;success&amp;quot;:1,&amp;quot;data&amp;quot;:{&amp;quot;data&amp;quot;:&amp;quot;SW4gb3JkZXIgdG8gZ2VuZXJhdGUgdGhlIGludml0ZSBjb2RlLCBtYWtlIGEgUE9TVCByZXF1ZXN0IHRvIC9hcGkvaW52aXRlL2dlbmVyYXRl&amp;quot;,&amp;quot;enctype&amp;quot;:&amp;quot;BASE64&amp;quot;},&amp;quot;0&amp;quot;:200}&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;I try that code but it doesn’t work, so I see it also says “BASE64” so I try decoding it using &lt;a href=&quot;https://www.base64decode.org&quot;&gt;https://www.base64decode.org&lt;/a&gt; and find out it decodes to “In order to generate the invite code, make a POST request to /api/invite/generate”.&lt;/p&gt;
+&lt;p&gt;I do a CURL POST to &lt;code class=&quot;language-text&quot;&gt;/api/invite/generate&lt;/code&gt; and get the response &lt;code class=&quot;language-text&quot;&gt;{&amp;quot;success&amp;quot;:1,&amp;quot;data&amp;quot;:{&amp;quot;code&amp;quot;:&amp;quot;VFZJVk4tQVdFWEctWlpWUVMtWUdSSkgtR0FDV0c=&amp;quot;,&amp;quot;format&amp;quot;:&amp;quot;encoded&amp;quot;},&amp;quot;0&amp;quot;:200}&lt;/code&gt;. I try that code, but that doesn’t work, so I also BASE64 decode that to get &lt;code class=&quot;language-text&quot;&gt;TVIVN-AWEXG-ZZVQS-YGRJH-GACWG&lt;/code&gt;. That works!&lt;/p&gt;
+&lt;h4&gt;Challenge 1 - Reversing - Snake - 10 points&lt;/h4&gt;
+&lt;p&gt;For this challenge, I need to download a file, called &lt;code class=&quot;language-text&quot;&gt;snake.py&lt;/code&gt;. I open it in a text editor and also run the script and see it asks me for a username and password.&lt;/p&gt;
+&lt;p&gt;First I take a look at the file:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/ad835/1a.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 61.08562691131498%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAACqUlEQVQoz3WT3UtTcRzGf1ha0guWomVJiZWaiG+rdLmtpqazLZWILgryKrroqpuugi6CoH8jgiyiooKgmi8haFGhaam5pdvOzna28z63+dbTd+cUeqEXD8/DOfw+PL/v+R6m8jL0iAo9ShJJvJm1GCnzXFCR0DVDuiojubKK6Gg/vjkL8dNdjJkLhfD3FGC+Ow/cxV1giihBlzOHFRMapyyYWYsqJpTe6wpJIuDiKsLDXnyyF2HCVYLJjn2Y8RTC15VvQBkX4iDzChIxE6bHzFbr3WgbU6BGRCwklhEc+IDh08X40noIY+0H8cNzAFPuIvzy5IMFA0HE+TgUQYIqyNTu39Ul07VM1lWk00mkkwmsAIiMDuGjhYBnDmOspQQTbcWYaidgZwEBZwOI+nmIgRiUCAHDitHGaBtfG8H87G/4JqcRCITx/e0rvHZUwuuqQb+rCoPnKzDUWYZhdylYKBhCnIuZM6RWCVFbAxF4QdIRDfC4cbUXHkcrus6eQ7ezHT0kt90Jj70FbpsTHU02Qyw4PQPRL0Kek6BwMpSQRNdUjI+gSQRUCRjicbneDevOajTuqIIluxwnc4/jxPZKNFD+73VZR8DCPh/C/qDRQhAESGIcmqqYa6KpSNLcIuEwuqvaUJtVhua8GkPW3dWG2/fWwZFfb2RLTjkBOQ6BuTlwIZolHVRiogHSFBmqLGNB0xChTbjS2APbnlq07D+FZvKG7GMbigk8h4ScpHVIIamlkEqRL5GvLCL9ZwnLWIWsKbhmuwQ7NckALdvKUb/16IZiww/f4PNTL0aeePH18QDG+gYx3jeA8ef0Nzx7h/EX7zHy6CVcJVZUs1KjRebgpg17mRXXWTNuMgduMSduszbcYa24S/neFgce5NhwP7cJjuwK1K4DbQb9CxsAn5XYk6uHAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;snake.py&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/fb8a0/1a.png&quot;
+        srcset=&quot;/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/1a291/1a.png 148w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/2bc4a/1a.png 295w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/fb8a0/1a.png 590w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/526de/1a.png 885w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/fa2eb/1a.png 1180w,
+/blog/static/cf294cc9e46d89b67f5d1f6e03a19659/ad835/1a.png 1308w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I see that it says:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;if user_input == slither&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So first thing I do is &lt;code class=&quot;language-text&quot;&gt;print slither&lt;/code&gt; which outputs “anaconda”. I run the script and type in “anaconda” and it asks me to enter my password.&lt;/p&gt;
+&lt;p&gt;There are a bunch of arrays that hold things like &lt;code class=&quot;language-text&quot;&gt;[0x74, 0x68..]&lt;/code&gt;. I have a feeling these are hex codes, so I start converting them using this &lt;a href=&quot;https://bluesock.org/~willg/dev/ascii.html&quot;&gt;converter&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;chains = “this is a troll”  😂&lt;/p&gt;
+&lt;p&gt;password = “its not that easy” 😂&lt;/p&gt;
+&lt;p&gt;keys = “password!!”&lt;/p&gt;
+&lt;p&gt;Printing out some things from the file:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/f449d/1b.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.75824175824175%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAABSElEQVQ4y62S60/CMBTFG1ATFU18xGmMoDyGJhNWXpNtgLzBCEwNCBsSeWjU///7sR1qjGICyIdfzm1uenp7WtJq19GxbtA2DVs7lmHXw6cuXt766A9NDEYWRs8PeBx0mHbZ2kTzvga+l8Nrq9fEa88AMfQKiuc68pLKVENB0lAK6V+16qVQfdRWzTeuNZvID8Y9Uj1KQSbeP6HEPxOk7NERWQoguhJkiP+GVDypseGyuBBI2a1DdvgWZ1g9ZhM6Fzjh1Uka1On/1eAxzBMFqYt5JF2SPSWHm38/YFZT0ggWUBNzyAkJpLZkZIU40tt0/glLbg35AwWZ3Shy+wlc7sUQ419oQgRTGbbC17iTqigeqsxQQXonCuoIfETArs9+wGcE05iS23ABDSmLjEARXxehbJwi4RIRXz1DbE1CcjOEC5bxpIebxDvKt3tdjWTgcQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;snake.py&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/fb8a0/1b.png&quot;
+        srcset=&quot;/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/1a291/1b.png 148w,
+/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/2bc4a/1b.png 295w,
+/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/fb8a0/1b.png 590w,
+/blog/static/b8e4d882189c69cf4e85382b7fcf7a9e/f449d/1b.png 728w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I take a look again and see that for the password, it’s checking if each char you type in for the password is in the chars array. I print the chars array and see a bunch of numbers. I use that same URL to convert each to its char value, and get keys = &lt;code class=&quot;language-text&quot;&gt;udvvrjwa$$&lt;/code&gt; and chains = &lt;code class=&quot;language-text&quot;&gt;-rs}*k*-|yvv&lt;/code&gt;. I try entering &lt;code class=&quot;language-text&quot;&gt;udvvrjwa$$&lt;/code&gt; into the submission box. It works!&lt;/p&gt;
+&lt;h4&gt;Challenge 2 - CRYPTO - SICK TEACHER - 20 points&lt;/h4&gt;
+&lt;p&gt;This looks like a classic crypto challenge. I first think that one of the words might be “teacher” but the pattern doesn’t fit any. I notice that “IKW” repeats and I think it could be “THE” because there is also “IKWYW” which could be “THERE”. When I put in “THERE”, I notice the next word could be “ARE”. I fill in all of those letters. Next I figure that C = O because I have T? which is probably TO. Next I notice OR?ER so I think S must be “D”. “HMS” so far translates to “A?D” so I think “M” = “N”. “B” must equal “I” since we already know what “A” is and there’s no other single letter word. Next I guess “J” = “S” because of “IKBJ” being “THI?” and “BJ” being “I?“. From there, I keep going and guessing letters until the entire sentence becomes clear. (Although I regret wasting so much time filling in the entire thing since the flag is at the very end — this does occur to me that it may be at the end, but I keep going since I do want to solve the entire cipher.)&lt;/p&gt;
+&lt;p&gt;Starting out:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/2074a/2a.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 70.4161979752531%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAABO0lEQVQ4y62T6Y6DMAyE8/7PuRVHgBDus9l8BiOq/VNtizRyYjtm7EmMtTas6xqWZfkKDAW/+Zm6rv84n8/nv2HKsgz7vodt26R11h8VpGVYOudClmVhnufPWi6KIsCyqiqBFhdbHxaQR9x7H8pobWFlT65vvJBxrjoK5vYIVtFBcZLwoxpjYByqInu9FToi4nQGjBYAFGUPI+w4joK+7yV5GIbDnn72xMZpukZliniwbVuhrS0BLSotRtt1nfi6Plpfv+RhicNURIFdnufnHFzAJ6OIPlrTq/SWKGmaXu1SBLaIoSLxZyvFM2Fizx8BmCdJIizJlZfiThWVftM011oU9McomNk7l978PB7SKkizNNwZ0zosyuoQCrZ3oaYohorDWlom6QqMgxzS14LV9XpeHQYvr+q0d/D9AklXQIe71tUJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Starting out&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/fb8a0/2a.png&quot;
+        srcset=&quot;/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/1a291/2a.png 148w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/2bc4a/2a.png 295w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/fb8a0/2a.png 590w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/526de/2a.png 885w,
+/blog/static/e8f65b1212a6a7fdbfb05969bf14df69/2074a/2a.png 889w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Everything solved:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/8a7cda381c9a31730c60215003a9fbe5/e094c/2b.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 88.04960541149944%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsSAAALEgHS3X78AAAB2ElEQVQ4y6WUW6+aUBCF+aFt0lbbU4/tU/tjfTMx3gAREAQv4HS+gbFqYpqeY7Ky956ZzGWtwWA8Gsh49EXGrwMZDj7I1+HHe6jt+8sn+f3rp+HH69Divj3EjF4+G4L1ei3b7VbSNJUoimS320ld11JV1R32+73h0f6IgGRVVUutjyzLpGlaec8vyLQzq6woikLO57M5LpfLmxAw6ul0kuPxKG3bGt6azBKGYSh5nhuHi8VCKuXvXSNHmjCOY9lsNoYkSSRRXl0oioEEv/py5Rm7xyIkfuJpLiAZFwyI4gk5EQtOoeRwOBgtdteTNycb4f49KpOM1aEid++UQmVZXoNvT1DXh/7UhJrYNVBRtrp7haT9KOwhnXKS2PcTG2/G4x7H9z7uJLeRGZfgzplbpwTR+f+KFCyXS6sWa7LVatVXj6Wzx1bZCfcuwVpj8VM06ptiKttDAgHGsiyuI2S9wq42HLlIcOZ3wL1pmq5DqoQ36xP3otAxNIQKVIcjT3Sr+rFX3UQJ7c/hb5e+V7Z7mgTRfFQKY3NaENL3EjuJgyjqdrDjI7yOi9131HnzbnPl6qkoBGZZaiL4twwX3dlebY94+i3PZjOZTqcymUxkPp8Lb1T/1+9Zwj/NK02oYdUeDQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Everything solved&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/8a7cda381c9a31730c60215003a9fbe5/fb8a0/2b.png&quot;
+        srcset=&quot;/blog/static/8a7cda381c9a31730c60215003a9fbe5/1a291/2b.png 148w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/2bc4a/2b.png 295w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/fb8a0/2b.png 590w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/526de/2b.png 885w,
+/blog/static/8a7cda381c9a31730c60215003a9fbe5/e094c/2b.png 887w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/d505c30fd9213092fe42af8f81b67545/89502/2c.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 35.169082125603865%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAABG0lEQVQoz31R7W7DIBDL87RdPggcH4GkSbaqUt//eTwf6dZNk/bDMnCHD5vGpAG9dzAhw8aFa0HrAy5S0ErAIBZWJthUIMXi3AvOgyOk4tQ7dC7CTQtOnUUT14gw7wjLXnmMM8akWCme0dmA3k3oRRHxNh5o7QudSxjYe+GAJmwGsghcSZBppZBOK0TGOAnhYcgmKTxsJkdPoUDhUAWVFfriRsVMSJzi6yRtbN3XdF504S+eYj+h/VUw3wTr7XHkR1tquaewrl26MsN8nGmO7BnksK8Wx1D4mMKotnqmeTauOPj5HZLXWjS8PJCH2jw/+ff+VS9VqNY1Q+NpeU6I1ztxQ9ru8MsH89z5o/s3yz/71ib4vNHNyl92+AQOxeWnMYChdgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Entering the answer&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/d505c30fd9213092fe42af8f81b67545/fb8a0/2c.png&quot;
+        srcset=&quot;/blog/static/d505c30fd9213092fe42af8f81b67545/1a291/2c.png 148w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/2bc4a/2c.png 295w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/fb8a0/2c.png 590w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/526de/2c.png 885w,
+/blog/static/d505c30fd9213092fe42af8f81b67545/89502/2c.png 1035w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;Challenge 3 - CRYPTO - YOU CAN DO IT! - 10 points&lt;/h4&gt;
+&lt;p&gt;This challenge is a text file with the letters &lt;code class=&quot;language-text&quot;&gt;YHAOANUTDSYOEOIEUTTC!&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;My initial thought is that the challenge is called YOU CAN DO IT! and there’s an exclamation point and all of the letters in “YOU CAN DO IT”, so I think maybe I need to unscramble the rest of the letters. I take out the letters for “YOU CAN DO IT” and see what’s left.&lt;/p&gt;
+&lt;p&gt;After trying many combinations:&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/683a1052fdc0e186e9e7b69418634ca2/edd88/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 47.288503253796094%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABAElEQVQoz52SXWuDMBSG8zf8FlGYV4LEqahQ2XQ2QWNbOnvbu10Nuv1/3iWBjvZisHrx3JyEJ+85J+QyCXx/MIjzFjPbYx53EHwG6zneXga8bjrsxQGXzy9dXw4nHHdHyTsmNkmErqu7CtLUNRjbom03qKsaVVWhKArETzFs24bruhrf9+F53h3Xs1vIc55LQYmyLGFZFgzDgGmavzLHcR6CUEp1IppRhGGoJX+9/h9I0zTouk623CKO79tcJRzHEZxzLMuik6qWVUIVf5UwyzIolCyX87wVrZGSYRjkluW3EQJ93+uEqu2r7FEpSdMUajEqZZIkiKJIzzIIglUJfwDKJAoRNPpH5wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Combinations&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/683a1052fdc0e186e9e7b69418634ca2/fb8a0/3.png&quot;
+        srcset=&quot;/blog/static/683a1052fdc0e186e9e7b69418634ca2/1a291/3.png 148w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/2bc4a/3.png 295w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/fb8a0/3.png 590w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/526de/3.png 885w,
+/blog/static/683a1052fdc0e186e9e7b69418634ca2/edd88/3.png 922w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And trying to enter them in the solution box…&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;YOUSEETHATYOUCANDOIT!&lt;/code&gt; works!&lt;/p&gt;
+&lt;h4&gt;Challenge 4 - CRYPTO - Deceitful Batman - 10 points&lt;/h4&gt;
+&lt;p&gt;This challenge is a text file with &lt;code class=&quot;language-text&quot;&gt;NAANAAANNNAANAAAANANANANAAAAAAAANNAANAAANAAANANNAAAAAAAANNNAANAAAAANAANAAAA&lt;/code&gt;. My initial thought is to count the letters in each, and maybe each number is associated with a letter. That doesn’t work out since there’s a lot of single characters.&lt;/p&gt;
+&lt;p&gt;Then I think it kind of reminds me of the Hamming Code that I just learned about in algorithms since there’s only two values, A and N. I look that up but it doesn’t really seem right.&lt;/p&gt;
+&lt;p&gt;I google “Binary cryptography” to see waht comes up and find &lt;a href=&quot;https://en.wikipedia.org/wiki/Bacon%27s_cipher&quot;&gt;Bacon’s cipher&lt;/a&gt;. This looks promising…&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/21176/4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 13.707165109034266%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAoUlEQVQI102LTQ6CMBSEOQeEFbTlABTKz45goS2IEePKGKP3v8LYPqNx8WXezJuJbvcBejGYDx5tYLSFmSzGQeOyX/F8vHDedqzuiG09wc0L9Dhj8n07OeoaUgfrf5FSEl3XQdU16n+qirK+76GUQuNpm4a6UkrygXCXZUmbtm0RMcbAGUfQPM+JLMsgigKcf/KgASEE+W+WpiniOEaSJD/e6Vdi+p2gvlwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Solved&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/fb8a0/4.png&quot;
+        srcset=&quot;/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/1a291/4.png 148w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/2bc4a/4.png 295w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/fb8a0/4.png 590w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/526de/4.png 885w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/fa2eb/4.png 1180w,
+/blog/static/fe525cce2e38e1c91db2d7f5f994c9a4/21176/4.png 1284w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Looks like I found the cypher: NAPIER!&lt;/p&gt;
+&lt;h4&gt;Summary:&lt;/h4&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/b574e/5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 49.52305246422894%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABkUlEQVQoz4WRXY6cMBCEOUc2/NkGg8FgAwPsMBMlD3v/I1XKhlGySpQ8lBpQ83V1dVJULezi0PsbKmPR+RnKOBi/ou4cHt8/MMw70rKCqDW248B6/4Zpe2CO2uFu77E3KCnrDn7f0Ywe7TjDr3fogXV/QtsJx48POH5LRY2Sw6ftgJsm6N5HNdajZlVmhGoHAqWC6TpOOuBvO3KpkfHntFD4WlR4u2pwKOnw/b4R+uTgI7p0yxYd9tMawUkuFBsbdOOCqrXRRaGaqLQMsFMpoYXSGOeFEWyMaIUlpHdzjKvhNtHhW64QcmwHh0xWcTXBGOx0Q8lBuTz1cnh/7Jj3x+XwiA7Dc+eCQ2YYXKRljYprd4smrIfQXRwSqtDne0ZgSYeGg1/5nQrHGHjQAZIbJmFyWEe1hodpI1ASIps+wuQFDH1lVdPVRofP6C5q5ZUZg7EjTbkTGDISuuVVDdfsL2ef9er7kklK/Ca+5/I6njqBGVeWjUFt278D61/AuNE/lISmTGhmYSNQ/AHsPzn8H/An2qsnfiixtAUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Proof&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/fb8a0/5.png&quot;
+        srcset=&quot;/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/1a291/5.png 148w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/2bc4a/5.png 295w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/fb8a0/5.png 590w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/526de/5.png 885w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/fa2eb/5.png 1180w,
+/blog/static/62b620d0be85ee5cfddeb20cf7aaeaba/b574e/5.png 1258w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Thoughts on Software Vulnerabilities (Defense Against the Dark Arts)]]></title><description><![CDATA[Software Vulnerabilities Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a…]]></description><link>https://michelelarson.com/blog/security-software/</link><guid isPermaLink="false">https://michelelarson.com/blog/security-software/</guid><pubDate>Wed, 30 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Software Vulnerabilities&lt;/h4&gt;
 &lt;p&gt;Hacking is manipulating software from bugs in a program, or through configuration vulnerability (when someone has a weak password, or unchecks a security box, etc. Those things make it less secure.) This week will focus on the first, software vulnerabilities.&lt;/p&gt;
 &lt;p&gt;Companies use bug bounty programs where they ask people to find vulnerabilities and report them so they can be fixed, and then they’ll be paid for finding them. &lt;/p&gt;
 &lt;p&gt;Companies have gotten better at protecting their perimeters, so rather than focusing on perimeter attacks, attackers now focus on targeting users through phishing and social engineering.&lt;/p&gt;
