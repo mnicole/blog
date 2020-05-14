@@ -12,6 +12,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: 'blog',
+        ignore: [`**/\.*`],
       },
     },
     {
@@ -69,7 +70,6 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `content/assets/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
